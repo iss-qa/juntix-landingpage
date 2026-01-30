@@ -803,6 +803,20 @@ button {
     color: #FBBF24;
 }
 
+/* === Custom CTA Button === */
+.btn-cta-green {
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+}
+
+.btn-cta-green:hover {
+    background-color: #218838;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(40, 167, 69, 0.3), 0 4px 6px -2px rgba(40, 167, 69, 0.1);
+}
+
 .benefits-list {
     display: flex;
     flex-direction: column;

@@ -165,20 +165,22 @@
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <a href="index.html" class="logo">
-                    <img src="logo/logo_juntix.png" alt="Juntix Logo" class="logo-img" loading="lazy">
-                    <span class="logo-text">Juntix</span>
-                </a>
-                <div class="nav-actions">
-                    <a href="index.html" class="btn btn-sm btn-outline">Voltar ao site</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <!-- Header (fixed) -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="logo">
+                <img src="logo/logo_juntix.png" alt="Juntix Logo" class="logo-img" width="40" height="40">
+                <span class="logo-text">Juntix</span>
+            </a>
+            <ul class="nav-links" style="gap: var(--space-lg);">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="termos-de-servico.html">Termos</a></li>
+                <li><a href="politica-privacidade.html">Privacidade</a></li>
+                <li><a href="exclusao-de-dados.html">Exclusao de Dados</a></li>
+                <li><a href="https://painel.juntix.com.br" class="btn btn-nav-cta">Acessar Plataforma</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main class="legal-page">
         <div class="container">
@@ -212,6 +214,7 @@
                         <li><a href="#armazenamento">Armazenamento e Segurança</a></li>
                         <li><a href="#retencao">Retenção de Dados</a></li>
                         <li><a href="#direitos">Seus Direitos (LGPD)</a></li>
+                        <li><a href="#exclusao">Exclusão de Conta e Dados</a></li>
                         <li><a href="#cookies">Cookies e Tecnologias Similares</a></li>
                         <li><a href="#menores">Menores de Idade</a></li>
                         <li><a href="#alteracoes">Alterações nesta Política</a></li>
@@ -345,7 +348,38 @@
                 <p>Para exercer qualquer desses direitos, entre em contato pelo e-mail <a href="mailto:privacidade@juntix.com.br"><strong>privacidade@juntix.com.br</strong></a> ou pelo canal de suporte. Responderemos em até 15 (quinze) dias úteis.</p>
 
                 <!-- 10 -->
-                <h2 id="cookies">10. Cookies e Tecnologias Similares</h2>
+                <h2 id="exclusao">10. Exclusão de Conta e Dados</h2>
+                <p>Você tem o direito de solicitar a exclusão completa da sua conta e de todos os seus dados pessoais da plataforma Juntix a qualquer momento. Para isso, siga o passo a passo abaixo:</p>
+
+                <h3>10.1 Como excluir sua conta pela plataforma</h3>
+                <ol>
+                    <li><strong>Acesse a plataforma</strong> em <a href="https://painel.juntix.com.br" target="_blank" rel="noopener">painel.juntix.com.br</a> e faça login na sua conta.</li>
+                    <li><strong>Clique na abreviação do seu nome</strong> no menu superior direito da tela (ex: "AS" para Anderson Silva).</li>
+                    <li><strong>Selecione "Configurações"</strong> no menu suspenso que será exibido.</li>
+                    <li><strong>Role até o final da página</strong> de configurações. Logo abaixo do botão "Sair da Conta", você encontrará o botão <strong>"Excluir Conta"</strong>.</li>
+                    <li><strong>Clique em "Excluir Conta"</strong>. Uma mensagem de confirmação será exibida informando que:
+                        <ul>
+                            <li>Todos os seus dados pessoais serão permanentemente removidos da plataforma;</li>
+                            <li>Seu histórico de participações, pagamentos e contemplações será excluído;</li>
+                            <li>Esta ação é irreversível e não poderá ser desfeita;</li>
+                            <li>Caso possua caixas em andamento, será necessário concluí-los ou transferir a administração antes da exclusão.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Confirme a exclusão</strong>. Ao confirmar, sua conta e todos os dados associados serão permanentemente deletados da plataforma Juntix.</li>
+                </ol>
+
+                <h3>10.2 Prazo para exclusão</h3>
+                <p>A exclusão da conta é processada imediatamente após a confirmação. Dados que precisam ser retidos por obrigação legal (como dados fiscais e de transações financeiras) serão mantidos pelo período exigido por lei e eliminados automaticamente após o término desse período, conforme descrito na seção 8 desta política.</p>
+
+                <h3>10.3 Exclusão via suporte</h3>
+                <p>Caso não consiga realizar a exclusão pela plataforma, você também pode solicitar a exclusão da sua conta enviando um e-mail para <a href="mailto:privacidade@juntix.com.br"><strong>privacidade@juntix.com.br</strong></a> com o assunto "Exclusão de Conta" e informando o CPF ou e-mail cadastrado. A solicitação será processada em até 15 (quinze) dias úteis.</p>
+
+                <div class="highlight-box">
+                    <p><strong>Atenção:</strong> A exclusão de dados também pode ser solicitada por meio da nossa <a href="exclusao-de-dados.html"><strong>página de Exclusão de Dados</strong></a>, que contém instruções detalhadas e está em conformidade com as políticas de plataformas de terceiros (Facebook, Instagram, etc.).</p>
+                </div>
+
+                <!-- 11 -->
+                <h2 id="cookies">11. Cookies e Tecnologias Similares</h2>
                 <p>Utilizamos cookies e tecnologias similares para:</p>
                 <ul>
                     <li><strong>Cookies essenciais:</strong> necessários para o funcionamento da plataforma (autenticação, segurança, preferências de sessão).</li>
@@ -354,16 +388,16 @@
                 </ul>
                 <p>Você pode gerenciar suas preferências de cookies através das configurações do seu navegador. A desativação de cookies essenciais pode impactar o funcionamento da plataforma.</p>
 
-                <!-- 11 -->
-                <h2 id="menores">11. Menores de Idade</h2>
+                <!-- 12 -->
+                <h2 id="menores">12. Menores de Idade</h2>
                 <p>A Plataforma Juntix não é destinada a menores de 18 (dezoito) anos. Não coletamos intencionalmente dados de menores de idade. Caso identifiquemos que dados de um menor foram coletados sem o consentimento dos responsáveis legais, procederemos com a exclusão imediata.</p>
 
-                <!-- 12 -->
-                <h2 id="alteracoes">12. Alterações nesta Política</h2>
+                <!-- 13 -->
+                <h2 id="alteracoes">13. Alterações nesta Política</h2>
                 <p>Esta Política de Privacidade pode ser atualizada periodicamente para refletir mudanças em nossas práticas, na legislação ou nos serviços oferecidos. Sempre que houver alterações relevantes, notificaremos você por e-mail ou por meio de aviso destacado na Plataforma. A data da última atualização estará sempre indicada no topo deste documento.</p>
 
-                <!-- 13 -->
-                <h2 id="contato">13. Contato e Encarregado (DPO)</h2>
+                <!-- 14 -->
+                <h2 id="contato">14. Contato e Encarregado (DPO)</h2>
                 <p>Para dúvidas, solicitações ou reclamações relacionadas a esta Política de Privacidade ou ao tratamento dos seus dados pessoais, entre em contato:</p>
                 <ul>
                     <li><strong>Controlador:</strong> ISS Software Quality Solutions LTDA — CNPJ: 39.997.807/0001-86</li>
@@ -408,6 +442,7 @@
                             <li><a href="https://drive.google.com/file/d/1WUZXJ4b6QgOiDSyBIy6LChHJAOiTYGX5/view?usp=sharing" target="_blank">Contrato de Adesão</a></li>
                             <li><a href="termos-de-servico.html">Termos de Serviço</a></li>
                             <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
+                            <li><a href="exclusao-de-dados.html">Exclusão de Dados</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">

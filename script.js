@@ -67,24 +67,30 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
 
-        playPauseBtn.addEventListener('click', () => {
+        function togglePlay(e) {
+            e.preventDefault();
+            e.stopPropagation();
             if (heroVideo.paused) {
                 heroVideo.play();
-                playIcon.classList.add('hidden');
-                pauseIcon.classList.remove('hidden');
             } else {
                 heroVideo.pause();
-                playIcon.classList.remove('hidden');
-                pauseIcon.classList.add('hidden');
             }
-        });
+        }
 
-        muteBtn.addEventListener('click', () => {
-            hasInteracted = true;
+        function toggleMute(e) {
+            e.preventDefault();
+            e.stopPropagation();
             heroVideo.muted = !heroVideo.muted;
             volumeIcon.classList.toggle('hidden', heroVideo.muted);
             muteIcon.classList.toggle('hidden', !heroVideo.muted);
-        });
+        }
+
+        // pointerdown fires immediately on press (faster than click)
+        playPauseBtn.addEventListener('pointerdown', togglePlay);
+        muteBtn.addEventListener('pointerdown', toggleMute);
+        // Prevent ghost click after pointerdown
+        playPauseBtn.addEventListener('click', (e) => e.preventDefault());
+        muteBtn.addEventListener('click', (e) => e.preventDefault());
 
         heroVideo.addEventListener('play', () => {
             playIcon.classList.add('hidden');

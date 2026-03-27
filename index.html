@@ -5,28 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Juntix - Junte seus amigos e realize seus sonhos. A alternativa inteligente ao empréstimo. Seja um administrador e ganhe 10% do valor do caixa.">
-    <meta name="keywords" content="caixa coletivo, vaquinha, poupança coletiva, sem juros, administrador, renda extra">
-    <title>Juntix - Junte seus amigos e realize seus sonhos</title>
+        content="Juntix - A plataforma inteligente de caixa coletivo entre amigos. Sem juros, sem banco, sem burocracia. Ganhe 10% como administrador. Acesse até R$ 20.000 pagando apenas R$ 10 por boleto.">
+    <meta name="keywords"
+        content="caixa coletivo, vaquinha entre amigos, poupança coletiva, sem juros, administrador de caixa, renda extra, consórcio informal, fintech brasileira, juntix">
+    <meta name="author" content="Juntix - ISS Software Quality Solutions">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <title>Juntix - Caixa Coletivo Entre Amigos | Sem Juros, 100% Online</title>
+
+    <!-- Preconnect & Preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="logo/logo_juntix.png">
 
     <!-- SEO & Social -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://juntix.com.br/">
-    <meta property="og:title" content="Juntix - Junte seus amigos e realize seus sonhos">
+    <meta property="og:title" content="Juntix - Caixa Coletivo Entre Amigos | Sem Juros">
     <meta property="og:description"
-        content="Juntix - A alternativa inteligente ao empréstimo. Organize caixas coletivos, sem juros e sem burocracia.">
+        content="Reúna amigos de confiança, forme um caixa coletivo e tenha acesso a até R$ 20.000 sem juros. Administradores ganham 10% de comissão.">
     <meta property="og:image" content="https://juntix.com.br/logo/logo_juntix.png">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Juntix">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Juntix - Junte seus amigos e realize seus sonhos">
+    <meta name="twitter:title" content="Juntix - Caixa Coletivo Entre Amigos | Sem Juros">
     <meta name="twitter:description"
-        content="Juntix - A alternativa inteligente ao empréstimo. Organize caixas coletivos, sem juros e sem burocracia.">
+        content="Reúna amigos de confiança e tenha acesso a até R$ 20.000. Sem juros, sem banco, sem burocracia. 100% online.">
     <meta name="twitter:image" content="https://juntix.com.br/logo/logo_juntix.png">
 
     <link rel="canonical" href="https://juntix.com.br/">
@@ -39,14 +48,38 @@
         {
           "@type": "Organization",
           "name": "Juntix",
+          "legalName": "ISS Software Quality Solutions",
           "url": "https://juntix.com.br/",
           "logo": "https://juntix.com.br/logo/logo_juntix.png",
-          "description": "Plataforma de gestão para caixas e vaquinhas coletivas."
+          "description": "Plataforma de gestão para caixas coletivos entre amigos. Sem juros, sem banco, 100% online.",
+          "foundingDate": "2024",
+          "taxID": "39.997.807/0001-86",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+55-71-3599-0522",
+            "contactType": "customer service",
+            "availableLanguage": "Portuguese"
+          },
+          "sameAs": []
         },
         {
           "@type": "WebSite",
           "url": "https://juntix.com.br/",
-          "name": "Juntix"
+          "name": "Juntix",
+          "description": "Plataforma de caixa coletivo entre amigos - sem juros, sem burocracia"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Juntix",
+          "operatingSystem": "Web",
+          "applicationCategory": "FinanceApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "10.00",
+            "priceCurrency": "BRL",
+            "description": "Taxa de serviço por boleto gerado"
+          },
+          "description": "Plataforma para organização e gestão de caixas coletivos entre amigos"
         },
         {
           "@type": "FAQPage",
@@ -76,12 +109,28 @@
               }
             },
             {
-               "@type": "Question",
-               "name": "Como funciona a divisão dos valores?",
-               "acceptedAnswer": {
-                 "@type": "Answer",
-                 "text": "A divisão é igualitária. O valor total do caixa é dividido pelo número de participantes, resultando na parcela mensal."
-               }
+              "@type": "Question",
+              "name": "Como funciona a divisão dos valores?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A divisão é igualitária. O valor total do caixa é dividido pelo número de participantes, resultando na parcela mensal."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Qual a diferença entre Juntix e empréstimo?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No Juntix, você não paga juros. Você recebe exatamente o que contribuiu ao longo dos meses, enquanto em empréstimos tradicionais você paga de 30% a 60% a mais."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Como funciona o Split? O Juntix retém meu dinheiro?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Não! O Juntix utiliza um sistema de Split automático onde o dinheiro vai direto para a carteira do contemplado. O Juntix recebe apenas a taxa de serviço (R$ 10/boleto)."
+              }
             }
           ]
         }
@@ -91,129 +140,161 @@
 </head>
 
 <body>
+    <!-- Cursor follower -->
+    <div class="cursor-glow" aria-hidden="true"></div>
+
     <!-- Header -->
-    <header class="header">
-        <nav class="nav container">
+    <header class="header" role="banner">
+        <nav class="nav container" aria-label="Navegação principal">
             <a href="#" class="logo">
-                <img src="logo/logo_juntix.png" alt="Juntix Logo" class="logo-img">
+                <img src="logo/logo_juntix.png" alt="Juntix - Plataforma de Caixa Coletivo" class="logo-img"
+                    width="40" height="40">
                 <span class="logo-text">Juntix</span>
             </a>
-            <button class="mobile-menu-btn" aria-label="Menu">
+            <button class="mobile-menu-btn" aria-label="Abrir menu de navegação" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <ul class="nav-links">
                 <li><a href="#como-funciona">Como Funciona</a></li>
+                <li><a href="#plataforma">Plataforma</a></li>
                 <li><a href="#participante">Para Você</a></li>
                 <li><a href="#compare">Compare</a></li>
-                <li><a href="#taxas">Taxas</a></li>
                 <li><a href="#ganhos">Administrador</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="https://painel.juntix.com.br" class="btn btn-cta-green">Começar Agora</a></li>
+                <li><a href="https://painel.juntix.com.br" class="btn btn-nav-cta">Começar Agora</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-bg"></div>
+        <section class="hero" aria-label="Seção principal">
+            <div class="hero-bg-effects" aria-hidden="true">
+                <div class="hero-orb hero-orb-1"></div>
+                <div class="hero-orb hero-orb-2"></div>
+                <div class="hero-orb hero-orb-3"></div>
+                <div class="hero-grid-pattern"></div>
+            </div>
+
             <div class="container hero-content">
-                <span class="badge animate-fade-in">
+                <div class="hero-badge reveal-up" data-delay="0">
+                    <span class="badge-pulse"></span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
                     </svg>
                     A alternativa inteligente ao empréstimo
-                </span>
-                <p class="hero-tagline animate-fade-in">Juntix, junte seus amigos e realize seus sonhos</p>
-                <h1 class="hero-title animate-fade-in">
-                    Precisa de dinheiro?<br>
-                    <span class="gradient-text">Sem juros. Sem banco. Sem agiota.</span>
+                </div>
+
+                <p class="hero-tagline reveal-up" data-delay="100">Juntix, junte seus amigos e realize seus sonhos</p>
+
+                <h1 class="hero-title reveal-up" data-delay="200">
+                    Precisa de dinheiro?
+                    <span class="hero-title-highlight">
+                        <span class="gradient-text-animated">Sem juros. Sem banco. Sem agiota.</span>
+                    </span>
                 </h1>
-                <p class="hero-subtitle animate-fade-in">
-                    Reúna pessoas de confiança, forme um caixa coletivo e tenha acesso a até R$ 10.000
+
+                <p class="hero-subtitle reveal-up" data-delay="300">
+                    Reúna pessoas de confiança, forme um caixa coletivo e tenha acesso a até
+                    <strong>R$ 20.000</strong>
                     pagando apenas <strong>R$ 10 de taxa por boleto</strong>.
                     Simples como a vaquinha que você já conhece.
                 </p>
-                <div class="hero-cta animate-fade-in">
-                    <a href="https://painel.juntix.com.br" class="btn btn-lg btn-white">
-                        Quero Participar
+
+                <div class="hero-cta reveal-up" data-delay="400">
+                    <a href="https://painel.juntix.com.br" class="btn btn-lg btn-glow">
+                        <span>Quero Participar</span>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                     </a>
-                    <a href="#ganhos" class="btn btn-lg btn-outline-white">
+                    <a href="#ganhos" class="btn btn-lg btn-outline-hero">
                         Quero ser Administrador
                     </a>
                     <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0Gs9Hugv8SqJn3pG1KIIXRyFilMM18uMXbD7bXaMkrzJYaJTq6fjhd0iOl-1J-napmOVHjEZrU?gv=true"
-                        target="_blank" class="btn btn-lg btn-white">
+                        target="_blank" rel="noopener" class="btn btn-lg btn-ghost-hero">
                         Quero saber mais
                     </a>
                 </div>
-                <div class="hero-badges animate-fade-in">
-                    <div class="hero-badge">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                            <polyline points="22 4 12 14.01 9 11.01" />
-                        </svg>
-                        Sem juros
+
+                <div class="hero-stats reveal-up" data-delay="500">
+                    <div class="hero-stat">
+                        <span class="hero-stat-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                        </span>
+                        <span>Zero juros</span>
                     </div>
-                    <div class="hero-badge">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                            <polyline points="22 4 12 14.01 9 11.01" />
-                        </svg>
-                        Sem burocracia
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                        </span>
+                        <span>Sem burocracia</span>
                     </div>
-                    <div class="hero-badge">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                            <polyline points="22 4 12 14.01 9 11.01" />
-                        </svg>
-                        100% online
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                        </span>
+                        <span>100% online</span>
                     </div>
                 </div>
 
                 <!-- Video Section -->
-                <div class="hero-video-container animate-fade-in">
-                    <video id="heroVideo" class="hero-video" autoplay muted loop playsinline>
-                        <source src="video/animacao_boa.mp4" type="video/mp4">
-                        Seu navegador não suporta vídeos HTML5.
-                    </video>
-                    <div class="video-controls">
-                        <button id="playPauseBtn" class="video-control-btn" aria-label="Play/Pause">
-                            <svg class="play-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                            </svg>
-                            <svg class="pause-icon hidden" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <rect x="6" y="4" width="4" height="16"></rect>
-                                <rect x="14" y="4" width="4" height="16"></rect>
-                            </svg>
-                        </button>
-                        <button id="muteBtn" class="video-control-btn" aria-label="Mute/Unmute">
-                            <svg class="volume-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-                            </svg>
-                            <svg class="mute-icon hidden" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                                <line x1="23" y1="9" x2="17" y2="15"></line>
-                                <line x1="17" y1="9" x2="23" y2="15"></line>
-                            </svg>
-                        </button>
+                <div class="hero-video-wrapper reveal-up" data-delay="600">
+                    <div class="hero-video-container">
+                        <video id="heroVideo" class="hero-video" autoplay loop playsinline
+                            poster="logo/logo_juntix.png">
+                            <source src="video/animacao_boa.mp4" type="video/mp4">
+                            Seu navegador não suporta vídeos HTML5.
+                        </video>
+                        <div class="video-controls">
+                            <button id="playPauseBtn" class="video-control-btn" aria-label="Play/Pause">
+                                <svg class="play-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                </svg>
+                                <svg class="pause-icon hidden" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <rect x="6" y="4" width="4" height="16"></rect>
+                                    <rect x="14" y="4" width="4" height="16"></rect>
+                                </svg>
+                            </button>
+                            <button id="muteBtn" class="video-control-btn" aria-label="Mute/Unmute">
+                                <svg class="volume-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                                </svg>
+                                <svg class="mute-icon hidden" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                    <line x1="23" y1="9" x2="17" y2="15"></line>
+                                    <line x1="17" y1="9" x2="23" y2="15"></line>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="video-glow" aria-hidden="true"></div>
                     </div>
                 </div>
             </div>
-            <div class="hero-wave">
+
+            <div class="hero-wave" aria-hidden="true">
                 <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                     <path
                         d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
@@ -222,15 +303,43 @@
             </div>
         </section>
 
+        <!-- Social Proof Numbers -->
+        <section class="section section-white numbers-section">
+            <div class="container">
+                <div class="numbers-grid">
+                    <div class="number-card reveal-up">
+                        <span class="number-value" data-target="0" data-suffix="%">0%</span>
+                        <span class="number-label">de juros cobrados</span>
+                    </div>
+                    <div class="number-card reveal-up" data-delay="100">
+                        <span class="number-value" data-target="10" data-prefix="R$ " data-suffix="">R$ 10</span>
+                        <span class="number-label">taxa por boleto</span>
+                    </div>
+                    <div class="number-card reveal-up" data-delay="200">
+                        <span class="number-value" data-target="20000" data-prefix="R$ " data-suffix="">R$ 20.000</span>
+                        <span class="number-label">valor máximo do caixa</span>
+                    </div>
+                    <div class="number-card reveal-up" data-delay="300">
+                        <span class="number-value" data-target="10" data-suffix="%">10%</span>
+                        <span class="number-label">comissão do administrador</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Como Funciona -->
-        <section id="como-funciona" class="section section-white">
+        <section id="como-funciona" class="section section-light">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Como funciona</h2>
-                    <p class="section-subtitle">Simples como uma vaquinha entre amigos</p>
+                    <span class="section-badge reveal-up">Passo a passo</span>
+                    <h2 class="section-title reveal-up">Como funciona o Juntix</h2>
+                    <p class="section-subtitle reveal-up">Simples como uma vaquinha entre amigos, mas com toda a
+                        segurança de uma plataforma digital</p>
                 </div>
-                <div class="steps-grid">
-                    <div class="step-card animate-on-scroll">
+                <div class="steps-timeline">
+                    <div class="timeline-line" aria-hidden="true"></div>
+                    <div class="step-card reveal-up" data-delay="0">
+                        <div class="step-number-badge">1</div>
                         <div class="step-icon">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
@@ -240,11 +349,12 @@
                                 <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                             </svg>
                         </div>
-                        <span class="step-number">1</span>
                         <h3 class="step-title">Forme o grupo</h3>
-                        <p class="step-desc">Reúna 5 a 12 pessoas de confiança</p>
+                        <p class="step-desc">Reúna de 5 a 12 pessoas de confiança. Amigos, família ou colegas de
+                            trabalho.</p>
                     </div>
-                    <div class="step-card animate-on-scroll" style="--delay: 0.1s">
+                    <div class="step-card reveal-up" data-delay="150">
+                        <div class="step-number-badge">2</div>
                         <div class="step-icon">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
@@ -252,11 +362,12 @@
                                 <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                             </svg>
                         </div>
-                        <span class="step-number">2</span>
                         <h3 class="step-title">Defina o valor</h3>
-                        <p class="step-desc">Escolha o valor do caixa (até R$ 10.000)</p>
+                        <p class="step-desc">Escolha o valor do caixa, de R$ 500 até R$ 20.000. Cada participante paga
+                            sua parte.</p>
                     </div>
-                    <div class="step-card animate-on-scroll" style="--delay: 0.2s">
+                    <div class="step-card reveal-up" data-delay="300">
+                        <div class="step-number-badge">3</div>
                         <div class="step-icon">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
@@ -264,11 +375,11 @@
                                 <polyline points="12 6 12 12 16 14" />
                             </svg>
                         </div>
-                        <span class="step-number">3</span>
                         <h3 class="step-title">Pague mensalmente</h3>
-                        <p class="step-desc">Todo mês, todos pagam a parcela</p>
+                        <p class="step-desc">Todo mês, todos pagam a parcela via boleto. Simples e organizado.</p>
                     </div>
-                    <div class="step-card animate-on-scroll" style="--delay: 0.3s">
+                    <div class="step-card reveal-up" data-delay="450">
+                        <div class="step-number-badge">4</div>
                         <div class="step-icon">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
@@ -276,10 +387,88 @@
                                 <path d="M9 12l2 2 4-4" />
                             </svg>
                         </div>
-                        <span class="step-number">4</span>
                         <h3 class="step-title">Receba com segurança</h3>
-                        <p class="step-desc">Cada mês um participante é contemplado</p>
+                        <p class="step-desc">Cada mês um participante é contemplado e recebe o valor integral na sua
+                            carteira.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Plataforma Preview -->
+        <section id="plataforma" class="section section-dark">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge section-badge-dark reveal-up">Conheça a plataforma</span>
+                    <h2 class="section-title light reveal-up">Tudo na palma da sua mão</h2>
+                    <p class="section-subtitle light reveal-up">Painel completo para acompanhar cada detalhe do seu
+                        caixa</p>
+                </div>
+
+                <div class="platform-showcase">
+                    <!-- Main Dashboard -->
+                    <div class="platform-card platform-card-main reveal-up" data-delay="0">
+                        <div class="platform-card-header">
+                            <span class="platform-card-dot"></span>
+                            <span class="platform-card-dot"></span>
+                            <span class="platform-card-dot"></span>
+                            <span class="platform-card-label">Dashboard do Caixa</span>
+                        </div>
+                        <img src="logo/caixa.png"
+                            alt="Painel de controle do caixa coletivo Juntix mostrando progresso de 40%, valor de R$ 2.500 e participantes"
+                            loading="lazy" width="883" height="565">
+                    </div>
+
+                    <!-- Journey -->
+                    <div class="platform-card platform-card-journey reveal-left" data-delay="200">
+                        <div class="platform-card-header">
+                            <span class="platform-card-dot"></span>
+                            <span class="platform-card-dot"></span>
+                            <span class="platform-card-dot"></span>
+                            <span class="platform-card-label">Jornada do Caixa</span>
+                        </div>
+                        <img src="logo/jornada.png"
+                            alt="Jornada do caixa Juntix mostrando a ordem de contemplação dos participantes"
+                            loading="lazy" width="884" height="293">
+                    </div>
+
+                    <!-- Payment Summary -->
+                    <div class="platform-card platform-card-summary reveal-right" data-delay="300">
+                        <div class="platform-card-header">
+                            <span class="platform-card-dot"></span>
+                            <span class="platform-card-dot"></span>
+                            <span class="platform-card-dot"></span>
+                            <span class="platform-card-label">Resumo de Pagamentos</span>
+                        </div>
+                        <img src="logo/resumo_pay.png"
+                            alt="Resumo de pagamentos do Juntix mostrando status mensal de pagos e pendentes"
+                            loading="lazy" width="892" height="275">
+                    </div>
+
+                    <!-- Payment List -->
+                    <div class="platform-card platform-card-payments reveal-up" data-delay="400">
+                        <div class="platform-card-header">
+                            <span class="platform-card-dot"></span>
+                            <span class="platform-card-dot"></span>
+                            <span class="platform-card-dot"></span>
+                            <span class="platform-card-label">Pagamentos Detalhados</span>
+                        </div>
+                        <img src="logo/pay.png"
+                            alt="Lista detalhada de pagamentos do Juntix com status individual de cada participante"
+                            loading="lazy" width="872" height="612">
+                    </div>
+                </div>
+
+                <div class="platform-cta reveal-up">
+                    <a href="https://painel.juntix.com.br" class="btn btn-lg btn-glow">
+                        <span>Acessar Plataforma</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" y1="14" x2="21" y2="3" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </section>
@@ -288,93 +477,113 @@
         <section id="participante" class="section section-gradient">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title light">Realize seus sonhos sem pagar juros</h2>
-                    <p class="section-subtitle light">Cansado de pagar juros abusivos para bancos e financeiras?</p>
+                    <span class="section-badge section-badge-light reveal-up">Para participantes</span>
+                    <h2 class="section-title light reveal-up">Realize seus sonhos sem pagar juros</h2>
+                    <p class="section-subtitle light reveal-up">Cansado de pagar juros abusivos para bancos e
+                        financeiras? Com o Juntix, você conquista o que precisa de forma inteligente.</p>
                 </div>
-                <div class="participant-content">
-                    <div class="participant-card animate-on-scroll">
-                        <div class="participant-dreams">
-                            <h3>O que você pode conquistar</h3>
-                            <div class="dreams-grid">
-                                <div class="dream-item">
-                                    <span class="dream-emoji">🏠</span>
-                                    <span>Reformar a casa</span>
-                                </div>
-                                <div class="dream-item">
-                                    <span class="dream-emoji">🎓</span>
-                                    <span>Pagar a faculdade</span>
-                                </div>
-                                <div class="dream-item">
-                                    <span class="dream-emoji">💍</span>
-                                    <span>Casar</span>
-                                </div>
-                                <div class="dream-item">
-                                    <span class="dream-emoji">🚗</span>
-                                    <span>Comprar um carro</span>
-                                </div>
-                                <div class="dream-item">
-                                    <span class="dream-emoji">✈️</span>
-                                    <span>Viajar</span>
-                                </div>
-                                <div class="dream-item">
-                                    <span class="dream-emoji">💼</span>
-                                    <span>Abrir um negócio</span>
-                                </div>
+                <div class="participant-layout">
+                    <div class="participant-dreams reveal-left">
+                        <h3>O que você pode conquistar</h3>
+                        <div class="dreams-grid">
+                            <div class="dream-item">
+                                <span class="dream-emoji">🏠</span>
+                                <span>Reformar a casa</span>
+                            </div>
+                            <div class="dream-item">
+                                <span class="dream-emoji">🎓</span>
+                                <span>Pagar a faculdade</span>
+                            </div>
+                            <div class="dream-item">
+                                <span class="dream-emoji">💍</span>
+                                <span>Casar</span>
+                            </div>
+                            <div class="dream-item">
+                                <span class="dream-emoji">🚗</span>
+                                <span>Comprar um carro</span>
+                            </div>
+                            <div class="dream-item">
+                                <span class="dream-emoji">✈️</span>
+                                <span>Viajar</span>
+                            </div>
+                            <div class="dream-item">
+                                <span class="dream-emoji">💼</span>
+                                <span>Abrir um negócio</span>
                             </div>
                         </div>
-                        <div class="participant-benefits">
-                            <h3>Por que participar do Juntix?</h3>
-                            <ul class="benefits-list">
-                                <li>
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                        <polyline points="22 4 12 14.01 9 11.01" />
-                                    </svg>
-                                    <strong>Zero juros</strong> - Você recebe o valor integral
-                                </li>
-                                <li>
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                        <polyline points="22 4 12 14.01 9 11.01" />
-                                    </svg>
-                                    <strong>Sem consulta ao SPC/Serasa</strong> - Nome limpo ou sujo
-                                </li>
-                                <li>
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                        <polyline points="22 4 12 14.01 9 11.01" />
-                                    </svg>
-                                    <strong>Parcelas fixas</strong> - Você já sabe quanto vai pagar
-                                </li>
-                                <li>
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                        <polyline points="22 4 12 14.01 9 11.01" />
-                                    </svg>
-                                    <strong>Grupo de confiança</strong> - Pessoas que você conhece
-                                </li>
-                                <li>
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                        <polyline points="22 4 12 14.01 9 11.01" />
-                                    </svg>
-                                    <strong>100% online</strong> - Acompanhe tudo pelo app
-                                </li>
-                            </ul>
-                        </div>
                     </div>
-                    <p class="participant-cta-text animate-on-scroll">
-                        <strong>Você é um bom pagador?</strong> Entre para um caixa, garanta sua posição
-                        e seja contemplado para realizar seu sonho!
-                    </p>
+                    <div class="participant-benefits reveal-right">
+                        <h3>Por que participar do Juntix?</h3>
+                        <ul class="benefits-list">
+                            <li>
+                                <span class="benefit-check">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg>
+                                </span>
+                                <div>
+                                    <strong>Zero juros</strong>
+                                    <span>Você recebe o valor integral, sem cobranças extras</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-check">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg>
+                                </span>
+                                <div>
+                                    <strong>Sem consulta ao SPC/Serasa</strong>
+                                    <span>Nome limpo ou sujo, todos podem participar</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-check">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg>
+                                </span>
+                                <div>
+                                    <strong>Parcelas fixas</strong>
+                                    <span>Você já sabe quanto vai pagar desde o início</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-check">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg>
+                                </span>
+                                <div>
+                                    <strong>Grupo de confiança</strong>
+                                    <span>Você escolhe com quem participa</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-check">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg>
+                                </span>
+                                <div>
+                                    <strong>100% online</strong>
+                                    <span>Acompanhe tudo pela plataforma, de qualquer lugar</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="cta-center animate-on-scroll">
-                    <a href="https://painel.juntix.com.br" class="btn btn-lg btn-white">
+                <p class="participant-cta-text reveal-up">
+                    <strong>Você é um bom pagador?</strong> Entre para um caixa, garanta sua posição
+                    e seja contemplado para realizar seu sonho!
+                </p>
+                <div class="cta-center reveal-up">
+                    <a href="https://painel.juntix.com.br" class="btn btn-lg btn-white-bold">
                         Quero Participar
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
@@ -386,13 +595,15 @@
         </section>
 
         <!-- Compare e Economize -->
-        <section id="compare" class="section section-light">
+        <section id="compare" class="section section-white">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Compare e economize</h2>
-                    <p class="section-subtitle">Veja quanto você paga para conseguir R$ 5.000 em cada modalidade</p>
+                    <span class="section-badge reveal-up">Economize de verdade</span>
+                    <h2 class="section-title reveal-up">Compare e veja a diferença</h2>
+                    <p class="section-subtitle reveal-up">Veja quanto você paga para conseguir R$ 5.000 em cada
+                        modalidade</p>
                 </div>
-                <div class="table-container animate-on-scroll">
+                <div class="table-container reveal-up">
                     <table class="compare-table">
                         <thead>
                             <tr>
@@ -451,42 +662,65 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="savings-banner animate-on-scroll">
+                <div class="savings-banner reveal-up">
                     <div class="savings-content">
-                        <h3>Com Juntix você economiza até <span>R$ 2.870</span></h3>
+                        <h3>Com Juntix você economiza até <span class="counter-value" data-target="2870"
+                                data-prefix="R$ ">R$ 2.870</span></h3>
                         <p>comparado a outras formas de conseguir R$ 5.000</p>
                     </div>
+                    <div class="savings-confetti" aria-hidden="true"></div>
                 </div>
             </div>
         </section>
 
         <!-- Exemplo Prático -->
-        <section class="section section-white">
+        <section class="section section-light">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Exemplo: Caixa de R$ 5.000 com 10 pessoas</h2>
+                    <span class="section-badge reveal-up">Na prática</span>
+                    <h2 class="section-title reveal-up">Exemplo: Caixa de R$ 5.000 com 10 pessoas</h2>
                 </div>
                 <div class="example-cards">
-                    <div class="example-card animate-on-scroll">
+                    <div class="example-card reveal-up" data-delay="0">
+                        <div class="example-icon-wrap">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="2" y="5" width="20" height="14" rx="2" />
+                                <line x1="2" y1="10" x2="22" y2="10" />
+                            </svg>
+                        </div>
                         <span class="example-label">Parcela mensal</span>
                         <span class="example-value">R$ 500</span>
                         <span class="example-note">+ R$ 10 taxa de serviço por boleto</span>
                     </div>
-                    <div class="example-card animate-on-scroll" style="--delay: 0.1s">
+                    <div class="example-card example-card-highlight reveal-up" data-delay="150">
+                        <div class="example-icon-wrap">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23" />
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                            </svg>
+                        </div>
                         <span class="example-label">Você recebe</span>
-                        <span class="example-value success">R$ 5.000</span>
+                        <span class="example-value">R$ 5.000</span>
                         <span class="example-note">valor cheio, sem descontos</span>
                     </div>
-                    <div class="example-card animate-on-scroll" style="--delay: 0.2s">
+                    <div class="example-card reveal-up" data-delay="300">
+                        <div class="example-icon-wrap">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                <path d="M9 12l2 2 4-4" />
+                            </svg>
+                        </div>
                         <span class="example-label">Custo total</span>
                         <span class="example-value">R$ 130</span>
-                        <span class="example-note">taxas em 10 meses</span>
+                        <span class="example-note">apenas 2,6% em taxas</span>
                     </div>
                 </div>
-                <p class="example-footnote animate-on-scroll">
+                <p class="example-footnote reveal-up">
                     * Parcela mensal de R$ 500 + R$ 10 de taxa de serviço = R$ 510 por mês | No último mês: R$ 560
-                    (parcela +
-                    R$ 50 comissão do administrador)<br>
+                    (parcela + R$ 50 comissão do administrador)<br>
                     <strong>Nota:</strong> A comissão do administrador corresponde a 10% do valor do caixa, paga
                     no último mês
                 </p>
@@ -497,104 +731,134 @@
         <section id="taxas" class="section section-dark">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title light">Taxas 100% transparentes</h2>
-                    <p class="section-subtitle light">Você sabe exatamente para onde vai cada centavo</p>
+                    <span class="section-badge section-badge-dark reveal-up">Sem surpresas</span>
+                    <h2 class="section-title light reveal-up">Taxas 100% transparentes</h2>
+                    <p class="section-subtitle light reveal-up">Você sabe exatamente para onde vai cada centavo</p>
                 </div>
                 <div class="fees-grid">
-                    <div class="fee-card animate-on-scroll">
+                    <div class="fee-card reveal-up" data-delay="0">
+                        <div class="fee-icon-wrap">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <rect x="2" y="5" width="20" height="14" rx="2" />
+                                <line x1="2" y1="10" x2="22" y2="10" />
+                            </svg>
+                        </div>
                         <span class="fee-label">TAXA DE SERVIÇO</span>
                         <span class="fee-value">R$ 10,00</span>
                         <span class="fee-period">por boleto gerado</span>
-                        <p class="fee-desc">Cobre custos de gateway, infraestrutura e suporte. Apenas isso!</p>
+                        <p class="fee-desc">Cobre custos de gateway de pagamento, infraestrutura e suporte. Apenas
+                            isso!</p>
                     </div>
-                    <div class="fee-card animate-on-scroll" style="--delay: 0.1s">
+                    <div class="fee-card reveal-up" data-delay="200">
+                        <div class="fee-icon-wrap">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M16 8l-8 8M8 8l8 8" />
+                            </svg>
+                        </div>
                         <span class="fee-label">COMISSÃO DO ADMINISTRADOR</span>
                         <span class="fee-value">10%</span>
                         <span class="fee-period">do valor total, pago no último mês</span>
                         <p class="fee-desc">Recompensa quem organizou e garantiu o sucesso do grupo. <strong>Só é pago
-                                se o
-                                caixa for concluído com sucesso!</strong></p>
+                                se o caixa for concluído com sucesso!</strong></p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Ganhe como Administrador -->
-        <section id="ganhos" class="section section-gradient">
+        <section id="ganhos" class="section section-gradient-dark">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title light">Ganhe dinheiro como Administrador</h2>
-                    <p class="section-subtitle light">Transforme sua rede de contatos em uma fonte de renda</p>
+                    <span class="section-badge section-badge-gold reveal-up">Oportunidade</span>
+                    <h2 class="section-title light reveal-up">Ganhe dinheiro como Administrador</h2>
+                    <p class="section-subtitle light reveal-up">Transforme sua rede de contatos em uma fonte de renda
+                        recorrente</p>
                 </div>
-                <div class="earnings-content">
-                    <div class="earnings-card animate-on-scroll">
-                        <div class="earnings-example">
-                            <h3>Exemplo de ganhos</h3>
-                            <div class="earnings-table">
-                                <div class="earnings-row">
-                                    <span>5 caixas de R$ 2.500</span>
-                                    <span class="earnings-amount">R$ 1.250</span>
+                <div class="admin-layout">
+                    <div class="admin-earnings reveal-left">
+                        <h3>Simulação de ganhos</h3>
+                        <p class="earnings-explainer">Você recebe <strong>10% do valor de cada caixa</strong> que organizar. Quanto mais caixas, maior sua renda!</p>
+                        <div class="earnings-table">
+                            <div class="earnings-row">
+                                <div class="earnings-info">
+                                    <span class="earnings-qty">5 caixas de R$ 2.500</span>
+                                    <span class="earnings-detail">5 × R$ 250 (10% de R$ 2.500)</span>
                                 </div>
-                                <div class="earnings-row">
-                                    <span>10 caixas de R$ 5.000</span>
-                                    <span class="earnings-amount">R$ 5.000</span>
+                                <span class="earnings-amount">R$ 1.250</span>
+                            </div>
+                            <div class="earnings-row">
+                                <div class="earnings-info">
+                                    <span class="earnings-qty">10 caixas de R$ 5.000</span>
+                                    <span class="earnings-detail">10 × R$ 500 (10% de R$ 5.000)</span>
                                 </div>
-                                <div class="earnings-row highlight">
-                                    <span>20 caixas de R$ 10.000</span>
-                                    <span class="earnings-amount">R$ 20.000</span>
+                                <span class="earnings-amount">R$ 5.000</span>
+                            </div>
+                            <div class="earnings-row earnings-row-highlight">
+                                <div class="earnings-info">
+                                    <span class="earnings-qty">20 caixas de R$ 20.000</span>
+                                    <span class="earnings-detail">20 × R$ 2.000 (10% de R$ 20.000)</span>
                                 </div>
+                                <span class="earnings-amount earnings-amount-big">R$ 40.000</span>
                             </div>
                         </div>
-                        <div class="earnings-benefits">
-                            <h3>Por que ser um Administrador?</h3>
-                            <ul class="benefits-list">
-                                <li>
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                        <polyline points="22 4 12 14.01 9 11.01" />
+                    </div>
+                    <div class="admin-benefits reveal-right">
+                        <h3>Por que ser um Administrador?</h3>
+                        <ul class="admin-benefits-list">
+                            <li>
+                                <span class="admin-check">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12" />
                                     </svg>
-                                    Receba 10% do valor total de cada caixa
-                                </li>
-                                <li>
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                        <polyline points="22 4 12 14.01 9 11.01" />
+                                </span>
+                                Receba <strong>10% do valor total</strong> de cada caixa
+                            </li>
+                            <li>
+                                <span class="admin-check">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12" />
                                     </svg>
-                                    Gerencie múltiplos caixas simultaneamente
-                                </li>
-                                <li>
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                        <polyline points="22 4 12 14.01 9 11.01" />
+                                </span>
+                                Gerencie <strong>múltiplos caixas</strong> simultaneamente
+                            </li>
+                            <li>
+                                <span class="admin-check">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12" />
                                     </svg>
-                                    Sistema automatizado de cobranças
-                                </li>
-                                <li>
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                        <polyline points="22 4 12 14.01 9 11.01" />
+                                </span>
+                                Sistema <strong>automatizado</strong> de cobranças e lembretes
+                            </li>
+                            <li>
+                                <span class="admin-check">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12" />
                                     </svg>
-                                    Dashboard completo para controle
-                                </li>
-                                <li>
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                        <polyline points="22 4 12 14.01 9 11.01" />
+                                </span>
+                                <strong>Dashboard completo</strong> para controle total
+                            </li>
+                            <li>
+                                <span class="admin-check">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12" />
                                     </svg>
-                                    Trabalhe de qualquer lugar
-                                </li>
-                            </ul>
-                        </div>
+                                </span>
+                                Trabalhe <strong>de qualquer lugar</strong>, no seu tempo
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="cta-center animate-on-scroll">
-                    <a href="https://painel.juntix.com.br" class="btn btn-lg btn-cta-green">
-                        Começar Agora
+                <div class="cta-center reveal-up">
+                    <a href="https://painel.juntix.com.br" class="btn btn-lg btn-gold">
+                        Começar como Administrador
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7" />
@@ -608,153 +872,165 @@
         <section id="faq" class="section section-white">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Perguntas Frequentes</h2>
-                    <p class="section-subtitle">Tire suas dúvidas sobre o Juntix</p>
+                    <span class="section-badge reveal-up">Tire suas dúvidas</span>
+                    <h2 class="section-title reveal-up">Perguntas Frequentes</h2>
+                    <p class="section-subtitle reveal-up">Tudo o que você precisa saber sobre o Juntix</p>
                 </div>
                 <div class="faq-container">
-                    <div class="faq-item animate-on-scroll">
-                        <button class="faq-question">
+                    <div class="faq-item reveal-up">
+                        <button class="faq-question" aria-expanded="false">
                             <span>O Juntix é uma instituição financeira?</span>
-                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9" />
-                            </svg>
+                            <span class="faq-icon-wrap">
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                            </span>
                         </button>
                         <div class="faq-answer">
                             <p><strong>Não.</strong> O Juntix é uma plataforma de tecnologia que facilita a organização
-                                de
-                                grupos de poupança coletiva entre pessoas conhecidas. Não captamos recursos, não
-                                emprestamos
-                                dinheiro e não somos regulados pelo Banco Central. Funcionamos como uma ferramenta de
-                                gestão
-                                para o tradicional "caixa" ou "vaquinha" entre amigos.</p>
+                                de grupos de poupança coletiva entre pessoas conhecidas. Não captamos recursos, não
+                                emprestamos dinheiro e não somos regulados pelo Banco Central. Funcionamos como uma
+                                ferramenta de gestão para o tradicional "caixa" ou "vaquinha" entre amigos.</p>
                         </div>
                     </div>
-                    <div class="faq-item animate-on-scroll">
-                        <button class="faq-question">
+                    <div class="faq-item reveal-up">
+                        <button class="faq-question" aria-expanded="false">
                             <span>Qual é o trabalho do Administrador?</span>
-                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9" />
-                            </svg>
+                            <span class="faq-icon-wrap">
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                            </span>
                         </button>
                         <div class="faq-answer">
                             <p>O Administrador é responsável por <strong>reunir pessoas de boa índole e bons
                                     pagadores</strong>, manter o grupo sempre adimplente e garantir que todos cumpram
-                                seus
-                                compromissos. Ele recebe <strong>10% do valor total do caixa</strong> como comissão (ex:
-                                R$
-                                500 em um caixa de R$ 5.000), paga no último mês. <strong>Importante: se o caixa não for
-                                    concluído com sucesso, o administrador não recebe a comissão.</strong> Por isso,
-                                escolher bem os participantes é fundamental!</p>
+                                seus compromissos. Ele recebe <strong>10% do valor total do caixa</strong> como comissão
+                                (ex: R$ 500 em um caixa de R$ 5.000), paga no último mês. <strong>Importante: se o caixa
+                                    não for concluído com sucesso, o administrador não recebe a comissão.</strong></p>
                         </div>
                     </div>
-                    <div class="faq-item animate-on-scroll">
-                        <button class="faq-question">
+                    <div class="faq-item reveal-up">
+                        <button class="faq-question" aria-expanded="false">
                             <span>O que acontece se alguém não pagar?</span>
-                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9" />
-                            </svg>
+                            <span class="faq-icon-wrap">
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                            </span>
                         </button>
                         <div class="faq-answer">
                             <p>O Juntix possui um <strong>sistema de alertas automáticos</strong> que notifica o
                                 participante e o administrador sobre atrasos via WhatsApp e e-mail. O administrador pode
                                 tomar medidas como remover o inadimplente do grupo. Por isso, a
-                                <strong>escolha de pessoas de confiança é fundamental</strong> para o sucesso do caixa.</p>
+                                <strong>escolha de pessoas de confiança é fundamental</strong> para o sucesso do caixa.
+                            </p>
                         </div>
                     </div>
-                    <div class="faq-item animate-on-scroll">
-                        <button class="faq-question">
+                    <div class="faq-item reveal-up">
+                        <button class="faq-question" aria-expanded="false">
                             <span>Como funciona a divisão dos valores?</span>
-                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9" />
-                            </svg>
+                            <span class="faq-icon-wrap">
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                            </span>
                         </button>
                         <div class="faq-answer">
-                            <p>A divisão é <strong>igualitária</strong>. O valor total do caixa é dividido pelo número
-                                de
+                            <p>A divisão é <strong>igualitária</strong>. O valor total do caixa é dividido pelo número de
                                 participantes, resultando na parcela mensal. Cada mês, um participante é contemplado e
                                 recebe o valor integral. Todos pagam a mesma quantia até que todos tenham recebido.</p>
                         </div>
                     </div>
-                    <div class="faq-item animate-on-scroll">
-                        <button class="faq-question">
+                    <div class="faq-item reveal-up">
+                        <button class="faq-question" aria-expanded="false">
                             <span>Qual a diferença entre Juntix e empréstimo?</span>
-                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9" />
-                            </svg>
+                            <span class="faq-icon-wrap">
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                            </span>
                         </button>
                         <div class="faq-answer">
                             <p>No Juntix, <strong>você não paga juros</strong>. Você recebe exatamente o que contribuiu
-                                ao
-                                longo dos meses, enquanto em empréstimos tradicionais você paga de 30% a 60% a mais.
-                                Além
-                                disso, não há análise de crédito, burocracia bancária ou negativação do seu nome.</p>
+                                ao longo dos meses, enquanto em empréstimos tradicionais você paga de 30% a 60% a mais.
+                                Além disso, não há análise de crédito, burocracia bancária ou negativação do seu nome.
+                            </p>
                         </div>
                     </div>
-                    <div class="faq-item animate-on-scroll">
-                        <button class="faq-question">
+                    <div class="faq-item reveal-up">
+                        <button class="faq-question" aria-expanded="false">
                             <span>Como funciona o Split? O Juntix retém meu dinheiro?</span>
-                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9" />
-                            </svg>
+                            <span class="faq-icon-wrap">
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                            </span>
                         </button>
                         <div class="faq-answer">
                             <p><strong>Não!</strong> O Juntix utiliza um sistema de <strong>Split automático</strong>
-                                onde o
-                                dinheiro vai direto para a carteira do contemplado. Exemplo prático:</p>
-                            <p style="margin-top: 10px;">Caixa com <strong>João, Maria, José e Pedro</strong>:</p>
-                            <ul style="margin: 10px 0; padding-left: 20px; list-style: disc; color: inherit;">
+                                onde o dinheiro vai direto para a carteira do contemplado. Exemplo prático:</p>
+                            <ul>
                                 <li><strong>Mês 1:</strong> Todos pagam → valor vai para a carteira do João</li>
                                 <li><strong>Mês 2:</strong> Todos pagam → valor vai para a carteira da Maria</li>
                                 <li><strong>Mês 3:</strong> Todos pagam → valor vai para a carteira do José</li>
                                 <li><strong>Mês 4:</strong> Todos pagam → valor vai para a carteira do Pedro</li>
                             </ul>
-                            <p>O valor fica disponível na carteira imediatamente, mas só é liberado para saque na
-                                <strong>data combinada</strong>. O Juntix recebe apenas a <strong>taxa de serviço (R$
-                                    10/boleto)</strong> para custear a operação. Simples e transparente!
-                            </p>
+                            <p>O Juntix recebe apenas a <strong>taxa de serviço (R$ 10/boleto)</strong> para custear a
+                                operação. Simples e transparente!</p>
                         </div>
                     </div>
-                    <div class="faq-item animate-on-scroll">
-                        <button class="faq-question">
+                    <div class="faq-item reveal-up">
+                        <button class="faq-question" aria-expanded="false">
                             <span>O Juntix é uma empresa séria e formalizada?</span>
-                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9" />
-                            </svg>
+                            <span class="faq-icon-wrap">
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                            </span>
                         </button>
                         <div class="faq-answer">
                             <p><strong>Sim!</strong> Somos a <strong>ISS Software Quality Solutions</strong> (CNPJ:
                                 39.997.807/0001-86), uma empresa brasileira formalizada. Emitimos <strong>Nota
                                     Fiscal</strong> para todos os serviços, pagamos todos os impostos federais
-                                normalmente e
-                                seguimos a legislação brasileira. O Juntix foi desenvolvido para modernizar e trazer
-                                segurança aos caixas informais que já existem há décadas entre amigos e famílias.</p>
+                                normalmente e seguimos a legislação brasileira.</p>
                         </div>
                     </div>
-                    <div class="faq-item animate-on-scroll">
-                        <button class="faq-question">
+                    <div class="faq-item reveal-up">
+                        <button class="faq-question" aria-expanded="false">
                             <span>O Juntix envia lembretes automáticos?</span>
-                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9" />
-                            </svg>
+                            <span class="faq-icon-wrap">
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                            </span>
                         </button>
                         <div class="faq-answer">
-                            <p><strong>Sim!</strong> Nosso sistema possui automação completa de comunicação:</p>
-                            <ul style="margin: 10px 0; padding-left: 20px; list-style: disc; color: inherit;">
-                                <li><strong>Lembretes de vencimento</strong> - antes da data de pagamento</li>
-                                <li><strong>Confirmação de pagamento</strong> - quando o boleto é pago</li>
-                                <li><strong>Notificação de atraso</strong> - para o administrador e participante</li>
-                                <li><strong>Status do grupo</strong> - quem pagou, quem está em dia</li>
-                                <li><strong>Alertas de contemplação</strong> - quando chega sua vez de receber</li>
+                            <p><strong>Sim!</strong> Nosso sistema possui automação completa:</p>
+                            <ul>
+                                <li><strong>Lembretes de vencimento</strong> antes da data de pagamento</li>
+                                <li><strong>Confirmação de pagamento</strong> quando o boleto é pago</li>
+                                <li><strong>Notificação de atraso</strong> para o administrador e participante</li>
+                                <li><strong>Status do grupo</strong> quem pagou, quem está em dia</li>
+                                <li><strong>Alertas de contemplação</strong> quando chega sua vez</li>
                             </ul>
-                            <p>Tudo automatizado para facilitar a gestão do administrador!</p>
+                            <p>Tudo automatizado para facilitar a gestão!</p>
                         </div>
                     </div>
                 </div>
@@ -765,12 +1041,13 @@
         <section id="documentos" class="section section-light">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Transparência Total</h2>
-                    <p class="section-subtitle">Baixe nossos documentos e conheça todas as regras</p>
+                    <span class="section-badge reveal-up">Confiança total</span>
+                    <h2 class="section-title reveal-up">Transparência Total</h2>
+                    <p class="section-subtitle reveal-up">Baixe nossos documentos e conheça todas as regras</p>
                 </div>
                 <div class="docs-grid">
                     <a href="https://drive.google.com/file/d/1WUZXJ4b6QgOiDSyBIy6LChHJAOiTYGX5/view?usp=sharing"
-                        target="_blank" class="doc-card animate-on-scroll">
+                        target="_blank" rel="noopener" class="doc-card reveal-up" data-delay="0">
                         <div class="doc-icon">
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
@@ -782,7 +1059,7 @@
                             </svg>
                         </div>
                         <h3>Contrato de Adesão</h3>
-                        <p>Documento completo com todas as cláusulas e condições de uso da plataforma</p>
+                        <p>Documento completo com todas as cláusulas e condições</p>
                         <span class="doc-download">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
@@ -793,8 +1070,7 @@
                             Baixar PDF
                         </span>
                     </a>
-                    <a href="termos-de-servico.html"
-                        class="doc-card animate-on-scroll" style="--delay: 0.1s">
+                    <a href="termos-de-servico.html" class="doc-card reveal-up" data-delay="150">
                         <div class="doc-icon">
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
@@ -802,7 +1078,7 @@
                             </svg>
                         </div>
                         <h3>Termos de Serviço</h3>
-                        <p>Regras de funcionamento, direitos e deveres de todos os participantes</p>
+                        <p>Regras de funcionamento, direitos e deveres</p>
                         <span class="doc-download">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
@@ -811,8 +1087,7 @@
                             Ler documento
                         </span>
                     </a>
-                    <a href="politica-privacidade.html"
-                        class="doc-card animate-on-scroll" style="--delay: 0.2s">
+                    <a href="politica-privacidade.html" class="doc-card reveal-up" data-delay="300">
                         <div class="doc-icon">
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
@@ -821,7 +1096,7 @@
                             </svg>
                         </div>
                         <h3>Política de Privacidade</h3>
-                        <p>Como coletamos, usamos e protegemos seus dados pessoais (LGPD)</p>
+                        <p>Como protegemos seus dados pessoais (LGPD)</p>
                         <span class="doc-download">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
@@ -838,13 +1113,15 @@
         <section class="section section-white">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Por que confiar no Juntix?</h2>
-                    <p class="section-subtitle">Empresa brasileira formalizada, com transparência total</p>
+                    <span class="section-badge reveal-up">Segurança</span>
+                    <h2 class="section-title reveal-up">Por que confiar no Juntix?</h2>
+                    <p class="section-subtitle reveal-up">Empresa brasileira formalizada, com transparência total</p>
                 </div>
-                <div class="trust-grid">
-                    <div class="trust-item animate-on-scroll">
+                <div class="trust-grid trust-grid-6">
+                    <div class="trust-item reveal-up" data-delay="0">
                         <div class="trust-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                                 <path d="M9 12l2 2 4-4" />
                             </svg>
@@ -852,9 +1129,35 @@
                         <h3>Empresa Formalizada</h3>
                         <p>ISS Software Quality Solutions<br>CNPJ: 39.997.807/0001-86</p>
                     </div>
-                    <div class="trust-item animate-on-scroll" style="--delay: 0.1s">
+                    <div class="trust-item reveal-up" data-delay="100">
                         <div class="trust-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                                <line x1="16" y1="13" x2="8" y2="13" />
+                                <line x1="16" y1="17" x2="8" y2="17" />
+                            </svg>
+                        </div>
+                        <h3>Contrato de Adesão</h3>
+                        <p>Todos os participantes assinam contrato formal com regras claras e transparentes</p>
+                    </div>
+                    <div class="trust-item reveal-up" data-delay="200">
+                        <div class="trust-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                        </div>
+                        <h3>Verificação KYC</h3>
+                        <p>Validação de identidade de todos os participantes para maior segurança do grupo</p>
+                    </div>
+                    <div class="trust-item reveal-up" data-delay="300">
+                        <div class="trust-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
                                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                                 <polyline points="14 2 14 8 20 8" />
                                 <line x1="16" y1="13" x2="8" y2="13" />
@@ -864,9 +1167,10 @@
                         <h3>Nota Fiscal em Tudo</h3>
                         <p>Emitimos NF-e automaticamente para todas as taxas de serviço</p>
                     </div>
-                    <div class="trust-item animate-on-scroll" style="--delay: 0.2s">
+                    <div class="trust-item reveal-up" data-delay="400">
                         <div class="trust-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
                                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
                                 <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                             </svg>
@@ -874,9 +1178,10 @@
                         <h3>Dados Protegidos</h3>
                         <p>Criptografia em todas as transações e conformidade com a LGPD</p>
                     </div>
-                    <div class="trust-item animate-on-scroll" style="--delay: 0.3s">
+                    <div class="trust-item reveal-up" data-delay="500">
                         <div class="trust-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
                                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                             </svg>
                         </div>
@@ -887,52 +1192,199 @@
             </div>
         </section>
 
-        <!-- CTA Final -->
-        <section class="section section-cta">
+        <!-- Depoimentos -->
+        <section id="depoimentos" class="section section-light">
             <div class="container">
-                <div class="cta-content animate-on-scroll">
-                    <h2>Pronto para começar a ganhar como Administrador?</h2>
-                    <p>Junte seus amigos, organize caixas e transforme sua rede de contatos em uma fonte de renda.</p>
-                    <a href="https://painel.juntix.com.br" class="btn btn-lg btn-cta-green">
-                        Começar Agora
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                    </a>
+                <div class="section-header">
+                    <span class="section-badge reveal-up">Quem ja participou</span>
+                    <h2 class="section-title reveal-up">O que dizem nossos participantes</h2>
+                    <p class="section-subtitle reveal-up">Historias reais de quem ja realizou sonhos com o Juntix</p>
+                </div>
+                <div class="testimonials-carousel reveal-up">
+                    <div class="testimonials-viewport">
+                        <div class="testimonials-track" id="testimonialsTrack">
+
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                                </div>
+                                <div class="testimonial-stars" aria-label="5 estrelas">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+                                <p class="testimonial-text">Consegui reformar minha casa sem pagar nenhum centavo de juros. O Juntix mudou minha forma de enxergar o dinheiro. Recomendo para todo mundo!</p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">A</div>
+                                    <div class="testimonial-author-info">
+                                        <strong>Anderson Silva</strong>
+                                        <span>Participante desde 2026</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                                </div>
+                                <div class="testimonial-stars" aria-label="5 estrelas">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+                                <p class="testimonial-text">Como administradora, ja organizei 8 caixas e a comissao virou minha renda extra. A plataforma e super facil de usar e o suporte e excelente.</p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar" style="background: linear-gradient(135deg, #ec4899, #f43f5e);">R</div>
+                                    <div class="testimonial-author-info">
+                                        <strong>Rafaela Santos</strong>
+                                        <span>Administradora desde 2026</span>
+                                        <span class="testimonial-role">Administradora</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                                </div>
+                                <div class="testimonial-stars" aria-label="5 estrelas">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+                                <p class="testimonial-text">Eu tinha medo de caixa por causa de calote, mas com o contrato e a verificacao KYC do Juntix me senti segura. Ja fui contemplada duas vezes e correu tudo certo!</p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar" style="background: linear-gradient(135deg, #8b5cf6, #6366f1);">S</div>
+                                    <div class="testimonial-author-info">
+                                        <strong>Silvia Oliveira</strong>
+                                        <span>Participante desde 2026</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                                </div>
+                                <div class="testimonial-stars" aria-label="5 estrelas">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+                                <p class="testimonial-text">Participei do meu primeiro caixa com colegas de trabalho. Recebi R$ 5.000 e paguei so R$ 130 de taxa total. Muito melhor que qualquer emprestimo!</p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar" style="background: linear-gradient(135deg, #f59e0b, #ea580c);">L</div>
+                                    <div class="testimonial-author-info">
+                                        <strong>Luciana Ferreira</strong>
+                                        <span>Participante desde 2026</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                                </div>
+                                <div class="testimonial-stars" aria-label="5 estrelas">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+                                <p class="testimonial-text">Sou administrador de 12 caixas e ja ganhei mais de R$ 8.000 em comissoes. O dashboard facilita muito o controle. E como ter um negocio proprio!</p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar" style="background: linear-gradient(135deg, #06b6d4, #0284c7);">I</div>
+                                    <div class="testimonial-author-info">
+                                        <strong>Ivan Rodrigues</strong>
+                                        <span>Administrador desde 2026</span>
+                                        <span class="testimonial-role">Administrador</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="testimonials-controls">
+                        <button class="testimonial-btn testimonial-prev" aria-label="Depoimento anterior">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="15 18 9 12 15 6" />
+                            </svg>
+                        </button>
+                        <div class="testimonials-dots" id="testimonialsDots"></div>
+                        <button class="testimonial-btn testimonial-next" aria-label="Proximo depoimento">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="9 18 15 12 9 6" />
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="testimonial-counter" id="testimonialCounter">1 / 5</p>
                 </div>
             </div>
         </section>
 
+        <!-- CTA Final -->
+        <section class="section section-cta-final">
+            <div class="container">
+                <div class="cta-final-content reveal-up">
+                    <h2>Pronto para transformar sua vida financeira?</h2>
+                    <p>Junte seus amigos, organize caixas e realize seus sonhos sem pagar juros. Ou torne-se
+                        administrador e ganhe dinheiro com sua rede de contatos.</p>
+                    <div class="cta-final-buttons">
+                        <a href="https://painel.juntix.com.br" class="btn btn-lg btn-glow">
+                            <span>Começar Agora</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/557135990522?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Juntix"
+                            target="_blank" rel="noopener" class="btn btn-lg btn-outline-hero">
+                            Falar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="#" class="logo">
-                        <img src="logo/logo_juntix.png" alt="Juntix Logo" class="logo-img" loading="lazy">
+                        <img src="logo/logo_juntix.png" alt="Juntix Logo" class="logo-img" loading="lazy" width="40"
+                            height="40">
                         <span class="logo-text">Juntix</span>
                     </a>
-                    <p>Junte seus amigos e realize seus sonhos</p>
+                    <p>Junte seus amigos e realize seus sonhos. A alternativa inteligente ao empréstimo.</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-col">
                         <h4>Navegação</h4>
                         <ul>
                             <li><a href="#como-funciona">Como Funciona</a></li>
+                            <li><a href="#plataforma">Plataforma</a></li>
                             <li><a href="#compare">Compare</a></li>
-                            <li><a href="#taxas">Taxas</a></li>
-                            <li><a href="#ganhos">Ganhos</a></li>
+                            <li><a href="#ganhos">Administrador</a></li>
                             <li><a href="#faq">FAQ</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
                         <h4>Documentos</h4>
                         <ul>
-                            <li><a href="https://drive.google.com/file/d/1WUZXJ4b6QgOiDSyBIy6LChHJAOiTYGX5/view?usp=sharing"
-                                    target="_blank">Contrato de Adesão</a></li>
+                            <li><a
+                                    href="https://drive.google.com/file/d/1WUZXJ4b6QgOiDSyBIy6LChHJAOiTYGX5/view?usp=sharing"
+                                    target="_blank" rel="noopener">Contrato de Adesão</a></li>
                             <li><a href="termos-de-servico.html">Termos de Serviço</a></li>
                             <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
                         </ul>
@@ -941,7 +1393,8 @@
                         <h4>Contato</h4>
                         <ul>
                             <li><a href="mailto:suporte@juntix.com.br">suporte@juntix.com.br</a></li>
-                            <li><a href="https://wa.me/557135990522">WhatsApp: 71 3599-0522</a></li>
+                            <li><a href="https://wa.me/557135990522" target="_blank" rel="noopener">WhatsApp: 71
+                                    3599-0522</a></li>
                         </ul>
                     </div>
                 </div>
@@ -949,15 +1402,17 @@
             <div class="footer-bottom">
                 <p>&copy; 2026 Juntix - ISS Software Quality Solutions. CNPJ: 39.997.807/0001-86</p>
                 <p>Este serviço não é uma instituição financeira. Não captamos recursos nem realizamos empréstimos.</p>
+                <p class="footer-updated">Última atualização: Março 2026</p>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/557135990522?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Juntix"
-        target="_blank" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
+        target="_blank" rel="noopener" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
         </svg>
         <span class="whatsapp-tooltip">Fale conosco</span>
     </a>

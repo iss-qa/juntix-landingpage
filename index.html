@@ -21,6 +21,7 @@
     <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="script.js" as="script">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cookie-consent.css">
     <link rel="icon" type="image/png" href="logo/logo_juntix.png">
 
     <!-- SEO & Social -->
@@ -1389,6 +1390,7 @@
                             <li><a href="termos-de-servico.html">Termos de Serviço</a></li>
                             <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
                             <li><a href="exclusao-de-dados.html">Exclusão de Dados</a></li>
+                            <li><button type="button" id="juntix-cookie-prefs-link" onclick="window.JuntixCookieConsent && window.JuntixCookieConsent.open()">Gerenciar cookies</button></li>
                         </ul>
                     </div>
                     <div class="footer-col">
@@ -1439,26 +1441,8 @@
     </script>
     <!-- end Google Calendar Appointment Scheduling -->
 
-    <!-- Facebook SDK for JavaScript -->
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId      : '1490465612677168',
-                cookie     : true,
-                xfbml      : true,
-                version    : 'v25.0'
-            });
-            FB.AppEvents.logPageView();
-        };
-
-        (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/pt_BR/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
+    <!-- LGPD: banner de consentimento + carregamento condicional do Facebook SDK -->
+    <script src="cookie-consent.js"></script>
 </body>
 
 </html>

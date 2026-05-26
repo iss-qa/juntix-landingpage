@@ -401,17 +401,85 @@ document.addEventListener('DOMContentLoaded', function () {
         startAuto();
     }
 
-    // === CTA Click Tracking ===
+    // === CTA Click Tracking (Google Analytics + Meta Pixel + CAPI) ===
+    // Backend endpoint que espelha o evento no servidor para a Meta deduplicar
+    // (mesmo event_id em fbq() + CAPI evita métrica inflada).
+    const META_CAPI_ENDPOINT = 'https://api.juntix.com.br/api/marketing/meta-capi/event';
+
+    function getCookie(name) {
+        const match = document.cookie.match(new RegExp('(?:^|; )' + name.replace(/([.$?*|{}()[\]\\/+^])/g, '\\$1') + '=([^;]*)'));
+        return match ? decodeURIComponent(match[1]) : undefined;
+    }
+
+    function generateEventId() {
+        if (window.crypto && typeof window.crypto.randomUUID === 'function') {
+            return window.crypto.randomUUID();
+        }
+        return 'ev-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 10);
+    }
+
+    // Lê o consentimento do localStorage (suporta formato legado string e novo JSON).
+    // Retorna 'all', 'essential' ou null.
+    function getStoredConsent() {
+        try {
+            const raw = localStorage.getItem('juntix-cookie-consent');
+            if (!raw) return null;
+            if (raw === 'all' || raw === 'essential') return raw;
+            const data = JSON.parse(raw);
+            if (data.expires && new Date(data.expires) < new Date()) return null;
+            return (data.value === 'all' || data.value === 'essential') ? data.value : null;
+        } catch (_) { return null; }
+    }
+
+    function dispatchMetaLead(href) {
+        // LGPD: só rastreia se o usuário consentiu explicitamente com cookies de marketing.
+        if (getStoredConsent() !== 'all') return;
+
+        const eventId = generateEventId();
+        const eventSourceUrl = window.location.href;
+
+        // 1) Pixel no navegador — com eventID para dedup com o servidor.
+        if (typeof fbq === 'function') {
+            fbq('track', 'Lead', { source_url: eventSourceUrl, cta_href: href }, { eventID: eventId });
+        }
+
+        // 2) Servidor (CAPI) — adiciona IP + UA + match com fbp/fbc do navegador.
+        // keepalive permite o request sair mesmo quando o usuário já navegou.
+        const payload = {
+            event_name: 'Lead',
+            event_id: eventId,
+            event_source_url: eventSourceUrl,
+            fbp: getCookie('_fbp'),
+            fbc: getCookie('_fbc'),
+            custom_data: { cta_href: href },
+        };
+        try {
+            fetch(META_CAPI_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+                keepalive: true,
+                mode: 'cors',
+            }).catch(() => { /* tracking falho não impacta UX */ });
+        } catch (_) { /* idem */ }
+    }
+
     document.querySelectorAll('.btn').forEach(button => {
         button.addEventListener('click', function () {
             const text = this.textContent.trim();
-            const href = this.getAttribute('href');
+            const href = this.getAttribute('href') || '';
 
-            if (typeof gtag === 'function') {
+            // LGPD: gtag só dispara com consentimento de marketing.
+            if (typeof gtag === 'function' && getStoredConsent() === 'all') {
                 gtag('event', 'cta_click', {
                     button_text: text,
                     button_href: href
                 });
+            }
+
+            // Só dispara Lead em CTAs que levam ao painel (intenção real de cadastro).
+            if (href.startsWith('https://painel.juntix.com.br')) {
+                dispatchMetaLead(href);
             }
         });
     });

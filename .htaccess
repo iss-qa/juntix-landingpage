@@ -1,0 +1,58 @@
+# === Encoding UTF-8 ===
+# Força o header "Content-Type: text/html; charset=UTF-8" em todos os arquivos
+# HTML servidos. Sem isso, browsers no Windows usam o encoding do sistema
+# (Windows-1252) e interpretam errado os caracteres acentuados.
+AddDefaultCharset UTF-8
+AddType "text/html; charset=UTF-8" .html
+AddType "text/css; charset=UTF-8"  .css
+AddType "text/javascript; charset=UTF-8" .js
+
+# === Content-Security-Policy ===
+# Restringe de onde scripts, estilos, fontes e frames podem ser carregados.
+# 'unsafe-inline' em script-src é necessário porque o HTML tem múltiplos
+# blocos <script> inline (GA, Meta Pixel, Google Calendar). Remover exigiria
+# nonces gerados server-side — planejado para próxima fase.
+<IfModule mod_headers.c>
+    Header always set Content-Security-Policy "\
+default-src 'self';\
+script-src 'self' 'unsafe-inline' https://calendar.google.com https://connect.facebook.net https://www.googletagmanager.com https://www.google-analytics.com https://apis.google.com;\
+style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://calendar.google.com;\
+font-src 'self' https://fonts.gstatic.com;\
+img-src 'self' data: https:;\
+connect-src 'self' https://api.juntix.com.br https://connect.facebook.net https://www.google-analytics.com https://www.googletagmanager.com;\
+frame-src https://calendar.google.com;\
+frame-ancestors 'self';\
+base-uri 'self';\
+form-action 'self' https://painel.juntix.com.br;\
+object-src 'none';\
+upgrade-insecure-requests;"
+</IfModule>
+
+# === Segurança básica ===
+# Impede listagem de diretórios
+Options -Indexes
+
+# Bloqueia acesso a arquivos de configuração e .git
+<FilesMatch "(^\.htaccess|^\.git|\.env)">
+    Require all denied
+</FilesMatch>
+
+# Headers de segurança (complementam os do backend para requests diretos)
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    # Cache: HTML sem cache (muda com frequência), assets com cache longo
+    <FilesMatch "\.(html)$">
+        Header set Cache-Control "no-cache, must-revalidate"
+    </FilesMatch>
+    <FilesMatch "\.(css|js|png|jpg|jpeg|svg|ico|woff2)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+</IfModule>
+
+# Compressão (melhora performance)
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css application/javascript
+</IfModule>

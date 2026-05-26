@@ -2,18 +2,14 @@
 <html lang="pt-BR">
 
 <head>
-    <!-- Meta Pixel Code -->
-    <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '891735022628881');
-    fbq('init', '1958090274813776');
-    fbq('track', 'PageView');</script>
-    <noscript>
-      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=891735022628881&ev=PageView&noscript=1"/>
-      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1958090274813776&ev=PageView&noscript=1"/>
-    </noscript>
-    <!-- End Meta Pixel Code -->
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"><!-- deve ser o 1º elemento — browsers leem antes de qualquer outro byte -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"><!-- fallback para servidores sem header charset -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta Pixel: carregado apenas após consentimento de cookies (ver script no fim do body) -->
+    <!-- Segurança: impede execução de scripts inline de origens desconhecidas -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(self)">
     <meta name="description"
         content="Juntix - A plataforma inteligente de caixa coletivo entre amigos. Sem juros, sem banco, sem burocracia. Ganhe 10% como administrador. Acesse até R$ 20.000 pagando apenas R$ 10 por boleto.">
     <meta name="keywords"
@@ -171,7 +167,8 @@
                 <li><a href="#como-funciona">Como Funciona</a></li>
                 <li><a href="#plataforma">Plataforma</a></li>
                 <li><a href="#participante">Para Você</a></li>
-                <li><a href="#compare">Compare</a></li>
+                <li><a href="#posicao-fixa">Posição Fixa</a></li>
+                <li><a href="#garantia">Garantia</a></li>
                 <li><a href="#ganhos">Administrador</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="https://painel.juntix.com.br" class="btn btn-nav-cta">Começar Agora</a></li>
@@ -226,7 +223,7 @@
                         Quero ser Administrador
                     </a>
                     <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0Gs9Hugv8SqJn3pG1KIIXRyFilMM18uMXbD7bXaMkrzJYaJTq6fjhd0iOl-1J-napmOVHjEZrU?gv=true"
-                        target="_blank" rel="noopener" class="btn btn-lg btn-ghost-hero">
+                        target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-ghost-hero">
                         Quero saber mais
                     </a>
                 </div>
@@ -775,6 +772,238 @@
                         <p class="fee-desc">Recompensa quem organizou e garantiu o sucesso do grupo. <strong>Só é pago
                                 se o caixa for concluído com sucesso!</strong></p>
                     </div>
+                    <div class="fee-card reveal-up" data-delay="400">
+                        <div class="fee-icon-wrap">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                                <path d="M2 17l10 5 10-5" />
+                                <path d="M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="fee-label">TAXA DE ADESÃO</span>
+                        <span class="fee-value">1%</span>
+                        <span class="fee-period">do valor do caixa, somente no 1º mês</span>
+                        <p class="fee-desc">Cobrada uma única vez na entrada. <strong>Exemplo: caixa de R$ 1.000 = R$ 10,00 de taxa de adesão.</strong> Depois disso, nenhum custo adicional além da taxa de serviço.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Posição Fixa no Sorteio -->
+        <section id="posicao-fixa" class="section section-dark">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge section-badge-dark reveal-up">Escolha seu mês</span>
+                    <h2 class="section-title light reveal-up">Garanta o mês certo para você</h2>
+                    <p class="section-subtitle light reveal-up">Não quer depender do sorteio? Compre a posição do mês que faz mais sentido para a sua vida — independente das parcelas do caixa.</p>
+                </div>
+
+                <!-- Contagem regressiva — aparece 48h antes do caixa iniciar -->
+                <div class="reveal-up" data-delay="50" style="display:flex;justify-content:center;margin-bottom:var(--space-xl)">
+                    <div style="background:rgba(245,158,11,0.1);border:1.5px solid rgba(245,158,11,0.35);border-radius:var(--radius-xl);padding:14px 28px;display:inline-flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;">
+                        <div style="display:flex;align-items:center;gap:8px;color:#fbbf24;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <span style="font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em">Compra de posição disponível por</span>
+                        </div>
+                        <div style="display:flex;gap:8px;align-items:center;">
+                            <div style="background:rgba(245,158,11,0.2);border-radius:8px;padding:6px 12px;text-align:center;min-width:52px;">
+                                <span style="display:block;font-size:22px;font-weight:900;color:#fbbf24;line-height:1;font-variant-numeric:tabular-nums">47</span>
+                                <span style="display:block;font-size:10px;color:rgba(255,255,255,0.5);margin-top:2px;letter-spacing:0.05em">HORAS</span>
+                            </div>
+                            <span style="color:#fbbf24;font-weight:700;font-size:18px">:</span>
+                            <div style="background:rgba(245,158,11,0.2);border-radius:8px;padding:6px 12px;text-align:center;min-width:52px;">
+                                <span style="display:block;font-size:22px;font-weight:900;color:#fbbf24;line-height:1;font-variant-numeric:tabular-nums">23</span>
+                                <span style="display:block;font-size:10px;color:rgba(255,255,255,0.5);margin-top:2px;letter-spacing:0.05em">MIN</span>
+                            </div>
+                            <span style="color:#fbbf24;font-weight:700;font-size:18px">:</span>
+                            <div style="background:rgba(245,158,11,0.2);border-radius:8px;padding:6px 12px;text-align:center;min-width:52px;">
+                                <span style="display:block;font-size:22px;font-weight:900;color:#fbbf24;line-height:1;font-variant-numeric:tabular-nums">41</span>
+                                <span style="display:block;font-size:10px;color:rgba(255,255,255,0.5);margin-top:2px;letter-spacing:0.05em">SEG</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="positions-label reveal-up">Exemplo: Caixa de R$ 1.000 — 12 participantes &nbsp;·&nbsp; Lance mínimo: R$ 100,00</p>
+                <div class="positions-grid reveal-up" data-delay="100">
+                    <div class="position-card available">
+                        <span class="position-month">Mês 1</span>
+                        <span class="position-name">Janeiro</span>
+                        <span class="position-price-free">Disponível</span>
+                    </div>
+                    <div class="position-card taken">
+                        <span class="position-month">Mês 2</span>
+                        <span class="position-name">Fevereiro</span>
+                        <span class="position-price-taken">R$ 100</span>
+                    </div>
+                    <div class="position-card available">
+                        <span class="position-month">Mês 3</span>
+                        <span class="position-name">Março</span>
+                        <span class="position-price-free">Disponível</span>
+                    </div>
+                    <div class="position-card available">
+                        <span class="position-month">Mês 4</span>
+                        <span class="position-name">Abril</span>
+                        <span class="position-price-free">Disponível</span>
+                    </div>
+                    <div class="position-card taken">
+                        <span class="position-month">Mês 5</span>
+                        <span class="position-name">Maio — Aniversário</span>
+                        <span class="position-price-taken">R$ 150</span>
+                    </div>
+                    <div class="position-card available">
+                        <span class="position-month">Mês 6</span>
+                        <span class="position-name">Junho</span>
+                        <span class="position-price-free">Disponível</span>
+                    </div>
+                    <div class="position-card taken">
+                        <span class="position-month">Mês 7</span>
+                        <span class="position-name">Julho — Férias</span>
+                        <span class="position-price-taken">R$ 120</span>
+                    </div>
+                    <div class="position-card available">
+                        <span class="position-month">Mês 8</span>
+                        <span class="position-name">Agosto</span>
+                        <span class="position-price-free">Disponível</span>
+                    </div>
+                    <div class="position-card available">
+                        <span class="position-month">Mês 9</span>
+                        <span class="position-name">Setembro</span>
+                        <span class="position-price-free">Disponível</span>
+                    </div>
+                    <div class="position-card available">
+                        <span class="position-month">Mês 10</span>
+                        <span class="position-name">Outubro</span>
+                        <span class="position-price-free">Disponível</span>
+                    </div>
+                    <div class="position-card taken">
+                        <span class="position-month">Mês 11</span>
+                        <span class="position-name">Nov — Viagem</span>
+                        <span class="position-price-taken">R$ 130</span>
+                    </div>
+                    <div class="position-card taken position-card-featured">
+                        <span class="position-month">Mês 12</span>
+                        <span class="position-name">Dez — Natal</span>
+                        <span class="position-price-taken">R$ 280</span>
+                    </div>
+                </div>
+
+                <div class="position-how-it-works reveal-up" data-delay="200">
+                    <h3 style="color:var(--text-white);text-align:center;font-size:var(--font-size-xl);margin-bottom:var(--space-xs)">Como funciona a compra de posição?</h3>
+                    <p style="color:rgba(255,255,255,0.5);text-align:center;font-size:var(--font-size-sm)">Simples, transparente e independente das suas parcelas mensais.</p>
+                    <div class="position-steps">
+                        <div class="position-step">
+                            <div class="position-step-num">1</div>
+                            <h4 style="color:var(--text-white);font-size:var(--font-size-sm);font-weight:700;margin-bottom:var(--space-xs)">Janela de 48 horas</h4>
+                            <p style="color:rgba(255,255,255,0.55);font-size:var(--font-size-sm);line-height:1.6">Nos 2 dias antes do caixa iniciar, uma contagem regressiva aparece acima do seu caixa. É a sua janela para garantir o mês ideal.</p>
+                        </div>
+                        <div class="position-step">
+                            <div class="position-step-num">2</div>
+                            <h4 style="color:var(--text-white);font-size:var(--font-size-sm);font-weight:700;margin-bottom:var(--space-xs)">Lance a partir de R$ 100</h4>
+                            <p style="color:rgba(255,255,255,0.55);font-size:var(--font-size-sm);line-height:1.6">O valor mínimo é R$ 100,00. Este valor é <strong style="color:rgba(255,255,255,0.85)">exclusivo para adquirir a posição</strong> — não se confunde com as parcelas mensais do caixa.</p>
+                        </div>
+                        <div class="position-step">
+                            <div class="position-step-num">3</div>
+                            <h4 style="color:var(--text-white);font-size:var(--font-size-sm);font-weight:700;margin-bottom:var(--space-xs)">Posição confirmada — por enquanto</h4>
+                            <p style="color:rgba(255,255,255,0.55);font-size:var(--font-size-sm);line-height:1.6">Você sai do sorteio e fica com o mês escolhido. Mas fique atento: outro participante pode oferecer mais e tomar a sua posição — nesse caso, você é movido automaticamente para a próxima posição disponível mais próxima.</p>
+                        </div>
+                    </div>
+                    <div class="position-note">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:2px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        <span><strong>Como funciona o deslocamento:</strong> se você comprou o Mês 1 e outro participante fizer uma oferta maior pelo Mês 1, ele assume essa posição e você é automaticamente movido para o Mês 2 (a próxima mais próxima disponível). Você será notificado a cada movimentação.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cartão de Garantia -->
+        <section id="garantia" class="section section-light">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge reveal-up">Sua proteção</span>
+                    <h2 class="section-title reveal-up">Cartão de Garantia</h2>
+                    <p class="section-subtitle reveal-up">Mais segurança para você e para todo o grupo</p>
+                </div>
+                <div class="guarantee-layout">
+                    <div class="reveal-left">
+                        <ul class="guarantee-features">
+                            <li class="guarantee-feature">
+                                <div class="guarantee-feature-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                        <path d="M9 12l2 2 4-4"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 style="font-weight:700;color:var(--text-primary);margin-bottom:4px">Proteção contra inadimplência</h4>
+                                    <p style="color:var(--text-secondary);font-size:var(--font-size-sm);line-height:1.6">Se um participante não pagar, o Cartão de Garantia cobre o valor para que o caixa continue sem interrupções para o grupo.</p>
+                                </div>
+                            </li>
+                            <li class="guarantee-feature">
+                                <div class="guarantee-feature-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                                        <line x1="1" y1="10" x2="23" y2="10"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 style="font-weight:700;color:var(--text-primary);margin-bottom:4px">Cadastro obrigatório na entrada</h4>
+                                    <p style="color:var(--text-secondary);font-size:var(--font-size-sm);line-height:1.6">Todos os participantes cadastram um cartão ao entrar no caixa. Isso cria um compromisso real e protege todos os membros do grupo.</p>
+                                </div>
+                            </li>
+                            <li class="guarantee-feature">
+                                <div class="guarantee-feature-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2"/>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 style="font-weight:700;color:var(--text-primary);margin-bottom:4px">Tecnologia Stripe</h4>
+                                    <p style="color:var(--text-secondary);font-size:var(--font-size-sm);line-height:1.6">Utilizamos a infraestrutura da Stripe — líder mundial em pagamentos digitais. Seus dados de cartão jamais ficam armazenados em nossos servidores.</p>
+                                </div>
+                            </li>
+                            <li class="guarantee-feature">
+                                <div class="guarantee-feature-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 style="font-weight:700;color:var(--text-primary);margin-bottom:4px">Cobrança só se necessário</h4>
+                                    <p style="color:var(--text-secondary);font-size:var(--font-size-sm);line-height:1.6">O cartão não é debitado automaticamente. Ele entra em ação somente em caso de inadimplência confirmada, com notificação prévia ao participante.</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="https://painel.juntix.com.br" class="btn btn-glow" style="margin-top:var(--space-xl)">
+                            <span>Quero participar com segurança</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                    <div class="reveal-right">
+                        <div class="guarantee-card-visual">
+                            <div style="display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:1">
+                                <div class="guarantee-card-chip"></div>
+                                <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div style="position:relative;z-index:1">
+                                <p class="guarantee-card-label">Número do cartão</p>
+                                <p class="guarantee-card-number">•••• •••• •••• 4242</p>
+                                <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:12px">
+                                    <div class="guarantee-card-brand">Juntix</div>
+                                    <div style="text-align:right">
+                                        <p class="guarantee-card-label">Válido até</p>
+                                        <p style="color:rgba(255,255,255,0.8);font-size:13px;font-weight:700;letter-spacing:0.1em">12/28</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stripe-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                            Pagamentos processados com segurança pela Stripe
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1044,6 +1273,82 @@
                             <p>Tudo automatizado para facilitar a gestão!</p>
                         </div>
                     </div>
+                    <div class="faq-item reveal-up">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>O que é a taxa de adesão?</span>
+                            <span class="faq-icon-wrap">
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>A taxa de adesão é um valor cobrado <strong>uma única vez</strong>, somente no primeiro mês, equivalente a <strong>1% do valor do caixa</strong>. Ela cobre os custos de ativação da conta, verificação de identidade (KYC) e configuração inicial do grupo.</p>
+                            <p>Exemplo prático: em um caixa de <strong>R$ 1.000</strong>, a taxa de adesão é de apenas <strong>R$ 10,00</strong>. Após isso, a única cobrança recorrente é a taxa de serviço de R$ 10 por boleto gerado.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal-up">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>O que é a compra de posição? Como funciona?</span>
+                            <span class="faq-icon-wrap">
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>A compra de posição permite que você <strong>reserve o mês em que deseja ser contemplado</strong> — por exemplo, o mês do seu aniversário, de uma viagem planejada ou do Natal — em vez de depender do sorteio.</p>
+                            <p>Funciona assim:</p>
+                            <ul>
+                                <li><strong>48 horas antes</strong> do caixa iniciar, uma contagem regressiva aparece acima do card do caixa</li>
+                                <li>O <strong>lance mínimo é R$ 100,00</strong> por posição</li>
+                                <li>Outro participante pode oferecer mais e comprar a mesma posição — nesse caso, quem pagou menos é <strong>deslocado automaticamente para a próxima posição mais próxima</strong></li>
+                                <li>Você é notificado a cada movimentação</li>
+                            </ul>
+                            <p><strong>Importante:</strong> o valor pago pela posição é <strong>independente das parcelas mensais</strong> do caixa. Não é adiantamento de parcela — é um custo exclusivo para garantir o mês escolhido.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal-up">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>O dinheiro da compra de posição vai para o grupo?</span>
+                            <span class="faq-icon-wrap">
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="faq-answer">
+                            <p><strong>Não.</strong> O valor pago pela compra de posição é uma <strong>receita da plataforma Juntix</strong> — não é repassado ao caixa coletivo nem aos demais participantes do grupo. Pense como uma tarifa de conveniência: você paga para sair do sorteio e garantir (ou disputar) o mês de sua preferência.</p>
+                            <p>As parcelas mensais do caixa continuam funcionando normalmente e são inteiramente independentes desse valor.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal-up">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>O que é o Cartão de Garantia e por que é obrigatório?</span>
+                            <span class="faq-icon-wrap">
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>O Cartão de Garantia é um cartão de crédito ou débito cadastrado na entrada do caixa, processado com segurança pela <strong>Stripe</strong>. Ele existe para <strong>proteger o grupo em caso de inadimplência</strong>: se um participante não pagar a parcela no prazo, o cartão pode ser utilizado para cobrir o valor, mantendo o caixa funcionando para todos.</p>
+                            <p>Pontos importantes:</p>
+                            <ul>
+                                <li><strong>Não é debitado automaticamente</strong> — só entra em ação após inadimplência confirmada e notificação prévia ao participante</li>
+                                <li>Os <strong>dados do cartão nunca ficam armazenados</strong> nos servidores do Juntix — são gerenciados pela infraestrutura da Stripe</li>
+                                <li>O cadastro é <strong>obrigatório para todos</strong> os participantes, criando um compromisso real com o grupo desde o início</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1058,7 +1363,7 @@
                 </div>
                 <div class="docs-grid">
                     <a href="https://drive.google.com/file/d/1WUZXJ4b6QgOiDSyBIy6LChHJAOiTYGX5/view?usp=sharing"
-                        target="_blank" rel="noopener" class="doc-card reveal-up" data-delay="0">
+                        target="_blank" rel="noopener noreferrer" class="doc-card reveal-up" data-delay="0">
                         <div class="doc-icon">
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
@@ -1358,7 +1663,7 @@
                             </svg>
                         </a>
                         <a href="https://wa.me/557135990522?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Juntix"
-                            target="_blank" rel="noopener" class="btn btn-lg btn-outline-hero">
+                            target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-outline-hero">
                             Falar no WhatsApp
                         </a>
                     </div>
@@ -1385,6 +1690,8 @@
                         <ul>
                             <li><a href="#como-funciona">Como Funciona</a></li>
                             <li><a href="#plataforma">Plataforma</a></li>
+                            <li><a href="#posicao-fixa">Posição Fixa</a></li>
+                            <li><a href="#garantia">Cartão de Garantia</a></li>
                             <li><a href="#compare">Compare</a></li>
                             <li><a href="#ganhos">Administrador</a></li>
                             <li><a href="#faq">FAQ</a></li>
@@ -1395,7 +1702,7 @@
                         <ul>
                             <li><a
                                     href="https://drive.google.com/file/d/1WUZXJ4b6QgOiDSyBIy6LChHJAOiTYGX5/view?usp=sharing"
-                                    target="_blank" rel="noopener">Contrato de Adesão</a></li>
+                                    target="_blank" rel="noopener noreferrer">Contrato de Adesão</a></li>
                             <li><a href="termos-de-servico.html">Termos de Serviço</a></li>
                             <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
                             <li><a href="exclusao-de-dados.html">Exclusão de Dados</a></li>
@@ -1405,7 +1712,7 @@
                         <h4>Contato</h4>
                         <ul>
                             <li><a href="mailto:suporte@juntix.com.br">suporte@juntix.com.br</a></li>
-                            <li><a href="https://wa.me/557135990522" target="_blank" rel="noopener">WhatsApp: 71
+                            <li><a href="https://wa.me/557135990522" target="_blank" rel="noopener noreferrer">WhatsApp: 71
                                     3599-0522</a></li>
                         </ul>
                     </div>
@@ -1414,20 +1721,31 @@
             <div class="footer-bottom">
                 <p>&copy; 2026 Juntix - ISS Software Quality Solutions. CNPJ: 39.997.807/0001-86</p>
                 <p>Este serviço não é uma instituição financeira. Não captamos recursos nem realizamos empréstimos.</p>
-                <p class="footer-updated">Última atualização: Março 2026</p>
+                <p style="margin-top:8px">
+                    <button onclick="window.juntixCookies && window.juntixCookies.reset()" style="background:none;border:none;color:#94a3b8;font-size:12px;cursor:pointer;text-decoration:underline;font-family:inherit;padding:0" aria-label="Gerenciar preferências de cookies">
+                        Gerenciar preferências de cookies
+                    </button>
+                </p>
+                <p class="footer-updated">Última atualização: Maio 2026</p>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/557135990522?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Juntix"
-        target="_blank" rel="noopener" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
+        target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
             <path
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
         </svg>
         <span class="whatsapp-tooltip">Fale conosco</span>
     </a>
+
+    <noscript>
+        <div style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1e293b;color:#e2e8f0;padding:14px 24px;font-family:sans-serif;font-size:13px;text-align:center;border-top:2px solid #334155">
+            Este site usa cookies de análise (Meta Pixel). Com JavaScript desativado, nenhum rastreamento é executado. Para gerenciar suas preferências, ative o JavaScript ou consulte nossa <a href="politica-privacidade.html" style="color:#34d399">Política de Privacidade</a>.
+        </div>
+    </noscript>
 
     <script src="script.js"></script>
 
@@ -1449,25 +1767,131 @@
     </script>
     <!-- end Google Calendar Appointment Scheduling -->
 
-    <!-- Facebook SDK for JavaScript -->
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId      : '1490465612677168',
-                cookie     : true,
-                xfbml      : true,
-                version    : 'v25.0'
-            });
-            FB.AppEvents.logPageView();
-        };
+    <!-- Banner de Cookies (LGPD) -->
+    <div id="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-title" aria-describedby="cookie-desc" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#fff;border-top:2px solid #e5e7eb;box-shadow:0 -8px 32px rgba(0,0,0,.12);padding:20px 28px;font-family:'Inter',sans-serif;font-size:14px;color:#374151;">
+        <div style="max-width:1200px;margin:0 auto;display:flex;align-items:flex-start;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+            <div style="flex:1;min-width:240px;">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D9F6E" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                    <strong id="cookie-title" style="color:#111827;font-size:15px;">Privacidade e Cookies</strong>
+                </div>
+                <p id="cookie-desc" style="margin:0;line-height:1.6;color:#4b5563;">Usamos cookies essenciais para o funcionamento do site e, com sua permissão, cookies de análise e marketing (Meta Pixel) para entender como você chegou até nós.
+                <a href="politica-privacidade.html" style="color:#0D9F6E;text-decoration:underline;font-weight:500;">Política de Privacidade</a>.</p>
+            </div>
+            <div style="display:flex;gap:10px;flex-shrink:0;align-items:center;flex-wrap:wrap;">
+                <button id="cookie-btn-essential" class="cookie-btn-secondary">Apenas essenciais</button>
+                <button id="cookie-btn-all" class="cookie-btn-primary">Aceitar todos</button>
+            </div>
+        </div>
+    </div>
 
-        (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/pt_BR/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
+    <script>
+        (function () {
+            var CONSENT_KEY    = 'juntix-cookie-consent';
+            var POLICY_VERSION = '2.0'; // incrementar ao mudar política de privacidade
+            var VALID_VALUES   = ['all', 'essential'];
+            var EXPIRY_DAYS    = 365; // LGPD: re-consentimento anual
+
+            function loadMetaPixel() {
+                if (window._metaPixelLoaded) return;
+                window._metaPixelLoaded = true;
+                !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+                fbq('init', '891735022628881');
+                fbq('init', '1958090274813776');
+                fbq('track', 'PageView');
+
+                window.fbAsyncInit = function() {
+                    FB.init({ appId: '1490465612677168', cookie: true, xfbml: true, version: 'v25.0' });
+                    FB.AppEvents.logPageView();
+                };
+                (function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s); js.id = id;
+                    js.src = 'https://connect.facebook.net/pt_BR/sdk.js';
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            }
+
+            function hideBanner() {
+                var b = document.getElementById('cookie-banner');
+                if (b) b.style.display = 'none';
+            }
+
+            function showBanner() {
+                var b = document.getElementById('cookie-banner');
+                if (!b) return;
+                b.style.display = 'flex';
+            }
+
+            // Salva o consentimento com timestamp e versão da política (trilha de auditoria LGPD).
+            function saveConsent(value) {
+                try {
+                    var expires = new Date();
+                    expires.setDate(expires.getDate() + EXPIRY_DAYS);
+                    var record = {
+                        value:         value,
+                        date:          new Date().toISOString(),
+                        policyVersion: POLICY_VERSION,
+                        expires:       expires.toISOString()
+                    };
+                    localStorage.setItem(CONSENT_KEY, JSON.stringify(record));
+                } catch(e) {}
+            }
+
+            // Lê e valida o consentimento (suporta formato legado string plana).
+            function getConsent() {
+                try {
+                    var raw = localStorage.getItem(CONSENT_KEY);
+                    if (!raw) return null;
+                    // Formato legado — sem JSON
+                    if (raw === 'all' || raw === 'essential') return raw;
+                    var data = JSON.parse(raw);
+                    // Expirado? Remove e pede novo consentimento.
+                    if (data.expires && new Date(data.expires) < new Date()) {
+                        localStorage.removeItem(CONSENT_KEY);
+                        return null;
+                    }
+                    // Política mudou? Exige novo consentimento.
+                    if (data.policyVersion && data.policyVersion !== POLICY_VERSION) {
+                        localStorage.removeItem(CONSENT_KEY);
+                        return null;
+                    }
+                    return VALID_VALUES.indexOf(data.value) !== -1 ? data.value : null;
+                } catch(e) { return null; }
+            }
+
+            window.juntixCookies = {
+                acceptAll: function() {
+                    saveConsent('all');
+                    hideBanner();
+                    loadMetaPixel();
+                },
+                acceptEssential: function() {
+                    saveConsent('essential');
+                    hideBanner();
+                },
+                // Retirada de consentimento — deve ser tão fácil quanto conceder (LGPD art. 8 §5).
+                reset: function() {
+                    try { localStorage.removeItem(CONSENT_KEY); } catch(e) {}
+                    showBanner();
+                }
+            };
+
+            document.addEventListener('DOMContentLoaded', function() {
+                var btnAll = document.getElementById('cookie-btn-all');
+                var btnEss = document.getElementById('cookie-btn-essential');
+                if (btnAll) btnAll.addEventListener('click', window.juntixCookies.acceptAll);
+                if (btnEss) btnEss.addEventListener('click', window.juntixCookies.acceptEssential);
+            });
+
+            var consent = getConsent();
+            if (consent === 'all') {
+                loadMetaPixel();
+            } else if (!consent) {
+                showBanner();
+            }
+        })();
     </script>
 </body>
 

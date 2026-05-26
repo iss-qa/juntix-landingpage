@@ -167,6 +167,7 @@
                 <li><a href="#como-funciona">Como Funciona</a></li>
                 <li><a href="#plataforma">Plataforma</a></li>
                 <li><a href="#participante">Para Você</a></li>
+                <li><a href="#fundador">Fundador</a></li>
                 <li><a href="#posicao-fixa">Posição Fixa</a></li>
                 <li><a href="#garantia">Garantia</a></li>
                 <li><a href="#ganhos">Administrador</a></li>
@@ -480,6 +481,127 @@
                 </div>
             </div>
         </section>
+
+        <!-- Seção Fundador -->
+        <section id="fundador" class="section section-white founder-section">
+            <div class="container">
+                <div class="founder-layout">
+                    <!-- Lado esquerdo: texto -->
+                    <div class="founder-text reveal-left">
+                        <span class="section-badge" style="margin-bottom:var(--space-lg);display:inline-block">A história por trás</span>
+                        <h2 class="section-title founder-title">
+                            De uma vaquinha de bairro<br>
+                            a uma plataforma para <span class="gradient-text">milhões de brasileiros</span>
+                        </h2>
+                        <p class="founder-story">
+                            Isaias Silva cresceu vendo a mãe organizar caixas entre vizinhos e amigos. Era assim que a família garantia o material escolar dos filhos, roupas novas nas datas especiais e pequenos sonhos que o salário sozinho não alcançava — sem banco, sem juros, sem burocracia. Apenas confiança e organização.
+                        </p>
+                        <p class="founder-story">
+                            Décadas depois, como engenheiro de software, Isaias se fez uma pergunta: <em>e se essa força da comunidade pudesse ganhar a segurança, a transparência e a escala que a tecnologia oferece?</em>
+                        </p>
+                        <p class="founder-story founder-story-highlight">
+                            Foi assim que nasceu o Juntix — o caixa que você já conhece, agora com contrato digital, garantias, automação e alcance para qualquer canto do Brasil.
+                        </p>
+                        <button class="founder-video-btn" id="founderVideoBtn" aria-label="Assistir vídeo do fundador">
+                            <span class="founder-video-play">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            </span>
+                            <span>
+                                <strong>Clique para conhecer o Juntix</strong><br>
+                                <span class="founder-video-sub">através do seu fundador · ~2 min</span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <!-- Lado direito: card visual animado -->
+                    <div class="founder-card-wrap reveal-right">
+                        <div class="founder-card" id="founderCardPlay" role="button" tabindex="0" aria-label="Assistir vídeo do fundador" onclick="openFounderModal()" onkeydown="if(event.key==='Enter')openFounderModal()">
+                            <div class="founder-card-bg"></div>
+                            <div class="founder-card-content">
+                                <div class="founder-avatar">IS</div>
+                                <div class="founder-card-info">
+                                    <strong>Isaias Silva</strong>
+                                    <span>Fundador &amp; CEO · Engenheiro de Software</span>
+                                </div>
+                            </div>
+                            <div class="founder-card-play-btn">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            </div>
+                            <div class="founder-card-label">Conheça o fundador</div>
+                            <!-- Ondas de pulse animadas -->
+                            <div class="founder-pulse founder-pulse-1"></div>
+                            <div class="founder-pulse founder-pulse-2"></div>
+                            <div class="founder-pulse founder-pulse-3"></div>
+                        </div>
+                        <!-- Stats flutuantes -->
+                        <div class="founder-float founder-float-1 reveal-up" data-delay="300">
+                            <span class="founder-float-icon">🏆</span>
+                            <div>
+                                <strong>Fundada em Fev. 2026</strong>
+                                <span>Brasileira 100%</span>
+                            </div>
+                        </div>
+                        <div class="founder-float founder-float-2 reveal-up" data-delay="500">
+                            <span class="founder-float-icon">💚</span>
+                            <div>
+                                <strong>Propósito real</strong>
+                                <span>Nascida da vivência</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal do vídeo do fundador — formato retrato (Reels 9:16) -->
+        <div id="founder-modal" role="dialog" aria-modal="true" aria-label="Vídeo do fundador" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:16px 8px">
+
+            <!-- Container principal: proporção 9/16, max-height para caber na tela -->
+            <div style="position:relative;height:min(92vh,700px);aspect-ratio:9/16;max-width:400px;width:100%">
+
+                <!-- Botão fechar -->
+                <button id="founder-close-btn" onclick="closeFounderModal()" aria-label="Fechar vídeo" style="position:absolute;top:-46px;right:0;background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.25);color:#fff;width:38px;height:38px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:22px;line-height:1;z-index:2;transition:background .2s;font-family:inherit">&times;</button>
+
+                <!-- Shell do player: borda arredondada como smartphone -->
+                <div style="position:relative;width:100%;height:100%;border-radius:24px;overflow:hidden;background:#000;box-shadow:0 32px 80px rgba(0,0,0,0.7),0 0 0 1px rgba(255,255,255,0.08)">
+
+                    <!-- Vídeo -->
+                    <video id="founder-video" preload="metadata" playsinline controlslist="nodownload"
+                        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none"
+                        oncontextmenu="return false"></video>
+
+                    <!-- Loading spinner -->
+                    <div id="founder-video-loading" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:#0f1a14">
+                        <div style="width:48px;height:48px;border:3px solid rgba(255,255,255,0.15);border-top-color:#0D9F6E;border-radius:50%;animation:spin 0.85s linear infinite"></div>
+                        <span style="font-size:13px;color:rgba(255,255,255,0.5);font-family:'Inter',sans-serif">Carregando vídeo…</span>
+                    </div>
+
+                    <!-- Overlay de play (antes de iniciar) -->
+                    <div id="founder-video-play-overlay" style="display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(to bottom,rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.55) 100%);cursor:pointer;gap:0" onclick="playFounderVideo()">
+                        <div id="founder-play-ring" style="width:88px;height:88px;border-radius:50%;background:rgba(255,255,255,0.18);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:2.5px solid rgba(255,255,255,0.45);display:flex;align-items:center;justify-content:center;transition:transform .2s,background .2s;margin-bottom:16px">
+                            <svg width="34" height="34" viewBox="0 0 24 24" fill="white" style="margin-left:5px"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        </div>
+                        <p style="color:#fff;font-weight:700;font-size:16px;margin:0;font-family:'Inter',sans-serif;text-shadow:0 2px 8px rgba(0,0,0,0.5)">Assistir mensagem do fundador</p>
+                        <p style="color:rgba(255,255,255,0.6);font-size:13px;margin:5px 0 0;font-family:'Inter',sans-serif">Isaias Silva · ~2 minutos</p>
+                    </div>
+
+                    <!-- Overlay inferior: info + CTA (sempre visível sobre o vídeo) -->
+                    <div style="position:absolute;bottom:0;left:0;right:0;padding:20px;background:linear-gradient(to top,rgba(0,0,0,0.88) 0%,transparent 100%);pointer-events:none">
+                        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+                            <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#0D9F6E,#047857);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:14px;flex-shrink:0;border:2px solid rgba(255,255,255,0.3);font-family:'Inter',sans-serif">IS</div>
+                            <div>
+                                <p style="color:#fff;font-weight:700;font-size:14px;margin:0;font-family:'Inter',sans-serif">Isaias Silva</p>
+                                <p style="color:rgba(255,255,255,0.6);font-size:12px;margin:2px 0 0;font-family:'Inter',sans-serif">Fundador &amp; CEO · Engenheiro de Software</p>
+                            </div>
+                        </div>
+                        <a href="https://painel.juntix.com.br/registro" style="display:flex;align-items:center;justify-content:center;gap:8px;background:#0D9F6E;color:#fff;font-weight:700;font-size:14px;padding:13px 20px;border-radius:14px;text-decoration:none;box-shadow:0 4px 20px rgba(13,159,110,.5);pointer-events:all;font-family:'Inter',sans-serif;letter-spacing:0.01em;transition:background .2s">
+                            Criar minha conta gratuitamente
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Para Você - Participante -->
         <section id="participante" class="section section-gradient">

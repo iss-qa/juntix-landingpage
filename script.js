@@ -484,6 +484,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // === Botão de vídeo do fundador ===
+    const founderVideoBtn = document.getElementById('founderVideoBtn');
+    if (founderVideoBtn) {
+        founderVideoBtn.addEventListener('click', openFounderModal);
+    }
+
     // === Preload Critical Images ===
     const criticalImages = ['logo/caixa.png', 'logo/jornada.png', 'logo/resumo_pay.png', 'logo/pay.png'];
     criticalImages.forEach(src => {
@@ -493,4 +499,107 @@ document.addEventListener('DOMContentLoaded', function () {
         document.head.appendChild(link);
     });
 
+});
+
+// === Modal do Fundador ===
+var _founderUrlCache = null;
+
+async function openFounderModal() {
+    const modal = document.getElementById('founder-modal');
+    if (!modal) return;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+
+    const video   = document.getElementById('founder-video');
+    const loading = document.getElementById('founder-video-loading');
+    const overlay = document.getElementById('founder-video-play-overlay');
+    if (!video || !loading || !overlay) return;
+
+    if (_founderUrlCache) {
+        video.src = _founderUrlCache;
+        loading.style.display = 'none';
+        video.style.display = 'block';
+        overlay.style.display = 'flex';
+        return;
+    }
+
+    loading.style.display = 'flex';
+    video.style.display = 'none';
+    overlay.style.display = 'none';
+
+    try {
+        const res = await fetch('https://api.juntix.com.br/api/videos/founder-intro', {
+            credentials: 'omit',
+            headers: { 'Accept': 'application/json' },
+        });
+        if (!res.ok) throw new Error('status ' + res.status);
+        const data = await res.json();
+        _founderUrlCache = data.url;
+        video.src = data.url;
+        loading.style.display = 'none';
+        video.style.display = 'block';
+        overlay.style.display = 'flex';
+    } catch (e) {
+        loading.innerHTML = [
+            '<div style="text-align:center;padding:0 24px">',
+            '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.5" style="margin-bottom:12px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>',
+            '<p style="color:rgba(255,255,255,.7);font-size:14px;font-weight:600;margin:0 0 6px;font-family:Inter,sans-serif">Vídeo temporariamente indisponível</p>',
+            '<p style="color:rgba(255,255,255,.45);font-size:12px;margin:0;font-family:Inter,sans-serif">Disponível em <strong style="color:rgba(255,255,255,.7)">juntix.com.br</strong></p>',
+            '<button onclick="openFounderModal._retry && openFounderModal._retry()" style="margin-top:14px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);font-size:12px;padding:8px 18px;border-radius:8px;cursor:pointer;font-family:inherit">Tentar novamente</button>',
+            '</div>'
+        ].join('');
+        // Disponibiliza retry sem reabrir o modal
+        openFounderModal._retry = function() {
+            _founderUrlCache = null;
+            openFounderModal();
+        };
+    }
+}
+
+function closeFounderModal() {
+    const modal = document.getElementById('founder-modal');
+    const video = document.getElementById('founder-video');
+    if (modal) modal.style.display = 'none';
+    if (video) { video.pause(); video.currentTime = 0; video.controls = false; }
+    document.body.style.overflow = '';
+}
+
+function playFounderVideo() {
+    const video   = document.getElementById('founder-video');
+    const overlay = document.getElementById('founder-video-play-overlay');
+    if (!video) return;
+    overlay.style.display = 'none';
+    video.controls = true;
+    video.play().catch(() => {});
+}
+
+// Hover no botão de fechar (sem inline handler)
+document.addEventListener('DOMContentLoaded', function () {
+    var closeBtn = document.getElementById('founder-close-btn');
+    if (closeBtn) {
+        closeBtn.addEventListener('mouseover', function () { this.style.background = 'rgba(255,255,255,0.22)'; });
+        closeBtn.addEventListener('mouseout',  function () { this.style.background = 'rgba(255,255,255,0.12)'; });
+    }
+    // Hover no play ring
+    var playOverlay = document.getElementById('founder-video-play-overlay');
+    var playRing    = document.getElementById('founder-play-ring');
+    if (playOverlay && playRing) {
+        playOverlay.addEventListener('mouseover', function () {
+            playRing.style.transform = 'scale(1.1)';
+            playRing.style.background = 'rgba(255,255,255,0.26)';
+        });
+        playOverlay.addEventListener('mouseout', function () {
+            playRing.style.transform = 'scale(1)';
+            playRing.style.background = 'rgba(255,255,255,0.18)';
+        });
+    }
+});
+
+document.addEventListener('click', function (e) {
+    const modal = document.getElementById('founder-modal');
+    if (modal && e.target === modal) closeFounderModal();
+});
+
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeFounderModal();
 });

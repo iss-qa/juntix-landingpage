@@ -2592,7 +2592,7 @@ body:hover .cursor-glow {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-3xl);
-    align-items: center;
+    align-items: stretch; /* coluna direita estica até a altura do texto */
 }
 
 .founder-title {
@@ -2684,15 +2684,17 @@ body:hover .cursor-glow {
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: var(--space-xl) var(--space-3xl);
+    align-items: stretch;
+    padding: var(--space-md);
 }
 
 .founder-card {
     position: relative;
-    width: 100%;
-    max-width: 240px;  /* estreito como um celular */
+    /* Ocupa toda a altura da coluna (alinhada ao texto), largura calculada pelo aspect-ratio */
+    height: 100%;
+    width: auto;
     aspect-ratio: 9 / 16;
+    max-height: 680px; /* teto para telas muito grandes */
     border-radius: 28px;
     overflow: hidden;
     cursor: pointer;
@@ -2846,14 +2848,14 @@ body:hover .cursor-glow {
 }
 
 .founder-float-1 {
-    top: 10%;
-    right: -12px;
+    top: 8%;
+    right: -8px;
     animation-delay: 0s;
 }
 
 .founder-float-2 {
-    bottom: 12%;
-    left: -12px;
+    bottom: 8%;
+    left: -8px;
     animation-delay: 2s;
 }
 
@@ -2893,12 +2895,17 @@ body:hover .cursor-glow {
 @media (max-width: 768px) {
     .founder-layout {
         grid-template-columns: 1fr;
+        align-items: center;
     }
     .founder-card-wrap {
         order: -1;
+        align-items: center;
     }
     .founder-card {
-        max-width: 200px; /* ainda retrato — menor em mobile */
+        height: auto;
+        width: 100%;
+        max-width: 280px;
+        max-height: none;
     }
     .founder-float-1 { right: -8px; top: 4%; }
     .founder-float-2 { left: -8px; bottom: 4%; }

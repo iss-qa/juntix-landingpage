@@ -502,58 +502,25 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // === Modal do Fundador ===
-var _founderUrlCache = null;
-
-async function openFounderModal() {
-    const modal = document.getElementById('founder-modal');
-    if (!modal) return;
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-
+// Vídeo servido como arquivo estático local — sem dependência de API ou R2.
+function openFounderModal() {
+    const modal   = document.getElementById('founder-modal');
     const video   = document.getElementById('founder-video');
     const loading = document.getElementById('founder-video-loading');
     const overlay = document.getElementById('founder-video-play-overlay');
-    if (!video || !loading || !overlay) return;
+    if (!modal || !video || !loading || !overlay) return;
 
-    if (_founderUrlCache) {
-        video.src = _founderUrlCache;
-        loading.style.display = 'none';
-        video.style.display = 'block';
-        overlay.style.display = 'flex';
-        return;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+
+    // Só define o src na primeira abertura
+    if (!video.src || video.src === window.location.href) {
+        video.src = 'video/Founder_vide.mp4';
     }
 
-    loading.style.display = 'flex';
-    video.style.display = 'none';
-    overlay.style.display = 'none';
-
-    try {
-        const res = await fetch('https://api.juntix.com.br/api/videos/founder-intro', {
-            credentials: 'omit',
-            headers: { 'Accept': 'application/json' },
-        });
-        if (!res.ok) throw new Error('status ' + res.status);
-        const data = await res.json();
-        _founderUrlCache = data.url;
-        video.src = data.url;
-        loading.style.display = 'none';
-        video.style.display = 'block';
-        overlay.style.display = 'flex';
-    } catch (e) {
-        loading.innerHTML = [
-            '<div style="text-align:center;padding:0 24px">',
-            '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.5" style="margin-bottom:12px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>',
-            '<p style="color:rgba(255,255,255,.7);font-size:14px;font-weight:600;margin:0 0 6px;font-family:Inter,sans-serif">Vídeo temporariamente indisponível</p>',
-            '<p style="color:rgba(255,255,255,.45);font-size:12px;margin:0;font-family:Inter,sans-serif">Disponível em <strong style="color:rgba(255,255,255,.7)">juntix.com.br</strong></p>',
-            '<button onclick="openFounderModal._retry && openFounderModal._retry()" style="margin-top:14px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);font-size:12px;padding:8px 18px;border-radius:8px;cursor:pointer;font-family:inherit">Tentar novamente</button>',
-            '</div>'
-        ].join('');
-        // Disponibiliza retry sem reabrir o modal
-        openFounderModal._retry = function() {
-            _founderUrlCache = null;
-            openFounderModal();
-        };
-    }
+    loading.style.display = 'none';
+    video.style.display = 'block';
+    overlay.style.display = 'flex';
 }
 
 function closeFounderModal() {

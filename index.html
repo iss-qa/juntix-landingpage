@@ -570,8 +570,8 @@
                         style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none"
                         oncontextmenu="return false"></video>
 
-                    <!-- Loading spinner -->
-                    <div id="founder-video-loading" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:#0f1a14">
+                    <!-- Loading spinner (oculto — vídeo é local, não precisa de fetch) -->
+                    <div id="founder-video-loading" style="position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:#0f1a14">
                         <div style="width:48px;height:48px;border:3px solid rgba(255,255,255,0.15);border-top-color:#0D9F6E;border-radius:50%;animation:spin 0.85s linear infinite"></div>
                         <span style="font-size:13px;color:rgba(255,255,255,0.5);font-family:'Inter',sans-serif">Carregando vídeo…</span>
                     </div>

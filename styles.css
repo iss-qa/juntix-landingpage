@@ -105,6 +105,8 @@ html {
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -114,6 +116,8 @@ body {
     color: var(--text-primary);
     background-color: var(--bg-white);
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 img {
@@ -169,14 +173,17 @@ body:hover .cursor-glow {
 .section {
     padding: var(--space-5xl) 0;
     position: relative;
+    overflow-x: hidden;
 }
 
 .section-white {
     background-color: var(--bg-white);
+    overflow-x: hidden;
 }
 
 .section-light {
     background-color: var(--bg-light);
+    overflow-x: hidden;
 }
 
 .section-dark {
@@ -555,6 +562,10 @@ body:hover .cursor-glow {
     font-weight: 500;
     margin-bottom: var(--space-2xl);
     position: relative;
+    max-width: 100%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .badge-pulse {
@@ -777,6 +788,7 @@ body:hover .cursor-glow {
     position: relative;
     z-index: 2;
     margin-top: -1px;
+    overflow-x: hidden;
 }
 
 .numbers-grid {
@@ -2084,6 +2096,14 @@ body:hover .cursor-glow {
         padding: var(--space-3xl) 0;
     }
 
+    .hero-title,
+    .hero-tagline,
+    .section-title,
+    .section-subtitle {
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+
     .nav-links {
         position: fixed;
         top: 72px;
@@ -2259,6 +2279,11 @@ body:hover .cursor-glow {
         width: 100%;
     }
 
+    .hero-badge {
+        font-size: 12px;
+        padding: 6px 14px;
+    }
+
     .example-value {
         font-size: var(--font-size-3xl);
     }
@@ -2300,6 +2325,49 @@ body:hover .cursor-glow {
     .cta-final-buttons {
         flex-direction: column;
         align-items: center;
+    }
+
+    .positions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .earnings-amount-big {
+        font-size: var(--font-size-xl);
+    }
+}
+
+@media (max-width: 360px) {
+    :root {
+        --font-size-5xl: 1.75rem;
+        --font-size-4xl: 1.5rem;
+        --font-size-3xl: 1.25rem;
+        --font-size-2xl: 1.1rem;
+    }
+
+    .hero-badge {
+        font-size: 11px;
+        padding: 6px 10px;
+        gap: 6px;
+    }
+
+    .hero-tagline {
+        font-size: var(--font-size-lg);
+    }
+
+    .positions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .hero-title {
+        font-size: var(--font-size-4xl);
+    }
+
+    .container {
+        padding: 0 12px;
     }
 }
 

@@ -3039,3 +3039,268 @@ body:hover .cursor-glow {
         animation: none;
     }
 }
+
+/* ============================================================
+   LOGO MAIOR + CONTROLES DO HEADER (tema + idioma)
+   ============================================================ */
+.logo-img {
+    width: 56px;
+    height: 56px;
+}
+
+.logo-text {
+    font-size: var(--font-size-2xl);
+}
+
+.nav {
+    gap: var(--space-md);
+}
+
+.nav-links {
+    margin-left: auto;
+    flex-wrap: nowrap;
+}
+
+/* Itens do menu SEMPRE em uma única linha */
+.nav-links a {
+    white-space: nowrap;
+}
+
+/* Larguras intermediárias: aperta espaçamento p/ caber em 1 linha */
+@media (max-width: 1360px) and (min-width: 1025px) {
+    .nav-links {
+        gap: var(--space-md);
+    }
+
+    .nav-links a {
+        font-size: var(--font-size-sm);
+    }
+
+    .logo-text {
+        display: none;
+    }
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    flex: none;
+}
+
+@media (max-width: 1024px) {
+    /* No mobile os links viram overlay — os controles ancoram à direita */
+    .nav-controls {
+        margin-left: auto;
+    }
+}
+
+/* Combobox de idioma (compacto — uma linha no header) */
+.lang-select {
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: var(--radius-full);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    line-height: 1;
+    padding: 9px 26px 9px 12px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    /* setinha do select */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%2394a3b8' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+.lang-select:hover,
+.lang-select:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.theme-toggle:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+/* Ícone do toggle: lua no claro, sol no escuro */
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: block; }
+[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+/* ============================================================
+   DESTAQUE DOS CTAs (pulso de brilho)
+   ============================================================ */
+@keyframes ctaPulse {
+    0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.45); }
+    70% { box-shadow: 0 0 0 14px rgba(16, 185, 129, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+@keyframes ctaPulseGold {
+    0% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.45); }
+    70% { box-shadow: 0 0 0 14px rgba(251, 191, 36, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0); }
+}
+
+.btn-nav-cta,
+.btn-glow {
+    animation: ctaPulse 2.2s ease-out infinite;
+}
+
+.btn-gold {
+    animation: ctaPulseGold 2.2s ease-out infinite;
+}
+
+/* ============================================================
+   BANNER "50% DA TAXA DE ADESÃO" (seção Recrutador)
+   ============================================================ */
+.earnings-adesao-banner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    max-width: 720px;
+    margin: 0 auto var(--space-2xl);
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-xl);
+    border: 1.5px solid rgba(251, 191, 36, 0.5);
+    background: rgba(251, 191, 36, 0.08);
+    color: #fde68a;
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+}
+
+.earnings-adesao-banner strong {
+    color: var(--color-gold);
+}
+
+.badge-novo {
+    flex: none;
+    background: var(--gradient-gold);
+    color: #1f2937;
+    font-weight: 800;
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+}
+
+@media (max-width: 480px) {
+    .earnings-adesao-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-sm);
+    }
+}
+
+/* ============================================================
+   DARK MODE (toggle no header; default segue o sistema)
+   As cores dos componentes são todas via CSS variables — o
+   tema escuro é um override das variáveis + ajustes pontuais.
+   ============================================================ */
+[data-theme="dark"] {
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-light: #94a3b8;
+
+    --bg-white: #0b1220;
+    --bg-light: #0f172a;
+    --bg-dark: #020617;
+    --bg-card: rgba(15, 23, 42, 0.98);
+
+    --color-success-light: rgba(16, 185, 129, 0.16);
+    --color-warning-light: rgba(245, 158, 11, 0.16);
+    --color-danger-light: rgba(239, 68, 68, 0.16);
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.55), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.55), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    --shadow-card: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 2px 4px rgba(0, 0, 0, 0.4), 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] body {
+    background-color: var(--bg-white);
+}
+
+[data-theme="dark"] .header {
+    background: rgba(11, 18, 32, 0.85);
+    border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .header.scrolled {
+    background: rgba(11, 18, 32, 0.95);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .lang-select,
+[data-theme="dark"] .theme-toggle {
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ── Correções de contraste no escuro ─────────────────────────
+   Elementos que eram BRANCOS sobre seções coloridas continuam
+   brancos; labels sobre fundo escuro viram texto claro. */
+
+/* Botão branco sobre seção verde (ex.: "Quero Participar") */
+[data-theme="dark"] .btn-white-bold {
+    background: #ffffff;
+    color: var(--color-primary-dark);
+}
+
+/* Badges de seção (ex.: "Economize de verdade") — texto branco */
+[data-theme="dark"] .section-badge {
+    color: #ffffff;
+    background: rgba(16, 185, 129, 0.22);
+}
+
+/* Linha destacada da tabela comparativa */
+[data-theme="dark"] .highlight-row td {
+    color: var(--color-primary-lighter);
+}
+
+[data-theme="dark"] .founder-video-btn strong {
+    color: var(--color-primary-lighter);
+}
+
+[data-theme="dark"] .theme-toggle {
+    color: var(--color-gold);
+}
+
+/* Bordas/dividers claros que usam preto translúcido */
+[data-theme="dark"] .faq-item,
+[data-theme="dark"] .earnings-row {
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Banner de cookies e botões utilitários com cores fixas */
+[data-theme="dark"] .cookie-btn-secondary {
+    background: #1e293b;
+    border-color: #334155;
+    color: #e2e8f0;
+}
+
+[data-theme="dark"] .cookie-btn-secondary:hover {
+    background: #273549;
+    border-color: #475569;
+}

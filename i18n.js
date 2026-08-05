@@ -53,13 +53,13 @@
     }
 
     function idiomaInicial() {
+        // Português do Brasil é o idioma padrão da landing page, independente
+        // do idioma configurado no navegador. Inglês e espanhol só devem ser
+        // aplicados quando o visitante escolher explicitamente essa opção.
         try {
             var salvo = localStorage.getItem(LANG_KEY);
             if (salvo === 'pt' || salvo === 'en' || salvo === 'es') return salvo;
         } catch (e) { /* noop */ }
-        var nav = (navigator.language || 'pt').toLowerCase();
-        if (nav.indexOf('es') === 0) return 'es';
-        if (nav.indexOf('en') === 0) return 'en';
         return 'pt';
     }
 

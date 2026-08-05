@@ -11,7 +11,7 @@
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(self)">
     <meta name="description"
-        content="Juntix - A plataforma inteligente de caixa coletivo entre amigos. Sem juros, sem banco, sem burocracia. Ganhe renda extra como recrutador: 50% da taxa de adesão no 1º mês + 10% por caixa no final. Acesse até R$ 20.000 pagando apenas R$ 10 por boleto.">
+        content="Juntix - A plataforma inteligente de caixa coletivo entre amigos. Sem juros, sem banco, sem burocracia. Ganhe renda extra como recrutador: 50% da taxa de adesão no 1º mês + 10% por caixa no final. Acesse até R$ 20.000 pagando apenas R$ 10 de taxa de serviço via Pix.">
     <meta name="keywords"
         content="caixa coletivo, vaquinha entre amigos, poupança coletiva, sem juros, recrutador, renda extra recrutando, administrador de caixa, consórcio informal, fintech brasileira, juntix">
     <meta name="author" content="Juntix - ISS Software Quality Solutions">
@@ -84,7 +84,7 @@
             "@type": "Offer",
             "price": "10.00",
             "priceCurrency": "BRL",
-            "description": "Taxa de serviço por boleto gerado"
+            "description": "Taxa de serviço por cobrança via Pix"
           },
           "description": "Plataforma para organização e gestão de caixas coletivos entre amigos"
         },
@@ -136,7 +136,7 @@
               "name": "Como funciona o Split? O Juntix retém meu dinheiro?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Não! O Juntix utiliza um sistema de Split automático onde o dinheiro vai direto para a carteira do contemplado. O Juntix recebe apenas a taxa de serviço (R$ 10/boleto)."
+                "text": "Não! O Juntix utiliza um sistema de Split automático onde o dinheiro vai direto para a carteira do contemplado. O Juntix recebe apenas a taxa de serviço de R$ 10 por cobrança via Pix."
               }
             }
           ]
@@ -237,7 +237,7 @@
                 <p class="hero-subtitle reveal-up" data-delay="300" data-i18n="hero_subtitulo">
                     Reúna pessoas de confiança, forme um caixa coletivo e tenha acesso a até
                     <strong>R$ 20.000</strong>
-                    pagando apenas <strong>R$ 10 de taxa por boleto</strong>.
+                    pagando apenas <strong>R$ 10 de taxa de serviço via Pix</strong>.
                     Simples como a vaquinha que você já conhece.
                 </p>
 
@@ -351,7 +351,7 @@
                     </div>
                     <div class="number-card reveal-up" data-delay="100">
                         <span class="number-value" data-target="10" data-prefix="R$ " data-suffix="">R$ 10</span>
-                        <span class="number-label" data-i18n="numeros_taxa">taxa por boleto</span>
+                        <span class="number-label" data-i18n="numeros_taxa">taxa de serviço via Pix</span>
                     </div>
                     <div class="number-card reveal-up" data-delay="200">
                         <span class="number-value" data-target="20000" data-prefix="R$ " data-suffix="">R$ 20.000</span>
@@ -414,7 +414,7 @@
                             </svg>
                         </div>
                         <h3 class="step-title" data-i18n="como_p3_titulo">Pague mensalmente</h3>
-                        <p class="step-desc" data-i18n="como_p3_desc">Todo mês, todos pagam a parcela via boleto. Simples e organizado.</p>
+                        <p class="step-desc" data-i18n="como_p3_desc">Todo mês, todos pagam a parcela com cobrança via Pix. Simples e organizado.</p>
                     </div>
                     <div class="step-card reveal-up" data-delay="450">
                         <div class="step-number-badge">4</div>
@@ -815,8 +815,8 @@
                                     <strong>Juntix</strong>
                                 </td>
                                 <td><strong>R$ 5.000</strong></td>
-                                <td class="success-text"><strong>R$ 5.130</strong></td>
-                                <td><span class="cost-badge success">R$ 130 (2,6%)</span></td>
+                                <td class="success-text"><strong>R$ 5.000 + taxas</strong></td>
+                                <td><span class="cost-badge success">R$ 130* (referência)</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -850,7 +850,7 @@
                         </div>
                         <span class="example-label" data-i18n="exemplo_c1_label">Parcela mensal</span>
                         <span class="example-value">R$ 500</span>
-                        <span class="example-note" data-i18n="exemplo_c1_nota">+ R$ 10 taxa de serviço por boleto</span>
+                        <span class="example-note" data-i18n="exemplo_c1_nota">+ R$ 10 de taxa de serviço via Pix</span>
                     </div>
                     <div class="example-card example-card-highlight reveal-up" data-delay="150">
                         <div class="example-icon-wrap">
@@ -872,16 +872,17 @@
                                 <path d="M9 12l2 2 4-4" />
                             </svg>
                         </div>
-                        <span class="example-label" data-i18n="exemplo_c3_label">Custo total</span>
+                        <span class="example-label" data-i18n="exemplo_c3_label">Referência de taxas</span>
                         <span class="example-value">R$ 130</span>
-                        <span class="example-note" data-i18n="exemplo_c3_nota">apenas 2,6% em taxas</span>
+                        <span class="example-note" data-i18n="exemplo_c3_nota">valor ilustrativo para comparação*</span>
                     </div>
                 </div>
                 <p class="example-footnote reveal-up" data-i18n="exemplo_nota">
-                    * Parcela mensal de R$ 500 + R$ 10 de taxa de serviço = R$ 510 por mês | No último mês: R$ 560
-                    (parcela + R$ 50 comissão do recrutador)<br>
-                    <strong>Nota:</strong> A comissão do recrutador corresponde a 10% do valor do caixa, paga
-                    no último mês
+                    * Nos meses intermediários, o participante paga a parcela de R$ 500 + R$ 10 de taxa de serviço via Pix.
+                    No primeiro mês, pode haver taxa de adesão conforme as regras da caixa; no último mês, pode haver
+                    o adicional de comissão do recrutador.<br>
+                    <strong>Nota:</strong> O valor de R$ 130 é uma referência ilustrativa de taxas para comparação e
+                    não representa o total de todas as cobranças possíveis do ciclo.
                 </p>
             </div>
         </section>
@@ -905,7 +906,7 @@
                         </div>
                         <span class="fee-label" data-i18n="taxas_f1_label">TAXA DE SERVIÇO</span>
                         <span class="fee-value">R$ 10,00</span>
-                        <span class="fee-period" data-i18n="taxas_f1_periodo">por boleto gerado</span>
+                        <span class="fee-period" data-i18n="taxas_f1_periodo">por cobrança via Pix</span>
                         <p class="fee-desc" data-i18n="taxas_f1_desc">Cobre custos de gateway de pagamento, infraestrutura e suporte. Apenas
                             isso!</p>
                     </div>
@@ -933,9 +934,9 @@
                             </svg>
                         </div>
                         <span class="fee-label" data-i18n="taxas_f3_label">TAXA DE ADESÃO</span>
-                        <span class="fee-value">1%</span>
-                        <span class="fee-period" data-i18n="taxas_f3_periodo">do valor do caixa, somente no 1º mês</span>
-                        <p class="fee-desc" data-i18n="taxas_f3_desc">Cobrada uma única vez na entrada. <strong>Exemplo: caixa de R$ 1.000 = R$ 10,00 de taxa de adesão.</strong> Depois disso, nenhum custo adicional além da taxa de serviço.</p>
+                        <span class="fee-value" data-i18n="taxas_f3_valor">Conforme a caixa</span>
+                        <span class="fee-period" data-i18n="taxas_f3_periodo">cobrada somente no 1º mês</span>
+                        <p class="fee-desc" data-i18n="taxas_f3_desc">Cobrada uma única vez na entrada, conforme as regras da caixa. Nos meses intermediários, aplica-se apenas a parcela do caixa + R$ 10 de taxa de serviço via Pix.</p>
                     </div>
                 </div>
             </div>
@@ -1408,7 +1409,7 @@
                                 <li data-i18n="faq_a6_li3"><strong>Mês 3:</strong> Todos pagam → valor vai para a carteira do José</li>
                                 <li data-i18n="faq_a6_li4"><strong>Mês 4:</strong> Todos pagam → valor vai para a carteira do Pedro</li>
                             </ul>
-                            <p data-i18n="faq_a6_p2">O Juntix recebe apenas a <strong>taxa de serviço (R$ 10/boleto)</strong> para custear a
+                            <p data-i18n="faq_a6_p2">O Juntix recebe apenas a <strong>taxa de serviço de R$ 10 por cobrança via Pix</strong> para custear a
                                 operação. Simples e transparente!</p>
                         </div>
                     </div>
@@ -1445,7 +1446,7 @@
                             <p data-i18n="faq_a8_p1"><strong>Sim!</strong> Nosso sistema possui automação completa:</p>
                             <ul>
                                 <li data-i18n="faq_a8_li1"><strong>Lembretes de vencimento</strong> antes da data de pagamento</li>
-                                <li data-i18n="faq_a8_li2"><strong>Confirmação de pagamento</strong> quando o boleto é pago</li>
+                                <li data-i18n="faq_a8_li2"><strong>Confirmação de pagamento</strong> quando a cobrança via Pix é paga</li>
                                 <li data-i18n="faq_a8_li3"><strong>Notificação de atraso</strong> para o recrutador e participante</li>
                                 <li data-i18n="faq_a8_li4"><strong>Status do grupo</strong> quem pagou, quem está em dia</li>
                                 <li data-i18n="faq_a8_li5"><strong>Alertas de contemplação</strong> quando chega sua vez</li>
@@ -1466,7 +1467,7 @@
                         </button>
                         <div class="faq-answer">
                             <p data-i18n="faq_a9_p1">A taxa de adesão é um valor cobrado <strong>uma única vez</strong>, somente no primeiro mês, equivalente a <strong>1% do valor do caixa</strong>. Ela cobre os custos de ativação da conta, verificação de identidade (KYC) e configuração inicial do grupo.</p>
-                            <p data-i18n="faq_a9_p2">Exemplo prático: em um caixa de <strong>R$ 1.000</strong>, a taxa de adesão é de apenas <strong>R$ 10,00</strong>. Após isso, a única cobrança recorrente é a taxa de serviço de R$ 10 por boleto gerado.</p>
+                            <p data-i18n="faq_a9_p2">Exemplo prático: em um caixa de <strong>R$ 1.000</strong>, a taxa de adesão segue a regra definida para aquela caixa. Nos meses intermediários, a cobrança recorrente é a parcela do caixa mais a taxa de serviço de R$ 10 via Pix.</p>
                         </div>
                     </div>
                     <div class="faq-item reveal-up">

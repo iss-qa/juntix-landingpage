@@ -187,3 +187,9 @@ vercel --prod
 ---
 
 **Desenvolvido com ❤️ para transformar a forma como as pessoas acessam crédito no Brasil**
+
+
+read -s "Cole o token do GitHub: " TOKEN
+printf "\n"
+printf "%s" "$TOKEN" | gh auth login --with-token
+unset TOKEN

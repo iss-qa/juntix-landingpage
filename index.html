@@ -11,7 +11,7 @@
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(self)">
     <meta name="description"
-        content="Juntix - A plataforma inteligente de caixa coletivo entre amigos. Sem juros, sem banco, sem burocracia. Ganhe renda extra como recrutador: 50% da taxa de adesão no 1º mês + 10% por caixa no final. Acesse até R$ 20.000 pagando apenas R$ 10 de taxa de serviço via Pix.">
+        content="Juntix - A plataforma inteligente de caixa coletivo entre amigos. Sem juros, sem banco, sem burocracia. Ganhe renda extra como recrutador: 50% da taxa de adesão no 1º mês + 10% por caixa no final. Acesse até R$ 20.000 pagando só uma taxa de serviço fixa por cobrança via Pix (de R$ 10 a R$ 40, conforme o caixa). Agora também para empresas: Juntix PJ, capital de giro sem banco no meio.">
     <meta name="keywords"
         content="caixa coletivo, vaquinha entre amigos, poupança coletiva, sem juros, recrutador, renda extra recrutando, administrador de caixa, consórcio informal, fintech brasileira, juntix">
     <meta name="author" content="Juntix - ISS Software Quality Solutions">
@@ -82,9 +82,14 @@
           "applicationCategory": "FinanceApplication",
           "offers": {
             "@type": "Offer",
-            "price": "10.00",
             "priceCurrency": "BRL",
-            "description": "Taxa de serviço por cobrança via Pix"
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "10.00",
+              "maxPrice": "40.00",
+              "priceCurrency": "BRL"
+            },
+            "description": "Taxa de serviço por cobrança via Pix, de R$ 10 a R$ 40 conforme o valor e o tipo do caixa"
           },
           "description": "Plataforma para organização e gestão de caixas coletivos entre amigos"
         },
@@ -136,7 +141,7 @@
               "name": "Como funciona o Split? O Juntix retém meu dinheiro?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Não! O Juntix utiliza um sistema de Split automático onde o dinheiro vai direto para a carteira do contemplado. O Juntix recebe apenas a taxa de serviço de R$ 10 por cobrança via Pix."
+                "text": "Não! O Juntix utiliza um sistema de Split automático onde o dinheiro vai direto para a carteira do contemplado. O Juntix recebe apenas a taxa de serviço fixa por cobrança via Pix, de R$ 10 a R$ 40 conforme o caixa."
               }
             }
           ]
@@ -201,6 +206,7 @@
                 <li><a href="#posicao-fixa" data-i18n="nav_posicao">Posição Fixa</a></li>
                 <li><a href="#garantia" data-i18n="nav_garantia">Garantia</a></li>
                 <li><a href="#ganhos" data-i18n="nav_recrutador">Recrutador</a></li>
+                <li><a href="#empresas" data-i18n="nav_empresas">Empresas</a></li>
                 <li><a href="https://painel.juntix.com.br" class="btn btn-nav-cta" data-i18n="nav_cta">Começar Agora</a></li>
             </ul>
         </nav>
@@ -237,7 +243,7 @@
                 <p class="hero-subtitle reveal-up" data-delay="300" data-i18n="hero_subtitulo">
                     Reúna pessoas de confiança, forme um caixa coletivo e tenha acesso a até
                     <strong>R$ 20.000</strong>
-                    pagando apenas <strong>R$ 10 de taxa de serviço via Pix</strong>.
+                    pagando só uma <strong>taxa de serviço fixa por cobrança via Pix</strong> (de R$ 10 a R$ 40, conforme o caixa).
                     Simples como a vaquinha que você já conhece.
                 </p>
 
@@ -350,7 +356,7 @@
                         <span class="number-label" data-i18n="numeros_juros">de juros cobrados</span>
                     </div>
                     <div class="number-card reveal-up" data-delay="100">
-                        <span class="number-value" data-target="10" data-prefix="R$ " data-suffix="">R$ 10</span>
+                        <span class="number-value" data-target="40" data-prefix="R$ 10–" data-suffix="">R$ 10–40</span>
                         <span class="number-label" data-i18n="numeros_taxa">taxa de serviço via Pix</span>
                     </div>
                     <div class="number-card reveal-up" data-delay="200">
@@ -850,7 +856,7 @@
                         </div>
                         <span class="example-label" data-i18n="exemplo_c1_label">Parcela mensal</span>
                         <span class="example-value">R$ 500</span>
-                        <span class="example-note" data-i18n="exemplo_c1_nota">+ R$ 10 de taxa de serviço via Pix</span>
+                        <span class="example-note" data-i18n="exemplo_c1_nota">+ taxa de serviço via Pix (R$ 10 a R$ 40, conforme o caixa)</span>
                     </div>
                     <div class="example-card example-card-highlight reveal-up" data-delay="150">
                         <div class="example-icon-wrap">
@@ -878,7 +884,7 @@
                     </div>
                 </div>
                 <p class="example-footnote reveal-up" data-i18n="exemplo_nota">
-                    * Nos meses intermediários, o participante paga a parcela de R$ 500 + R$ 10 de taxa de serviço via Pix.
+                    * Nos meses intermediários, o participante paga a parcela de R$ 500 + a taxa de serviço via Pix (de R$ 10 a R$ 40, conforme o caixa).
                     No primeiro mês, pode haver taxa de adesão conforme as regras da caixa; no último mês, pode haver
                     o adicional de comissão do recrutador.<br>
                     <strong>Nota:</strong> O valor de R$ 130 é uma referência ilustrativa de taxas para comparação e
@@ -905,10 +911,9 @@
                             </svg>
                         </div>
                         <span class="fee-label" data-i18n="taxas_f1_label">TAXA DE SERVIÇO</span>
-                        <span class="fee-value">R$ 10,00</span>
-                        <span class="fee-period" data-i18n="taxas_f1_periodo">por cobrança via Pix</span>
-                        <p class="fee-desc" data-i18n="taxas_f1_desc">Cobre custos de gateway de pagamento, infraestrutura e suporte. Apenas
-                            isso!</p>
+                        <span class="fee-value">R$ 10 a R$ 40</span>
+                        <span class="fee-period" data-i18n="taxas_f1_periodo">por cobrança via Pix, conforme o caixa</span>
+                        <p class="fee-desc" data-i18n="taxas_f1_desc">Valor fixo definido na criação do caixa (varia com o valor e o tipo — pessoal ou empresarial). Cobre gateway de pagamento, infraestrutura e suporte. Apenas isso!</p>
                     </div>
                     <div class="fee-card reveal-up" data-delay="200">
                         <div class="fee-icon-wrap">
@@ -936,7 +941,7 @@
                         <span class="fee-label" data-i18n="taxas_f3_label">TAXA DE ADESÃO</span>
                         <span class="fee-value" data-i18n="taxas_f3_valor">Conforme a caixa</span>
                         <span class="fee-period" data-i18n="taxas_f3_periodo">cobrada somente no 1º mês</span>
-                        <p class="fee-desc" data-i18n="taxas_f3_desc">Cobrada uma única vez na entrada, conforme as regras da caixa. Nos meses intermediários, aplica-se apenas a parcela do caixa + R$ 10 de taxa de serviço via Pix.</p>
+                        <p class="fee-desc" data-i18n="taxas_f3_desc">Cobrada uma única vez na entrada, conforme as regras da caixa. Nos meses intermediários, aplica-se apenas a parcela do caixa + a taxa de serviço via Pix (R$ 10 a R$ 40, conforme o caixa).</p>
                     </div>
                 </div>
             </div>
@@ -1157,6 +1162,135 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Juntix PJ — Caixa Capital de Giro para empresas -->
+        <section id="empresas" class="section pj-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge section-badge-dark reveal-up" data-i18n="pj_badge">Novo · Juntix PJ</span>
+                    <h2 class="section-title light reveal-up" data-i18n="pj_titulo">Capital de giro para a sua empresa, sem banco no meio</h2>
+                    <p class="section-subtitle light reveal-up" data-i18n="pj_subtitulo">12 empresas, 12 meses, uma contemplada por mês. Cada uma recebe o valor cheio do caixa — de <strong>R$ 5.000 a R$ 20.000</strong> — pagando taxas fixas e transparentes em vez de juros.</p>
+                </div>
+
+                <div class="pj-stats reveal-up">
+                    <div class="pj-stat">
+                        <span class="pj-stat-value">R$ 5.000 a R$ 20.000</span>
+                        <span class="pj-stat-label" data-i18n="pj_stat1">por empresa, valor cheio no seu mês</span>
+                    </div>
+                    <div class="pj-stat">
+                        <span class="pj-stat-value">12 × 12</span>
+                        <span class="pj-stat-label" data-i18n="pj_stat2">empresas e meses — uma contemplada por mês</span>
+                    </div>
+                    <div class="pj-stat">
+                        <span class="pj-stat-value" data-i18n="pj_stat3_valor">0 juros</span>
+                        <span class="pj-stat-label" data-i18n="pj_stat3">só taxas fixas, conhecidas antes de entrar</span>
+                    </div>
+                </div>
+
+                <!-- Faça a conta -->
+                <div class="pj-conta reveal-up" data-delay="100">
+                    <div class="pj-conta-header">
+                        <h3 data-i18n="pj_conta_titulo">Faça a conta: R$ 10.000 de capital de giro em 12 meses</h3>
+                        <p data-i18n="pj_conta_sub">Posição intermediária do caixa (ágio de 2%), com adesão, taxa de gestão e comissão do organizador incluídas. Crédito para pequena empresa a 4% ao mês (estimativa de mercado: bancos digitais e fintechs), Tabela Price em 12 meses.</p>
+                    </div>
+                    <div class="pj-conta-grid">
+                        <div class="pj-conta-card juntix">
+                            <span class="pj-conta-tag">Juntix PJ</span>
+                            <span class="pj-conta-recebe" data-i18n="pj_conta_recebe">Você recebe <strong>R$ 10.000,00</strong></span>
+                            <span class="pj-conta-total">R$ 10.913,33</span>
+                            <span class="pj-conta-legenda" data-i18n="pj_conta_paga">é o que você paga no total</span>
+                            <span class="pj-conta-custo success" data-i18n="pj_conta_custo_juntix">R$ 913,33 de custo (9,1%)</span>
+                        </div>
+                        <div class="pj-conta-vs" aria-hidden="true">vs</div>
+                        <div class="pj-conta-card banco">
+                            <span class="pj-conta-tag" data-i18n="pj_conta_banco_tag">Crédito para pequena empresa (4% ao mês)</span>
+                            <span class="pj-conta-recebe" data-i18n="pj_conta_recebe">Você recebe <strong>R$ 10.000,00</strong></span>
+                            <span class="pj-conta-total">R$ 12.786,26</span>
+                            <span class="pj-conta-legenda" data-i18n="pj_conta_paga">é o que você paga no total</span>
+                            <span class="pj-conta-custo danger" data-i18n="pj_conta_custo_banco">R$ 2.786,26 só de juros (27,9%) + IOF e tarifas</span>
+                        </div>
+                    </div>
+                    <p class="pj-conta-nota" data-i18n="pj_conta_nota">O custo é baixo porque não existe banco no meio: o dinheiro é das próprias empresas do grupo. A Juntix cobra apenas taxas fixas pela organização — adesão de 3%, taxa de gestão de R$ 20 a R$ 40 por mês conforme a faixa do caixa e a comissão do organizador (10%, rateada entre as empresas). Quem pode esperar até o fim paga ainda menos; quem precisa receber nos primeiros meses paga um pouco mais pela urgência. Mesmo pela média do BCB para capital de giro (2,5% ao mês, puxada pelas grandes empresas) o banco sairia por R$ 11.698,46 — e no cartão rotativo ou no cheque especial o total passa de R$ 15.000,00.</p>
+                </div>
+
+                <!-- Como funciona -->
+                <div class="pj-steps reveal-up" data-delay="150">
+                    <div class="pj-step">
+                        <span class="pj-step-n">1</span>
+                        <h4 data-i18n="pj_p1_t">Forma-se o grupo</h4>
+                        <p data-i18n="pj_p1_d">12 empresas, ciclo de 12 meses. Cadastro com CNPJ, triagem cadastral e termo de adesão assinado digitalmente.</p>
+                    </div>
+                    <div class="pj-step">
+                        <span class="pj-step-n">2</span>
+                        <h4 data-i18n="pj_p2_t">Cada empresa define sua posição</h4>
+                        <p data-i18n="pj_p2_d">A posição diz em que mês a sua empresa recebe. Quem precisa do capital agora reserva uma posição inicial; quem pode esperar entra no sorteio e paga menos.</p>
+                    </div>
+                    <div class="pj-step">
+                        <span class="pj-step-n">3</span>
+                        <h4 data-i18n="pj_p3_t">Um boleto por mês, do começo ao fim</h4>
+                        <p data-i18n="pj_p3_d">O carnê com os 12 boletos sai na formação do grupo, com Pix copia e cola. O valor da sua posição é congelado: não muda no meio do ciclo.</p>
+                    </div>
+                    <div class="pj-step">
+                        <span class="pj-step-n">4</span>
+                        <h4 data-i18n="pj_p4_t">No seu mês, o dinheiro cai na conta da empresa</h4>
+                        <p data-i18n="pj_p4_d">A contemplada recebe o valor cheio direto na carteira da empresa, com contrato, extrato e nota fiscal das taxas prontos para a contabilidade.</p>
+                    </div>
+                </div>
+
+                <!-- Tabela de posições -->
+                <div class="pj-tabela-wrap reveal-up" data-delay="200">
+                    <h3 class="pj-tabela-titulo" data-i18n="pj_tabela_titulo">Todas recebem o mesmo. Só muda quando.</h3>
+                    <p class="pj-tabela-sub" data-i18n="pj_tabela_sub">Caixa de R$ 10.000 · 12 empresas · 12 meses. O ágio é só o preço de receber antes — e é ele que remunera quem aceitou esperar.</p>
+                    <div class="table-container">
+                        <table class="pj-table">
+                            <thead>
+                                <tr>
+                                    <th data-i18n="pj_th_pos">Posição</th>
+                                    <th data-i18n="pj_th_perfil">Perfil</th>
+                                    <th data-i18n="pj_th_agio">Ágio</th>
+                                    <th data-i18n="pj_th_parcela">Parcela (12×)</th>
+                                    <th data-i18n="pj_th_total">Paga pelo caixa</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="pj-urg"><td>1º</td><td data-i18n="pj_perfil_urg">Urgência</td><td>12%</td><td>R$ 933,33</td><td>R$ 11.200,00</td></tr>
+                                <tr class="pj-urg"><td>2º</td><td data-i18n="pj_perfil_urg">Urgência</td><td>10%</td><td>R$ 916,67</td><td>R$ 11.000,00</td></tr>
+                                <tr class="pj-urg"><td>3º</td><td data-i18n="pj_perfil_urg">Urgência</td><td>8%</td><td>R$ 900,00</td><td>R$ 10.800,00</td></tr>
+                                <tr class="pj-urg"><td>4º</td><td data-i18n="pj_perfil_urg">Urgência</td><td>6%</td><td>R$ 883,33</td><td>R$ 10.600,00</td></tr>
+                                <tr class="pj-urg"><td>5º</td><td data-i18n="pj_perfil_urg">Urgência</td><td>4%</td><td>R$ 866,67</td><td>R$ 10.400,00</td></tr>
+                                <tr class="pj-plan"><td>6º</td><td data-i18n="pj_perfil_plan">Planejamento</td><td>2%</td><td>R$ 850,00</td><td>R$ 10.200,00</td></tr>
+                                <tr class="pj-plan"><td>7º</td><td data-i18n="pj_perfil_plan">Planejamento</td><td>2%</td><td>R$ 850,00</td><td>R$ 10.200,00</td></tr>
+                                <tr class="pj-plan"><td>8º</td><td data-i18n="pj_perfil_plan">Planejamento</td><td>2%</td><td>R$ 850,00</td><td>R$ 10.200,00</td></tr>
+                                <tr class="pj-plan"><td>9º</td><td data-i18n="pj_perfil_plan">Planejamento</td><td>2%</td><td>R$ 850,00</td><td>R$ 10.200,00</td></tr>
+                                <tr class="pj-plan"><td>10º</td><td data-i18n="pj_perfil_plan">Planejamento</td><td>2%</td><td>R$ 850,00</td><td>R$ 10.200,00</td></tr>
+                                <tr class="pj-poup"><td>11º</td><td data-i18n="pj_perfil_poup">Poupador</td><td>0%</td><td>R$ 833,33</td><td>R$ 10.000,00</td></tr>
+                                <tr class="pj-poup"><td>12º</td><td data-i18n="pj_perfil_poup">Poupador</td><td>0%</td><td>R$ 833,33</td><td>R$ 10.000,00</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="pj-tabela-nota" data-i18n="pj_tabela_nota">Valores da cota + ágio da posição. Somam-se as taxas fixas (adesão de 3%, gestão mensal de R$ 20 a R$ 40 e comissão do organizador), iguais para todas as posições. Todas as 12 empresas recebem exatamente R$ 10.000,00.</p>
+                </div>
+
+                <!-- Não é / É -->
+                <div class="pj-ee reveal-up" data-delay="250">
+                    <div class="pj-ee-card nao">
+                        <h4 data-i18n="pj_naoe_t">Não é</h4>
+                        <p data-i18n="pj_naoe_d">Empréstimo, financiamento, consórcio, custódia de valores nem produto de investimento. Não há juros nem promessa de rendimento.</p>
+                    </div>
+                    <div class="pj-ee-card sim">
+                        <h4 data-i18n="pj_e_t">É</h4>
+                        <p data-i18n="pj_e_d">Um caixa colaborativo entre empresas, com regras contratuais claras, intermediado e gerenciado por uma plataforma de tecnologia. Cobrança e repasse por instituição de pagamento autorizada pelo Banco Central; contrato digital, cartão de garantia e kit fiscal completo.</p>
+                    </div>
+                </div>
+
+                <div class="pj-cta reveal-up" data-delay="300">
+                    <a href="https://wa.me/5571996838735?text=Ol%C3%A1%20Isaias!%20Vi%20o%20Juntix%20PJ%20no%20site%20e%20quero%20saber%20mais%20sobre%20o%20Caixa%20Capital%20de%20Giro%20para%20a%20minha%20empresa."
+                        target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-glow" data-i18n="pj_cta_whats">Falar com a Juntix no WhatsApp</a>
+                    <a href="https://painel.juntix.com.br/registro" class="btn btn-lg btn-outline-hero" data-i18n="pj_cta_cadastro">Cadastrar minha empresa</a>
+                </div>
+                <p class="pj-legal" data-i18n="pj_legal">Juntix PJ é operado por ISS Software Quality Solutions LTDA (CNPJ 39.997.807/0001-86) como plataforma de intermediação e gestão de caixas colaborativos. A simulação é ilustrativa e segue a tabela vigente na plataforma.</p>
             </div>
         </section>
 
@@ -1409,7 +1543,7 @@
                                 <li data-i18n="faq_a6_li3"><strong>Mês 3:</strong> Todos pagam → valor vai para a carteira do José</li>
                                 <li data-i18n="faq_a6_li4"><strong>Mês 4:</strong> Todos pagam → valor vai para a carteira do Pedro</li>
                             </ul>
-                            <p data-i18n="faq_a6_p2">O Juntix recebe apenas a <strong>taxa de serviço de R$ 10 por cobrança via Pix</strong> para custear a
+                            <p data-i18n="faq_a6_p2">O Juntix recebe apenas a <strong>taxa de serviço fixa por cobrança via Pix — de R$ 10 a R$ 40, conforme o valor e o tipo do caixa</strong> — para custear a
                                 operação. Simples e transparente!</p>
                         </div>
                     </div>
@@ -1467,7 +1601,7 @@
                         </button>
                         <div class="faq-answer">
                             <p data-i18n="faq_a9_p1">A taxa de adesão é um valor cobrado <strong>uma única vez</strong>, somente no primeiro mês, equivalente a <strong>1% do valor do caixa</strong>. Ela cobre os custos de ativação da conta, verificação de identidade (KYC) e configuração inicial do grupo.</p>
-                            <p data-i18n="faq_a9_p2">Exemplo prático: em um caixa de <strong>R$ 1.000</strong>, a taxa de adesão segue a regra definida para aquela caixa. Nos meses intermediários, a cobrança recorrente é a parcela do caixa mais a taxa de serviço de R$ 10 via Pix.</p>
+                            <p data-i18n="faq_a9_p2">Exemplo prático: em um caixa de <strong>R$ 1.000</strong>, a taxa de adesão segue a regra definida para aquela caixa. Nos meses intermediários, a cobrança recorrente é a parcela do caixa mais a taxa de serviço via Pix (de R$ 10 a R$ 40, conforme o caixa).</p>
                         </div>
                     </div>
                     <div class="faq-item reveal-up">
@@ -1875,6 +2009,7 @@
                             <li><a href="#garantia" data-i18n="footer_garantia">Cartão de Garantia</a></li>
                             <li><a href="#compare" data-i18n="footer_compare">Compare</a></li>
                             <li><a href="#ganhos" data-i18n="nav_recrutador">Recrutador</a></li>
+                            <li><a href="#empresas" data-i18n="nav_empresas_footer">Juntix PJ — Empresas</a></li>
                             <li><a href="https://painel.juntix.com.br/seja-administrador" data-i18n="footer_seja_recrutador">Seja um Recrutador</a></li>
                             <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
                         </ul>

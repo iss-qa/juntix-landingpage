@@ -3304,3 +3304,324 @@ body:hover .cursor-glow {
     background: #273549;
     border-color: #475569;
 }
+
+
+/* ============================================================
+   Juntix PJ — seção "Empresas" (#empresas)
+   Identidade índigo (mesma do Caixa Empresarial no app) sobre a base escura
+   da landing. Reaproveita section-header/badge/btn; o resto é próprio (.pj-*).
+   ============================================================ */
+.pj-section {
+    background:
+        radial-gradient(ellipse at top left, rgba(99, 102, 241, 0.22), transparent 55%),
+        radial-gradient(ellipse at bottom right, rgba(16, 185, 129, 0.12), transparent 50%),
+        #0e1129;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.pj-section .section-badge-dark {
+    background: rgba(99, 102, 241, 0.18);
+    border-color: rgba(129, 140, 248, 0.45);
+    color: #c7d2fe;
+}
+
+.pj-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-md);
+    margin: var(--space-xl) 0;
+}
+
+.pj-stat {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-xl);
+    padding: var(--space-lg);
+    text-align: center;
+}
+
+.pj-stat-value {
+    display: block;
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: #a5b4fc;
+    font-variant-numeric: tabular-nums;
+}
+
+.pj-stat-label {
+    display: block;
+    margin-top: 6px;
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.65);
+}
+
+/* Faça a conta */
+.pj-conta {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(129, 140, 248, 0.35);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-xl);
+    margin-bottom: var(--space-2xl);
+}
+
+.pj-conta-header h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    margin: 0 0 8px;
+    color: #fff;
+}
+
+.pj-conta-header p {
+    margin: 0 0 var(--space-lg);
+    color: rgba(255, 255, 255, 0.65);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+}
+
+.pj-conta-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: var(--space-md);
+    align-items: stretch;
+}
+
+.pj-conta-card {
+    border-radius: var(--radius-xl);
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.pj-conta-card.juntix {
+    border-color: rgba(16, 185, 129, 0.55);
+    background: rgba(16, 185, 129, 0.08);
+    box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.15), 0 20px 50px -30px rgba(16, 185, 129, 0.7);
+}
+
+.pj-conta-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.pj-conta-card.juntix .pj-conta-tag { color: #6ee7b7; }
+
+.pj-conta-recebe {
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.75);
+    margin-top: 6px;
+}
+
+.pj-conta-total {
+    font-size: var(--font-size-4xl);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #fff;
+    font-variant-numeric: tabular-nums;
+    margin-top: 6px;
+}
+
+.pj-conta-card.banco .pj-conta-total { color: rgba(255, 255, 255, 0.85); }
+
+.pj-conta-legenda {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.pj-conta-custo {
+    margin-top: 10px;
+    display: inline-block;
+    align-self: flex-start;
+    border-radius: var(--radius-full);
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.pj-conta-custo.success { background: rgba(16, 185, 129, 0.18); color: #6ee7b7; }
+.pj-conta-custo.danger { background: rgba(239, 68, 68, 0.16); color: #fca5a5; }
+
+.pj-conta-vs {
+    align-self: center;
+    font-weight: 800;
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+}
+
+.pj-conta-nota {
+    margin: var(--space-lg) 0 0;
+    font-size: var(--font-size-sm);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+/* Passos */
+.pj-steps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-2xl);
+}
+
+.pj-step {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-xl);
+    padding: var(--space-lg);
+}
+
+.pj-step-n {
+    display: inline-flex;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(99, 102, 241, 0.25);
+    color: #c7d2fe;
+    font-weight: 800;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.pj-step h4 {
+    margin: 0 0 6px;
+    font-size: var(--font-size-md);
+    font-weight: 700;
+    color: #fff;
+}
+
+.pj-step p {
+    margin: 0;
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+/* Tabela de posições */
+.pj-tabela-wrap { margin-bottom: var(--space-2xl); }
+
+.pj-tabela-titulo {
+    text-align: center;
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    margin: 0 0 6px;
+    color: #fff;
+}
+
+.pj-tabela-sub {
+    text-align: center;
+    margin: 0 auto var(--space-lg);
+    max-width: 680px;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: var(--font-size-sm);
+}
+
+.pj-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.85);
+    font-variant-numeric: tabular-nums;
+}
+
+.pj-table th,
+.pj-table td {
+    padding: 10px 14px;
+    text-align: right;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    white-space: nowrap;
+}
+
+.pj-table th:nth-child(1), .pj-table td:nth-child(1),
+.pj-table th:nth-child(2), .pj-table td:nth-child(2) { text-align: left; }
+
+.pj-table thead th {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.pj-table tr.pj-urg td:nth-child(2) { color: #fcd34d; }
+.pj-table tr.pj-plan td:nth-child(2) { color: #a5b4fc; }
+.pj-table tr.pj-poup td:nth-child(2) { color: #6ee7b7; }
+.pj-table tbody tr:hover { background: rgba(255, 255, 255, 0.04); }
+
+.pj-tabela-nota {
+    margin: var(--space-md) 0 0;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Não é / É */
+.pj-ee {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+.pj-ee-card {
+    border-radius: var(--radius-xl);
+    padding: var(--space-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.pj-ee-card h4 {
+    margin: 0 0 6px;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.pj-ee-card.nao h4 { color: #fca5a5; }
+.pj-ee-card.sim h4 { color: #6ee7b7; }
+
+.pj-ee-card p {
+    margin: 0;
+    font-size: var(--font-size-sm);
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.pj-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    justify-content: center;
+}
+
+.pj-legal {
+    margin: var(--space-lg) auto 0;
+    max-width: 760px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+@media (max-width: 900px) {
+    .pj-stats { grid-template-columns: 1fr; }
+    .pj-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .pj-conta-grid { grid-template-columns: 1fr; }
+    .pj-conta-vs { justify-self: center; }
+}
+
+@media (max-width: 600px) {
+    .pj-steps, .pj-ee { grid-template-columns: 1fr; }
+    .pj-conta { padding: var(--space-lg); }
+    .pj-conta-total { font-size: var(--font-size-3xl); }
+}

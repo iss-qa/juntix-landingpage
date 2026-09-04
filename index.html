@@ -24,9 +24,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-    <link rel="preload" href="styles.css" as="style">
-    <link rel="preload" href="script.js" as="script">
-    <link rel="stylesheet" href="styles.css">
+    <!-- ?v= é cache-busting: o .htaccess serve css/js com cache imutável de 1 ano.
+         Bumpar a versão em TODOS os .html a cada deploy que mude css/js. -->
+    <link rel="preload" href="styles.css?v=20260904" as="style">
+    <link rel="preload" href="script.js?v=20260904" as="script">
+    <link rel="stylesheet" href="styles.css?v=20260904">
     <link rel="icon" type="image/png" href="logo/logo_juntix.png">
 
     <!-- SEO & Social -->
@@ -1171,124 +1173,254 @@
                 <div class="section-header">
                     <span class="section-badge section-badge-dark reveal-up" data-i18n="pj_badge">Novo · Juntix PJ</span>
                     <h2 class="section-title light reveal-up" data-i18n="pj_titulo">Capital de giro para a sua empresa, sem banco no meio</h2>
-                    <p class="section-subtitle light reveal-up" data-i18n="pj_subtitulo">12 empresas, 12 meses, uma contemplada por mês. Cada uma recebe o valor cheio do caixa — de <strong>R$ 5.000 a R$ 20.000</strong> — pagando taxas fixas e transparentes em vez de juros.</p>
+                    <p class="section-subtitle light reveal-up" data-i18n="pj_subtitulo">12 empresas formam um caixa de 12 meses. A cada mês, uma recebe o valor cheio — de <strong>R$ 5.000 a R$ 20.000</strong> — e todas pagam só taxas fixas. Sem juros.</p>
                 </div>
 
-                <div class="pj-stats reveal-up">
-                    <div class="pj-stat">
-                        <span class="pj-stat-value">R$ 5.000 a R$ 20.000</span>
-                        <span class="pj-stat-label" data-i18n="pj_stat1">por empresa, valor cheio no seu mês</span>
+                <!-- Resumo em 3 números -->
+                <div class="pj-strip reveal-up" role="list">
+                    <div class="pj-strip-item" role="listitem">
+                        <span class="pj-strip-value" data-i18n="pj_stat1_valor">R$ 5.000 a R$ 20.000</span>
+                        <span class="pj-strip-label" data-i18n="pj_stat1">por empresa, valor cheio no seu mês</span>
                     </div>
-                    <div class="pj-stat">
-                        <span class="pj-stat-value">12 × 12</span>
-                        <span class="pj-stat-label" data-i18n="pj_stat2">empresas e meses — uma contemplada por mês</span>
+                    <div class="pj-strip-item" role="listitem">
+                        <span class="pj-strip-value">12 × 12</span>
+                        <span class="pj-strip-label" data-i18n="pj_stat2">empresas e meses — uma contemplada por mês</span>
                     </div>
-                    <div class="pj-stat">
-                        <span class="pj-stat-value" data-i18n="pj_stat3_valor">0 juros</span>
-                        <span class="pj-stat-label" data-i18n="pj_stat3">só taxas fixas, conhecidas antes de entrar</span>
+                    <div class="pj-strip-item" role="listitem">
+                        <span class="pj-strip-value" data-i18n="pj_stat3_valor">0 juros</span>
+                        <span class="pj-strip-label" data-i18n="pj_stat3">só taxas fixas, conhecidas antes de entrar</span>
                     </div>
                 </div>
 
-                <!-- Faça a conta -->
-                <div class="pj-conta reveal-up" data-delay="100">
-                    <div class="pj-conta-header">
+                <!-- Como funciona: timeline em 4 passos -->
+                <div class="pj-block reveal-up" data-delay="100">
+                    <div class="pj-block-head">
+                        <h3 data-i18n="pj_como_titulo">Como funciona</h3>
+                        <p data-i18n="pj_como_sub">Quatro passos, do cadastro ao dinheiro na conta da empresa.</p>
+                    </div>
+                    <ol class="pj-timeline">
+                        <li class="pj-tl-step">
+                            <span class="pj-tl-node" aria-hidden="true">1</span>
+                            <div class="pj-tl-card">
+                                <span class="pj-tl-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                </span>
+                                <h4 data-i18n="pj_p1_t">Forma-se o grupo</h4>
+                                <p data-i18n="pj_p1_d">12 empresas com CNPJ, triagem cadastral e termo de adesão assinado digitalmente.</p>
+                            </div>
+                        </li>
+                        <li class="pj-tl-step">
+                            <span class="pj-tl-node" aria-hidden="true">2</span>
+                            <div class="pj-tl-card">
+                                <span class="pj-tl-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="m9 16 2 2 4-4"/></svg>
+                                </span>
+                                <h4 data-i18n="pj_p2_t">Cada empresa escolhe sua posição</h4>
+                                <p data-i18n="pj_p2_d">A posição define o mês em que você recebe. Precisa agora? Reserva uma das primeiras. Pode esperar? Paga menos.</p>
+                            </div>
+                        </li>
+                        <li class="pj-tl-step">
+                            <span class="pj-tl-node" aria-hidden="true">3</span>
+                            <div class="pj-tl-card">
+                                <span class="pj-tl-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M14 8H8M16 12H8M13 16H8"/></svg>
+                                </span>
+                                <h4 data-i18n="pj_p3_t">Um boleto por mês</h4>
+                                <p data-i18n="pj_p3_d">O carnê com os 12 boletos (com Pix copia e cola) sai na formação do grupo. O valor da sua posição é congelado.</p>
+                            </div>
+                        </li>
+                        <li class="pj-tl-step">
+                            <span class="pj-tl-node" aria-hidden="true">4</span>
+                            <div class="pj-tl-card">
+                                <span class="pj-tl-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
+                                </span>
+                                <h4 data-i18n="pj_p4_t">No seu mês, o dinheiro cai na conta</h4>
+                                <p data-i18n="pj_p4_d">A empresa contemplada recebe o valor cheio, com contrato, extrato e nota fiscal das taxas prontos para a contabilidade.</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+
+                <!-- Faça a conta: comparativo de custo em barras -->
+                <div class="pj-block pj-conta reveal-up" data-delay="150">
+                    <div class="pj-block-head">
                         <h3 data-i18n="pj_conta_titulo">Faça a conta: R$ 10.000 de capital de giro em 12 meses</h3>
-                        <p data-i18n="pj_conta_sub">Posição intermediária do caixa (ágio de 2%), com adesão, taxa de gestão e comissão do organizador incluídas. Crédito para pequena empresa a 4% ao mês (estimativa de mercado: bancos digitais e fintechs), Tabela Price em 12 meses.</p>
+                        <p data-i18n="pj_conta_sub">Quanto custa receber R$ 10.000 e devolver em 12 parcelas, fonte por fonte. No Juntix PJ, posição intermediária (ágio de 2%) com adesão, gestão e comissão do organizador já incluídas.</p>
                     </div>
                     <div class="pj-conta-grid">
-                        <div class="pj-conta-card juntix">
-                            <span class="pj-conta-tag">Juntix PJ</span>
-                            <span class="pj-conta-recebe" data-i18n="pj_conta_recebe">Você recebe <strong>R$ 10.000,00</strong></span>
-                            <span class="pj-conta-total">R$ 10.913,33</span>
-                            <span class="pj-conta-legenda" data-i18n="pj_conta_paga">é o que você paga no total</span>
-                            <span class="pj-conta-custo success" data-i18n="pj_conta_custo_juntix">R$ 913,33 de custo (9,1%)</span>
-                        </div>
-                        <div class="pj-conta-vs" aria-hidden="true">vs</div>
-                        <div class="pj-conta-card banco">
-                            <span class="pj-conta-tag" data-i18n="pj_conta_banco_tag">Crédito para pequena empresa (4% ao mês)</span>
-                            <span class="pj-conta-recebe" data-i18n="pj_conta_recebe">Você recebe <strong>R$ 10.000,00</strong></span>
-                            <span class="pj-conta-total">R$ 12.786,26</span>
-                            <span class="pj-conta-legenda" data-i18n="pj_conta_paga">é o que você paga no total</span>
-                            <span class="pj-conta-custo danger" data-i18n="pj_conta_custo_banco">R$ 2.786,26 só de juros (27,9%) + IOF e tarifas</span>
-                        </div>
+                        <figure class="pj-chart">
+                            <figcaption class="pj-chart-title" data-i18n="pj_chart_titulo">Custo total para receber R$ 10.000</figcaption>
+                            <ol class="pj-bars">
+                                <li class="pj-bar is-juntix">
+                                    <div class="pj-bar-head">
+                                        <span class="pj-bar-name" data-i18n="pj_bar1_n">Juntix PJ</span>
+                                        <span class="pj-bar-value" data-i18n="pj_bar1_v"><strong>R$ 913,33</strong> <small>(9,1%)</small></span>
+                                    </div>
+                                    <div class="pj-bar-track"><div class="pj-bar-fill" style="--w: 18%"></div></div>
+                                    <span class="pj-bar-total" data-i18n="pj_bar1_t">Você paga R$ 10.913,33 no total</span>
+                                </li>
+                                <li class="pj-bar">
+                                    <div class="pj-bar-head">
+                                        <span class="pj-bar-name" data-i18n="pj_bar2_n">Capital de giro, média BCB (2,5% a.m.)</span>
+                                        <span class="pj-bar-value" data-i18n="pj_bar2_v"><strong>R$ 1.698,46</strong> <small>(17%)</small></span>
+                                    </div>
+                                    <div class="pj-bar-track"><div class="pj-bar-fill" style="--w: 34%"></div></div>
+                                    <span class="pj-bar-total" data-i18n="pj_bar2_t">Você paga R$ 11.698,46 no total</span>
+                                </li>
+                                <li class="pj-bar">
+                                    <div class="pj-bar-head">
+                                        <span class="pj-bar-name" data-i18n="pj_bar3_n">Crédito para pequena empresa (4% a.m.)</span>
+                                        <span class="pj-bar-value" data-i18n="pj_bar3_v"><strong>R$ 2.786,26</strong> <small>(27,9%) + IOF e tarifas</small></span>
+                                    </div>
+                                    <div class="pj-bar-track"><div class="pj-bar-fill" style="--w: 56%"></div></div>
+                                    <span class="pj-bar-total" data-i18n="pj_bar3_t">Você paga R$ 12.786,26 no total</span>
+                                </li>
+                                <li class="pj-bar is-open">
+                                    <div class="pj-bar-head">
+                                        <span class="pj-bar-name" data-i18n="pj_bar4_n">Cartão rotativo / cheque especial</span>
+                                        <span class="pj-bar-value" data-i18n="pj_bar4_v"><strong>mais de R$ 5.000</strong> <small>(&gt;50%)</small></span>
+                                    </div>
+                                    <div class="pj-bar-track"><div class="pj-bar-fill" style="--w: 100%"></div></div>
+                                    <span class="pj-bar-total" data-i18n="pj_bar4_t">Você paga mais de R$ 15.000 no total</span>
+                                </li>
+                            </ol>
+                        </figure>
+                        <aside class="pj-taxas">
+                            <h4 data-i18n="pj_taxas_titulo">Sem banco no meio, o custo é só isto:</h4>
+                            <ul>
+                                <li><span class="pj-taxa-k" data-i18n="pj_taxa1_k">Adesão</span><span data-i18n="pj_taxa1_v">3% do valor, uma única vez</span></li>
+                                <li><span class="pj-taxa-k" data-i18n="pj_taxa2_k">Gestão</span><span data-i18n="pj_taxa2_v">R$ 20 a R$ 40 por mês, conforme a faixa do caixa</span></li>
+                                <li><span class="pj-taxa-k" data-i18n="pj_taxa3_k">Organizador</span><span data-i18n="pj_taxa3_v">10%, rateado entre as 12 empresas</span></li>
+                                <li><span class="pj-taxa-k" data-i18n="pj_taxa4_k">Ágio da posição</span><span data-i18n="pj_taxa4_v">0% a 12% — só para quem recebe antes</span></li>
+                            </ul>
+                            <p class="pj-taxas-nota" data-i18n="pj_taxas_nota">O dinheiro é das próprias empresas do grupo — por isso não há juros.</p>
+                        </aside>
                     </div>
-                    <p class="pj-conta-nota" data-i18n="pj_conta_nota">O custo é baixo porque não existe banco no meio: o dinheiro é das próprias empresas do grupo. A Juntix cobra apenas taxas fixas pela organização — adesão de 3%, taxa de gestão de R$ 20 a R$ 40 por mês conforme a faixa do caixa e a comissão do organizador (10%, rateada entre as empresas). Quem pode esperar até o fim paga ainda menos; quem precisa receber nos primeiros meses paga um pouco mais pela urgência. Mesmo pela média do BCB para capital de giro (2,5% ao mês, puxada pelas grandes empresas) o banco sairia por R$ 11.698,46 — e no cartão rotativo ou no cheque especial o total passa de R$ 15.000,00.</p>
+                    <p class="pj-conta-nota" data-i18n="pj_conta_nota">Simulação ilustrativa. Crédito para pequena empresa a 4% a.m. (estimativa de mercado: bancos digitais e fintechs) e média BCB de 2,5% a.m. para capital de giro, ambos em Tabela Price de 12 meses, sem IOF e tarifas.</p>
                 </div>
 
-                <!-- Como funciona -->
-                <div class="pj-steps reveal-up" data-delay="150">
-                    <div class="pj-step">
-                        <span class="pj-step-n">1</span>
-                        <h4 data-i18n="pj_p1_t">Forma-se o grupo</h4>
-                        <p data-i18n="pj_p1_d">12 empresas, ciclo de 12 meses. Cadastro com CNPJ, triagem cadastral e termo de adesão assinado digitalmente.</p>
+                <!-- Mapa das 12 posições -->
+                <div class="pj-block reveal-up" data-delay="200">
+                    <div class="pj-block-head">
+                        <h3 data-i18n="pj_tabela_titulo">Todas recebem o mesmo. Só muda quando.</h3>
+                        <p data-i18n="pj_tabela_sub">Caixa de R$ 10.000 · 12 empresas · 12 meses. O ágio é só o preço de receber antes — e é ele que remunera quem aceitou esperar.</p>
                     </div>
-                    <div class="pj-step">
-                        <span class="pj-step-n">2</span>
-                        <h4 data-i18n="pj_p2_t">Cada empresa define sua posição</h4>
-                        <p data-i18n="pj_p2_d">A posição diz em que mês a sua empresa recebe. Quem precisa do capital agora reserva uma posição inicial; quem pode esperar entra no sorteio e paga menos.</p>
-                    </div>
-                    <div class="pj-step">
-                        <span class="pj-step-n">3</span>
-                        <h4 data-i18n="pj_p3_t">Um boleto por mês, do começo ao fim</h4>
-                        <p data-i18n="pj_p3_d">O carnê com os 12 boletos sai na formação do grupo, com Pix copia e cola. O valor da sua posição é congelado: não muda no meio do ciclo.</p>
-                    </div>
-                    <div class="pj-step">
-                        <span class="pj-step-n">4</span>
-                        <h4 data-i18n="pj_p4_t">No seu mês, o dinheiro cai na conta da empresa</h4>
-                        <p data-i18n="pj_p4_d">A contemplada recebe o valor cheio direto na carteira da empresa, com contrato, extrato e nota fiscal das taxas prontos para a contabilidade.</p>
-                    </div>
-                </div>
-
-                <!-- Tabela de posições -->
-                <div class="pj-tabela-wrap reveal-up" data-delay="200">
-                    <h3 class="pj-tabela-titulo" data-i18n="pj_tabela_titulo">Todas recebem o mesmo. Só muda quando.</h3>
-                    <p class="pj-tabela-sub" data-i18n="pj_tabela_sub">Caixa de R$ 10.000 · 12 empresas · 12 meses. O ágio é só o preço de receber antes — e é ele que remunera quem aceitou esperar.</p>
-                    <div class="table-container">
-                        <table class="pj-table">
-                            <thead>
-                                <tr>
-                                    <th data-i18n="pj_th_pos">Posição</th>
-                                    <th data-i18n="pj_th_perfil">Perfil</th>
-                                    <th data-i18n="pj_th_agio">Ágio</th>
-                                    <th data-i18n="pj_th_parcela">Parcela (12×)</th>
-                                    <th data-i18n="pj_th_total">Paga pelo caixa</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="pj-urg"><td>1º</td><td data-i18n="pj_perfil_urg">Urgência</td><td>12%</td><td>R$ 933,33</td><td>R$ 11.200,00</td></tr>
-                                <tr class="pj-urg"><td>2º</td><td data-i18n="pj_perfil_urg">Urgência</td><td>10%</td><td>R$ 916,67</td><td>R$ 11.000,00</td></tr>
-                                <tr class="pj-urg"><td>3º</td><td data-i18n="pj_perfil_urg">Urgência</td><td>8%</td><td>R$ 900,00</td><td>R$ 10.800,00</td></tr>
-                                <tr class="pj-urg"><td>4º</td><td data-i18n="pj_perfil_urg">Urgência</td><td>6%</td><td>R$ 883,33</td><td>R$ 10.600,00</td></tr>
-                                <tr class="pj-urg"><td>5º</td><td data-i18n="pj_perfil_urg">Urgência</td><td>4%</td><td>R$ 866,67</td><td>R$ 10.400,00</td></tr>
-                                <tr class="pj-plan"><td>6º</td><td data-i18n="pj_perfil_plan">Planejamento</td><td>2%</td><td>R$ 850,00</td><td>R$ 10.200,00</td></tr>
-                                <tr class="pj-plan"><td>7º</td><td data-i18n="pj_perfil_plan">Planejamento</td><td>2%</td><td>R$ 850,00</td><td>R$ 10.200,00</td></tr>
-                                <tr class="pj-plan"><td>8º</td><td data-i18n="pj_perfil_plan">Planejamento</td><td>2%</td><td>R$ 850,00</td><td>R$ 10.200,00</td></tr>
-                                <tr class="pj-plan"><td>9º</td><td data-i18n="pj_perfil_plan">Planejamento</td><td>2%</td><td>R$ 850,00</td><td>R$ 10.200,00</td></tr>
-                                <tr class="pj-plan"><td>10º</td><td data-i18n="pj_perfil_plan">Planejamento</td><td>2%</td><td>R$ 850,00</td><td>R$ 10.200,00</td></tr>
-                                <tr class="pj-poup"><td>11º</td><td data-i18n="pj_perfil_poup">Poupador</td><td>0%</td><td>R$ 833,33</td><td>R$ 10.000,00</td></tr>
-                                <tr class="pj-poup"><td>12º</td><td data-i18n="pj_perfil_poup">Poupador</td><td>0%</td><td>R$ 833,33</td><td>R$ 10.000,00</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <p class="pj-tabela-nota" data-i18n="pj_tabela_nota">Valores da cota + ágio da posição. Somam-se as taxas fixas (adesão de 3%, gestão mensal de R$ 20 a R$ 40 e comissão do organizador), iguais para todas as posições. Todas as 12 empresas recebem exatamente R$ 10.000,00.</p>
+                    <ul class="pj-zonas">
+                        <li class="pj-zona urg"><span class="pj-zona-dot" aria-hidden="true"></span><strong data-i18n="pj_perfil_urg">Urgência</strong><span data-i18n="pj_zona_urg_d">1º ao 5º · recebe primeiro, ágio de 12% a 4%</span></li>
+                        <li class="pj-zona plan"><span class="pj-zona-dot" aria-hidden="true"></span><strong data-i18n="pj_perfil_plan">Planejamento</strong><span data-i18n="pj_zona_plan_d">6º ao 10º · ágio de 2%</span></li>
+                        <li class="pj-zona poup"><span class="pj-zona-dot" aria-hidden="true"></span><strong data-i18n="pj_perfil_poup">Poupador</strong><span data-i18n="pj_zona_poup_d">11º e 12º · sem ágio, paga só a cota</span></li>
+                    </ul>
+                    <ol class="pj-pos-grid">
+                        <li class="pj-pos urg">
+                            <div class="pj-pos-top"><span class="pj-pos-n">1º</span><span class="pj-pos-agio">+12%</span></div>
+                            <span class="pj-pos-zona" data-i18n="pj_perfil_urg">Urgência</span>
+                            <span class="pj-pos-parcela">R$ 933,33 <small data-i18n="pj_lbl_mes">/mês</small></span>
+                            <span class="pj-pos-total">R$ 11.200,00 <small data-i18n="pj_lbl_total">pelo caixa</small></span>
+                        </li>
+                        <li class="pj-pos urg">
+                            <div class="pj-pos-top"><span class="pj-pos-n">2º</span><span class="pj-pos-agio">+10%</span></div>
+                            <span class="pj-pos-zona" data-i18n="pj_perfil_urg">Urgência</span>
+                            <span class="pj-pos-parcela">R$ 916,67 <small data-i18n="pj_lbl_mes">/mês</small></span>
+                            <span class="pj-pos-total">R$ 11.000,00 <small data-i18n="pj_lbl_total">pelo caixa</small></span>
+                        </li>
+                        <li class="pj-pos urg">
+                            <div class="pj-pos-top"><span class="pj-pos-n">3º</span><span class="pj-pos-agio">+8%</span></div>
+                            <span class="pj-pos-zona" data-i18n="pj_perfil_urg">Urgência</span>
+                            <span class="pj-pos-parcela">R$ 900,00 <small data-i18n="pj_lbl_mes">/mês</small></span>
+                            <span class="pj-pos-total">R$ 10.800,00 <small data-i18n="pj_lbl_total">pelo caixa</small></span>
+                        </li>
+                        <li class="pj-pos urg">
+                            <div class="pj-pos-top"><span class="pj-pos-n">4º</span><span class="pj-pos-agio">+6%</span></div>
+                            <span class="pj-pos-zona" data-i18n="pj_perfil_urg">Urgência</span>
+                            <span class="pj-pos-parcela">R$ 883,33 <small data-i18n="pj_lbl_mes">/mês</small></span>
+                            <span class="pj-pos-total">R$ 10.600,00 <small data-i18n="pj_lbl_total">pelo caixa</small></span>
+                        </li>
+                        <li class="pj-pos urg">
+                            <div class="pj-pos-top"><span class="pj-pos-n">5º</span><span class="pj-pos-agio">+4%</span></div>
+                            <span class="pj-pos-zona" data-i18n="pj_perfil_urg">Urgência</span>
+                            <span class="pj-pos-parcela">R$ 866,67 <small data-i18n="pj_lbl_mes">/mês</small></span>
+                            <span class="pj-pos-total">R$ 10.400,00 <small data-i18n="pj_lbl_total">pelo caixa</small></span>
+                        </li>
+                        <li class="pj-pos plan">
+                            <div class="pj-pos-top"><span class="pj-pos-n">6º</span><span class="pj-pos-agio">+2%</span></div>
+                            <span class="pj-pos-zona" data-i18n="pj_perfil_plan">Planejamento</span>
+                            <span class="pj-pos-parcela">R$ 850,00 <small data-i18n="pj_lbl_mes">/mês</small></span>
+                            <span class="pj-pos-total">R$ 10.200,00 <small data-i18n="pj_lbl_total">pelo caixa</small></span>
+                        </li>
+                        <li class="pj-pos plan">
+                            <div class="pj-pos-top"><span class="pj-pos-n">7º</span><span class="pj-pos-agio">+2%</span></div>
+                            <span class="pj-pos-zona" data-i18n="pj_perfil_plan">Planejamento</span>
+                            <span class="pj-pos-parcela">R$ 850,00 <small data-i18n="pj_lbl_mes">/mês</small></span>
+                            <span class="pj-pos-total">R$ 10.200,00 <small data-i18n="pj_lbl_total">pelo caixa</small></span>
+                        </li>
+                        <li class="pj-pos plan">
+                            <div class="pj-pos-top"><span class="pj-pos-n">8º</span><span class="pj-pos-agio">+2%</span></div>
+                            <span class="pj-pos-zona" data-i18n="pj_perfil_plan">Planejamento</span>
+                            <span class="pj-pos-parcela">R$ 850,00 <small data-i18n="pj_lbl_mes">/mês</small></span>
+                            <span class="pj-pos-total">R$ 10.200,00 <small data-i18n="pj_lbl_total">pelo caixa</small></span>
+                        </li>
+                        <li class="pj-pos plan">
+                            <div class="pj-pos-top"><span class="pj-pos-n">9º</span><span class="pj-pos-agio">+2%</span></div>
+                            <span class="pj-pos-zona" data-i18n="pj_perfil_plan">Planejamento</span>
+                            <span class="pj-pos-parcela">R$ 850,00 <small data-i18n="pj_lbl_mes">/mês</small></span>
+                            <span class="pj-pos-total">R$ 10.200,00 <small data-i18n="pj_lbl_total">pelo caixa</small></span>
+                        </li>
+                        <li class="pj-pos plan">
+                            <div class="pj-pos-top"><span class="pj-pos-n">10º</span><span class="pj-pos-agio">+2%</span></div>
+                            <span class="pj-pos-zona" data-i18n="pj_perfil_plan">Planejamento</span>
+                            <span class="pj-pos-parcela">R$ 850,00 <small data-i18n="pj_lbl_mes">/mês</small></span>
+                            <span class="pj-pos-total">R$ 10.200,00 <small data-i18n="pj_lbl_total">pelo caixa</small></span>
+                        </li>
+                        <li class="pj-pos poup">
+                            <div class="pj-pos-top"><span class="pj-pos-n">11º</span><span class="pj-pos-agio">0%</span></div>
+                            <span class="pj-pos-zona" data-i18n="pj_perfil_poup">Poupador</span>
+                            <span class="pj-pos-parcela">R$ 833,33 <small data-i18n="pj_lbl_mes">/mês</small></span>
+                            <span class="pj-pos-total">R$ 10.000,00 <small data-i18n="pj_lbl_total">pelo caixa</small></span>
+                        </li>
+                        <li class="pj-pos poup">
+                            <div class="pj-pos-top"><span class="pj-pos-n">12º</span><span class="pj-pos-agio">0%</span></div>
+                            <span class="pj-pos-zona" data-i18n="pj_perfil_poup">Poupador</span>
+                            <span class="pj-pos-parcela">R$ 833,33 <small data-i18n="pj_lbl_mes">/mês</small></span>
+                            <span class="pj-pos-total">R$ 10.000,00 <small data-i18n="pj_lbl_total">pelo caixa</small></span>
+                        </li>
+                    </ol>
+                    <p class="pj-tabela-nota" data-i18n="pj_tabela_nota">Valores da cota + ágio da posição. As taxas fixas (adesão, gestão e organizador) são iguais para todas as posições. Todas as 12 empresas recebem exatamente R$ 10.000,00.</p>
                 </div>
 
                 <!-- Não é / É -->
                 <div class="pj-ee reveal-up" data-delay="250">
                     <div class="pj-ee-card nao">
-                        <h4 data-i18n="pj_naoe_t">Não é</h4>
-                        <p data-i18n="pj_naoe_d">Empréstimo, financiamento, consórcio, custódia de valores nem produto de investimento. Não há juros nem promessa de rendimento.</p>
+                        <h4><span class="pj-ee-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span data-i18n="pj_naoe_t">Não é</span></h4>
+                        <ul>
+                            <li data-i18n="pj_naoe_1">Empréstimo ou financiamento</li>
+                            <li data-i18n="pj_naoe_2">Consórcio</li>
+                            <li data-i18n="pj_naoe_3">Custódia de valores</li>
+                            <li data-i18n="pj_naoe_4">Produto de investimento — não há juros nem promessa de rendimento</li>
+                        </ul>
                     </div>
                     <div class="pj-ee-card sim">
-                        <h4 data-i18n="pj_e_t">É</h4>
-                        <p data-i18n="pj_e_d">Um caixa colaborativo entre empresas, com regras contratuais claras, intermediado e gerenciado por uma plataforma de tecnologia. Cobrança e repasse por instituição de pagamento autorizada pelo Banco Central; contrato digital, cartão de garantia e kit fiscal completo.</p>
+                        <h4><span class="pj-ee-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pj_e_t">É</span></h4>
+                        <ul>
+                            <li data-i18n="pj_e_1">Um caixa colaborativo entre empresas, com regras contratuais claras</li>
+                            <li data-i18n="pj_e_2">Intermediado e gerenciado por uma plataforma de tecnologia</li>
+                            <li data-i18n="pj_e_3">Cobrança e repasse por instituição de pagamento autorizada pelo Banco Central</li>
+                            <li data-i18n="pj_e_4">Contrato digital, cartão de garantia e kit fiscal completo</li>
+                        </ul>
                     </div>
                 </div>
 
+                <!-- CTA -->
                 <div class="pj-cta reveal-up" data-delay="300">
-                    <a href="https://wa.me/5571996838735?text=Ol%C3%A1%20Isaias!%20Vi%20o%20Juntix%20PJ%20no%20site%20e%20quero%20saber%20mais%20sobre%20o%20Caixa%20Capital%20de%20Giro%20para%20a%20minha%20empresa."
-                        target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-glow" data-i18n="pj_cta_whats">Falar com a Juntix no WhatsApp</a>
-                    <a href="https://painel.juntix.com.br/registro" class="btn btn-lg btn-outline-hero" data-i18n="pj_cta_cadastro">Cadastrar minha empresa</a>
+                    <div class="pj-cta-text">
+                        <h3 data-i18n="pj_cta_titulo">Pronto para montar o caixa da sua empresa?</h3>
+                        <p data-i18n="pj_cta_sub">Fale com a gente ou cadastre a empresa agora. Cadastro e contrato 100% digitais.</p>
+                    </div>
+                    <div class="pj-cta-actions">
+                        <a href="https://wa.me/5571996838735?text=Ol%C3%A1%20Isaias!%20Vi%20o%20Juntix%20PJ%20no%20site%20e%20quero%20saber%20mais%20sobre%20o%20Caixa%20Capital%20de%20Giro%20para%20a%20minha%20empresa."
+                            target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-glow" data-i18n="pj_cta_whats">Falar com a Juntix no WhatsApp</a>
+                        <a href="https://painel.juntix.com.br/registro" class="btn btn-lg btn-outline-hero" data-i18n="pj_cta_cadastro">Cadastrar minha empresa</a>
+                    </div>
                 </div>
                 <p class="pj-legal" data-i18n="pj_legal">Juntix PJ é operado por ISS Software Quality Solutions LTDA (CNPJ 39.997.807/0001-86) como plataforma de intermediação e gestão de caixas colaborativos. A simulação é ilustrativa e segue a tabela vigente na plataforma.</p>
             </div>
@@ -2064,9 +2196,9 @@
         </div>
     </noscript>
 
-    <script src="translations.js"></script>
-    <script src="i18n.js"></script>
-    <script src="script.js"></script>
+    <script src="translations.js?v=20260904"></script>
+    <script src="i18n.js?v=20260904"></script>
+    <script src="script.js?v=20260904"></script>
 
     <!-- Google Calendar Appointment Scheduling begin -->
     <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">

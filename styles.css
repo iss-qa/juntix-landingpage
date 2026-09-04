@@ -3305,6 +3305,16 @@ body:hover .cursor-glow {
     border-color: #475569;
 }
 
+/* Menu mobile (hambúrguer): o painel tinha fundo branco fixo (só pensado
+   para o claro); no escuro o texto (--text-secondary) fica claro também,
+   então virava texto claro sobre fundo quase branco — quase ilegível. */
+@media (max-width: 768px) {
+    [data-theme="dark"] .nav-links {
+        background: rgba(11, 18, 32, 0.98);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+    }
+}
+
 
 /* ============================================================
    Juntix PJ — seção "Empresas" (#empresas)

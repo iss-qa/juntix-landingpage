@@ -573,7 +573,7 @@ document.addEventListener('DOMContentLoaded', function () {
             this.setAttribute(
                 'href',
                 'https://wa.me/' + ASSISTENTE_WA + '?text=' +
-                    encodeURIComponent('Oi Juntix! Quero conhecer os caixas [ref:' + ref + ']'),
+                    encodeURIComponent('Oi Juntix! Quero saber mais sobre o Caixa. [ref:' + ref + ']'),
             );
         });
     });

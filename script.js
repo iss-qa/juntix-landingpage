@@ -484,6 +484,122 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // === Assistente Juntix no WhatsApp + atribuição de origem ===
+    // Cada clique ganha um `ref` (ex.: LP-FLUTUANTE-7KQ2) que vai no texto do
+    // wa.me — o Assistente liga a conversa ao clique (UTM, fbclid, cookies do
+    // Pixel), registrado antes aqui. Links para o painel levam o mesmo ref e
+    // as UTMs para o cadastro.
+    const ASSISTENTE_WA = '557182166039';
+    const ORIGEM_ENDPOINT = 'https://api.juntix.com.br/api/marketing/origem';
+
+    function gerarRef(posicao) {
+        const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+        let sufixo = '';
+        for (let i = 0; i < 4; i++) sufixo += chars[Math.floor(Math.random() * chars.length)];
+        return ('LP-' + posicao + '-' + sufixo).replace(/[^A-Za-z0-9_-]/g, '').slice(0, 40);
+    }
+
+    function lerUtm() {
+        const params = new URLSearchParams(window.location.search);
+        const utm = {};
+        ['source', 'medium', 'campaign', 'content', 'term'].forEach(function (k) {
+            const v = params.get('utm_' + k);
+            if (v) utm[k] = v.slice(0, 200);
+        });
+        const clickIds = {};
+        ['fbclid', 'gclid'].forEach(function (k) {
+            const v = params.get(k);
+            if (v) clickIds[k] = v.slice(0, 200);
+        });
+        // Cookies do Pixel só com consentimento de marketing (LGPD).
+        if (getStoredConsent() === 'all') {
+            const fbc = getCookie('_fbc');
+            const fbp = getCookie('_fbp');
+            if (fbc) clickIds.fbc = fbc;
+            if (fbp) clickIds.fbp = fbp;
+        }
+        return { utm: utm, clickIds: clickIds };
+    }
+
+    function registrarOrigem(ref) {
+        const dados = lerUtm();
+        try {
+            fetch(ORIGEM_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    ref: ref,
+                    utm: dados.utm,
+                    clickIds: dados.clickIds,
+                    landing: window.location.href.slice(0, 300),
+                    referrer: (document.referrer || '').slice(0, 300) || undefined,
+                }),
+                keepalive: true,
+                mode: 'cors',
+            }).catch(function () { /* atribuição falha não impacta a navegação */ });
+        } catch (_) { /* idem */ }
+    }
+
+    function dispatchMetaContact(ref) {
+        if (getStoredConsent() !== 'all') return;
+        const eventId = generateEventId();
+        if (typeof fbq === 'function') {
+            fbq('track', 'Contact', { canal: 'whatsapp', ref: ref }, { eventID: eventId });
+        }
+        try {
+            fetch(META_CAPI_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    event_name: 'Contact',
+                    event_id: eventId,
+                    event_source_url: window.location.href,
+                    fbp: getCookie('_fbp'),
+                    fbc: getCookie('_fbc'),
+                    custom_data: { canal: 'whatsapp', ref: ref },
+                }),
+                keepalive: true,
+                mode: 'cors',
+            }).catch(function () {});
+        } catch (_) {}
+    }
+
+    document.querySelectorAll('[data-assistente]').forEach(function (link) {
+        link.addEventListener('click', function () {
+            const ref = gerarRef(this.getAttribute('data-assistente') || 'LP');
+            registrarOrigem(ref);
+            dispatchMetaContact(ref);
+            // O href é lido depois dos handlers: o wa.me já sai com o ref.
+            this.setAttribute(
+                'href',
+                'https://wa.me/' + ASSISTENTE_WA + '?text=' +
+                    encodeURIComponent('Oi Juntix! Quero conhecer os caixas [ref:' + ref + ']'),
+            );
+        });
+    });
+
+    // Links para o painel: um ref por visita + UTMs, para o cadastro herdar.
+    const refVisita = gerarRef('SITE');
+    let refVisitaRegistrado = false;
+    document.querySelectorAll('a[href^="https://painel.juntix.com.br"]').forEach(function (link) {
+        try {
+            const url = new URL(link.getAttribute('href'));
+            const params = new URLSearchParams(window.location.search);
+            url.searchParams.set('ref', refVisita);
+            ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'].forEach(function (k) {
+                const v = params.get(k);
+                if (v) url.searchParams.set(k, v);
+            });
+            link.setAttribute('href', url.toString());
+            link.addEventListener('click', function () {
+                if (!refVisitaRegistrado) {
+                    refVisitaRegistrado = true;
+                    registrarOrigem(refVisita);
+                }
+            });
+        } catch (_) { /* href inválido: deixa como está */ }
+    });
+
     // === Botão de vídeo do fundador ===
     const founderVideoBtn = document.getElementById('founderVideoBtn');
     if (founderVideoBtn) {

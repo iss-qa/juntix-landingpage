@@ -657,6 +657,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // força reflow para a transição rodar após remover [hidden]
             void waBubble.offsetWidth;
             waBubble.classList.add('is-open');
+            waWidget.classList.add('sheet-open');
             if (waBadge) waBadge.classList.remove('is-on');
             if (!bubbleJaMostrado) { bubbleJaMostrado = true; guardar('shown'); }
         }
@@ -665,6 +666,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!bubbleAberto) return;
             bubbleAberto = false;
             waBubble.classList.remove('is-open');
+            waWidget.classList.remove('sheet-open');
             setTimeout(() => { if (!bubbleAberto) waBubble.hidden = true; }, 320);
             if (dispensado) guardar('dismissed');
         }

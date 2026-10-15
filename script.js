@@ -28,18 +28,29 @@ document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelector('.nav-links');
 
     if (mobileMenuBtn && navLinks) {
+        const setMenu = (open) => {
+            mobileMenuBtn.classList.toggle('active', open);
+            navLinks.classList.toggle('active', open);
+            document.body.classList.toggle('nav-open', open);
+            mobileMenuBtn.setAttribute('aria-expanded', String(open));
+        };
+
         mobileMenuBtn.addEventListener('click', function () {
-            const isOpen = this.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            this.setAttribute('aria-expanded', isOpen);
+            setMenu(!navLinks.classList.contains('active'));
         });
 
         navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuBtn.classList.remove('active');
-                navLinks.classList.remove('active');
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            });
+            link.addEventListener('click', () => setMenu(false));
+        });
+
+        // Esc e clique fora do painel fecham o menu
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) setMenu(false);
+        });
+        document.addEventListener('click', (e) => {
+            if (!navLinks.classList.contains('active')) return;
+            if (navLinks.contains(e.target) || mobileMenuBtn.contains(e.target)) return;
+            setMenu(false);
         });
     }
 
@@ -54,17 +65,35 @@ document.addEventListener('DOMContentLoaded', function () {
         const volumeIcon = muteBtn.querySelector('.volume-icon');
         const muteIcon = muteBtn.querySelector('.mute-icon');
 
-        // Try to play with sound; browsers may block unmuted autoplay
-        heroVideo.muted = false;
-        const playPromise = heroVideo.play();
-        if (playPromise !== undefined) {
-            playPromise.catch(() => {
-                // Browser blocked unmuted autoplay, fallback to muted
-                heroVideo.muted = true;
-                heroVideo.play();
-                volumeIcon.classList.add('hidden');
-                muteIcon.classList.remove('hidden');
-            });
+        // O <video> está sem autoplay e com preload="none": o arquivo (~2,8 MB) só é
+        // baixado quando o player entra na tela. Mantém a tentativa com som; se o
+        // navegador bloquear, cai para mudo (comportamento anterior).
+        let heroVideoIniciado = false;
+        function iniciarHeroVideo() {
+            if (heroVideoIniciado) return;
+            heroVideoIniciado = true;
+            heroVideo.muted = false;
+            const playPromise = heroVideo.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(() => {
+                    // Browser blocked unmuted autoplay, fallback to muted
+                    heroVideo.muted = true;
+                    heroVideo.play().catch(() => {});
+                    volumeIcon.classList.add('hidden');
+                    muteIcon.classList.remove('hidden');
+                });
+            }
+        }
+        if ('IntersectionObserver' in window) {
+            const videoObserver = new IntersectionObserver((entries) => {
+                if (entries.some(e => e.isIntersecting)) {
+                    iniciarHeroVideo();
+                    videoObserver.disconnect();
+                }
+            }, { rootMargin: '200px 0px' });
+            videoObserver.observe(heroVideo);
+        } else {
+            iniciarHeroVideo();
         }
 
         function togglePlay(e) {
@@ -604,20 +633,94 @@ document.addEventListener('DOMContentLoaded', function () {
         } catch (_) { /* href inválido: deixa como está */ }
     });
 
+    // === Widget do WhatsApp: balão de saudação + badge + offset do banner de cookies ===
+    // Gatilhos: 1) badge "1" após 4 s; 2) balão após 9 s OU ao rolar 30% da página
+    // (o que vier primeiro) — uma vez por sessão (sessionStorage). Fechar = não volta
+    // nesta sessão. O clique no botão redondo vai direto para o wa.me (menos atrito).
+    const waWidget = document.getElementById('waWidget');
+    const waBubble = document.getElementById('waBubble');
+    const waBadge = document.getElementById('waBadge');
+    const waBubbleClose = document.getElementById('waBubbleClose');
+
+    if (waWidget && waBubble) {
+        const WA_SESSION_KEY = 'juntix-wa-bubble';
+        const estado = (() => { try { return sessionStorage.getItem(WA_SESSION_KEY); } catch (_) { return null; } })();
+        const guardar = (v) => { try { sessionStorage.setItem(WA_SESSION_KEY, v); } catch (_) { /* noop */ } };
+        let bubbleAberto = false;
+        let bubbleJaMostrado = estado === 'shown' || estado === 'dismissed';
+
+        function abrirBubble() {
+            if (bubbleAberto || estado === 'dismissed') return;
+            if (document.body.classList.contains('nav-open')) return;
+            bubbleAberto = true;
+            waBubble.hidden = false;
+            // força reflow para a transição rodar após remover [hidden]
+            void waBubble.offsetWidth;
+            waBubble.classList.add('is-open');
+            if (waBadge) waBadge.classList.remove('is-on');
+            if (!bubbleJaMostrado) { bubbleJaMostrado = true; guardar('shown'); }
+        }
+
+        function fecharBubble(dispensado) {
+            if (!bubbleAberto) return;
+            bubbleAberto = false;
+            waBubble.classList.remove('is-open');
+            setTimeout(() => { if (!bubbleAberto) waBubble.hidden = true; }, 320);
+            if (dispensado) guardar('dismissed');
+        }
+
+        if (waBubbleClose) waBubbleClose.addEventListener('click', () => fecharBubble(true));
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') fecharBubble(true); });
+        document.addEventListener('click', (e) => {
+            if (bubbleAberto && !waWidget.contains(e.target)) fecharBubble(false);
+        });
+        // Clicou em qualquer CTA do WhatsApp: a conversa começou, o balão não precisa mais aparecer
+        document.querySelectorAll('[data-assistente]').forEach((el) => {
+            el.addEventListener('click', () => { guardar('dismissed'); fecharBubble(false); });
+        });
+
+        if (estado !== 'dismissed') {
+            if (waBadge && !bubbleJaMostrado) setTimeout(() => { if (!bubbleAberto) waBadge.classList.add('is-on'); }, 4000);
+            if (!bubbleJaMostrado) {
+                const timer = setTimeout(abrirBubble, 9000);
+                const aoRolar = () => {
+                    const alvo = (document.documentElement.scrollHeight - window.innerHeight) * 0.3;
+                    if (window.scrollY > alvo) {
+                        clearTimeout(timer);
+                        abrirBubble();
+                        window.removeEventListener('scroll', aoRolar);
+                    }
+                };
+                window.addEventListener('scroll', aoRolar, { passive: true });
+            } else if (waBadge) {
+                // Já viu o balão nesta sessão e não dispensou: só o badge discreto
+                setTimeout(() => waBadge.classList.add('is-on'), 4000);
+            }
+        }
+
+        // Banner de cookies (LGPD) fica fixo no rodapé: sobe o widget para não ficar escondido
+        const cookieBanner = document.getElementById('cookie-banner');
+        if (cookieBanner) {
+            const ajustarOffset = () => {
+                const visivel = cookieBanner.style.display !== 'none' && cookieBanner.offsetParent !== null;
+                waWidget.style.setProperty('--wa-offset', visivel ? cookieBanner.offsetHeight + 'px' : '0px');
+            };
+            ajustarOffset();
+            new MutationObserver(ajustarOffset).observe(cookieBanner, { attributes: true, attributeFilter: ['style'] });
+            if ('ResizeObserver' in window) new ResizeObserver(ajustarOffset).observe(cookieBanner);
+            window.addEventListener('resize', ajustarOffset, { passive: true });
+        }
+    }
+
     // === Botão de vídeo do fundador ===
     const founderVideoBtn = document.getElementById('founderVideoBtn');
     if (founderVideoBtn) {
         founderVideoBtn.addEventListener('click', openFounderModal);
     }
 
-    // === Preload Critical Images ===
-    const criticalImages = ['logo/caixa.png', 'logo/jornada.png', 'logo/resumo_pay.png', 'logo/pay.png'];
-    criticalImages.forEach(src => {
-        const link = document.createElement('link');
-        link.rel = 'prefetch';
-        link.href = src;
-        document.head.appendChild(link);
-    });
+    // (Prefetch das imagens da plataforma removido: elas já têm loading="lazy" e
+    // agora são servidas em WebP via <picture>; o prefetch baixava os PNGs
+    // (~310 KB) em toda visita, inclusive no mobile.)
 
 });
 

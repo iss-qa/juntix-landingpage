@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /callback.html
+Disallow: /video/*.pdf$
+
+Sitemap: https://juntix.com.br/sitemap.xml

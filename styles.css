@@ -2104,49 +2104,8 @@ body:hover .cursor-glow {
         word-break: break-word;
     }
 
-    .nav-links {
-        position: fixed;
-        top: 72px;
-        left: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(20px);
-        flex-direction: column;
-        padding: var(--space-lg);
-        gap: var(--space-md);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all var(--transition-normal);
-        z-index: 999;
-    }
-
-    .nav-links.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .nav-links a:not(.btn)::after {
-        display: none;
-    }
-
-    .mobile-menu-btn {
-        display: flex;
-    }
-
-    .mobile-menu-btn.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .mobile-menu-btn.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .mobile-menu-btn.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-    }
+    /* Regras do menu mobile (.nav-links / .mobile-menu-btn) movidas para o bloco
+       HEADER mais abaixo, com breakpoint em 1024px (8 links + ações não cabem em tablet). */
 
     .hero-content {
         padding: var(--space-2xl) 0;
@@ -2373,7 +2332,7 @@ body:hover .cursor-glow {
 
 /* === Print Styles === */
 @media print {
-    .header, .whatsapp-float, .hero-bg-effects, .cursor-glow, .video-controls {
+    .header, .whatsapp-float, .wa-widget, .wa-inline, .hero-bg-effects, .cursor-glow, .video-controls {
         display: none !important;
     }
 
@@ -3041,7 +3000,13 @@ body:hover .cursor-glow {
 }
 
 /* ============================================================
-   LOGO MAIOR + CONTROLES DO HEADER (tema + idioma)
+   HEADER — logo + links + ações (idioma, tema, Entrar, CTA, hambúrguer)
+   Desktop (≥1101px): [logo] [links ....................] [PT ▾][☾][Entrar][Começar Agora]
+   Mobile  (≤1100px): [logo ................] [PT ▾][☾][≡]   links e CTAs no painel
+   Regra: logo e ações NUNCA encolhem (flex: 0 0 auto). Só a lista de links
+   se comprime (gap/fonte) e, abaixo de 1101px, vira painel. Antes, o logo
+   tinha flex-shrink padrão e o seletor de idioma (que vinha logo depois dele
+   no DOM) era pintado por cima do texto "Juntix".
    ============================================================ */
 .logo-img {
     width: 56px;
@@ -3056,8 +3021,20 @@ body:hover .cursor-glow {
     gap: var(--space-md);
 }
 
+/* O header pode usar mais largura que o conteúdo (1200px): 8 links + ações
+   não cabem em 1152px úteis sem sobrepor. */
+.header .container {
+    max-width: 1320px;
+}
+
+.logo {
+    flex: 0 0 auto;
+}
+
 .nav-links {
     margin-left: auto;
+    flex: 0 0 auto;
+    gap: var(--space-md);
     flex-wrap: nowrap;
 }
 
@@ -3066,8 +3043,39 @@ body:hover .cursor-glow {
     white-space: nowrap;
 }
 
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    flex: 0 0 auto;
+}
+
+.nav-mobile-only {
+    display: none;
+}
+
+/* "Entrar": link discreto ao lado do CTA (usuário que já tem conta) */
+.btn-nav-login {
+    background: transparent !important;
+    color: var(--text-secondary) !important;
+    padding: 8px 12px !important;
+    font-size: var(--font-size-sm) !important;
+    font-weight: 600 !important;
+    border-radius: var(--radius-lg) !important;
+    white-space: nowrap;
+}
+
+.btn-nav-login:hover {
+    color: var(--color-primary) !important;
+    background: rgba(13, 159, 110, 0.08) !important;
+}
+
+.btn-nav-cta {
+    white-space: nowrap;
+}
+
 /* Larguras intermediárias: aperta espaçamento p/ caber em 1 linha */
-@media (max-width: 1360px) and (min-width: 1025px) {
+@media (max-width: 1360px) and (min-width: 1101px) {
     .nav-links {
         gap: var(--space-md);
     }
@@ -3081,17 +3089,172 @@ body:hover .cursor-glow {
     }
 }
 
-.nav-controls {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    flex: none;
+@media (max-width: 1200px) and (min-width: 1101px) {
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a:not(.btn) {
+        font-size: 13px;
+    }
+
+    .nav-actions .btn-nav-login {
+        display: none;
+    }
+
+    .btn-nav-cta {
+        padding: 8px 14px !important;
+    }
 }
 
-@media (max-width: 1024px) {
-    /* No mobile os links viram overlay — os controles ancoram à direita */
-    .nav-controls {
+/* ≤1100px: hambúrguer + painel (9 links + ações precisam de ~1100px em uma linha) */
+@media (max-width: 1100px) {
+    .nav-actions {
         margin-left: auto;
+    }
+
+    .nav-actions .nav-desktop-only {
+        display: none !important;
+    }
+
+    .nav-mobile-only {
+        display: block;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        max-height: calc(100vh - 72px);
+        max-height: calc(100dvh - 72px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-left: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        flex-direction: column;
+        align-items: stretch;
+        padding: var(--space-md) var(--space-lg) var(--space-lg);
+        gap: 2px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform var(--transition-normal), opacity var(--transition-normal), visibility 0s linear 300ms;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        transition: transform var(--transition-normal), opacity var(--transition-normal), visibility 0s;
+    }
+
+    .nav-links a:not(.btn)::after {
+        display: none;
+    }
+
+    .nav-links > li > a:not(.btn):not(.btn-nav-whats) {
+        display: block;
+        padding: 10px 4px;
+        font-size: var(--font-size-md);
+    }
+
+    .nav-mobile-actions {
+        display: flex;
+        gap: var(--space-sm);
+        margin-top: var(--space-sm);
+        padding-top: var(--space-md);
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .nav-mobile-actions .btn {
+        flex: 1 1 0;
+        justify-content: center;
+        padding: 12px 16px !important;
+        font-size: var(--font-size-sm) !important;
+    }
+
+    .nav-mobile-actions .btn-nav-login {
+        border: 1px solid rgba(0, 0, 0, 0.12) !important;
+    }
+
+    .nav-links a.btn-nav-whats,
+    .nav-links a.btn-nav-whats:hover {
+        color: #fff !important;
+    }
+
+    .nav-links .btn-nav-whats {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        margin-top: var(--space-sm);
+        padding: 12px 16px;
+        background: #25D366;
+        color: #fff;
+        font-size: var(--font-size-sm);
+        font-weight: 700;
+        border-radius: var(--radius-lg);
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    }
+
+    @media (hover: hover) {
+        .nav-links .btn-nav-whats:hover {
+            background: #1ebe5b;
+        }
+    }
+
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    [data-theme="dark"] .nav-mobile-actions {
+        border-top-color: rgba(255, 255, 255, 0.08);
+    }
+
+    [data-theme="dark"] .nav-mobile-actions .btn-nav-login {
+        border-color: rgba(255, 255, 255, 0.14) !important;
+    }
+}
+
+/* Telas estreitas (320–480px): seletor e toggle mais compactos; só o ícone do logo */
+@media (max-width: 480px) {
+    .nav {
+        gap: var(--space-sm);
+    }
+
+    .lang-select {
+        padding: 8px 22px 8px 10px;
+        font-size: 13px;
+        background-position: right 8px center;
+    }
+
+    .theme-toggle {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (max-width: 400px) {
+    .logo-text {
+        display: none;
     }
 }
 
@@ -3134,6 +3297,7 @@ body:hover .cursor-glow {
     color: var(--text-secondary);
     cursor: pointer;
     transition: all var(--transition-fast);
+    flex: 0 0 auto;
 }
 
 .theme-toggle:hover {
@@ -3308,7 +3472,7 @@ body:hover .cursor-glow {
 /* Menu mobile (hambúrguer): o painel tinha fundo branco fixo (só pensado
    para o claro); no escuro o texto (--text-secondary) fica claro também,
    então virava texto claro sobre fundo quase branco — quase ilegível. */
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     [data-theme="dark"] .nav-links {
         background: rgba(11, 18, 32, 0.98);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
@@ -3634,4 +3798,359 @@ body:hover .cursor-glow {
     .pj-steps, .pj-ee { grid-template-columns: 1fr; }
     .pj-conta { padding: var(--space-lg); }
     .pj-conta-total { font-size: var(--font-size-3xl); }
+}
+
+
+/* ============================================================
+   WHATSAPP (CRO 2026-10) — botão flutuante + balão de saudação
+   + CTAs contextuais inline (hero, taxas, FAQ, menu mobile)
+   Thumb zone: canto inferior direito, respeitando safe-area do iOS e o
+   banner de cookies (--wa-offset calculado em script.js).
+   ============================================================ */
+.wa-widget {
+    position: fixed;
+    right: 20px;
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px) + var(--wa-offset, 0px));
+    z-index: 1200;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    transition: bottom var(--transition-normal), opacity var(--transition-fast);
+}
+
+body.nav-open .wa-widget {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* o botão deixa de ser fixed (o container é) */
+.whatsapp-float {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    z-index: auto;
+    width: 60px;
+    height: 60px;
+    flex: 0 0 auto;
+}
+
+.wa-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid rgba(37, 211, 102, 0.75);
+    animation: waRing 2.4s ease-out infinite;
+    pointer-events: none;
+}
+
+@keyframes waRing {
+    0% { transform: scale(1); opacity: 0.9; }
+    70% { transform: scale(1.65); opacity: 0; }
+    100% { transform: scale(1.65); opacity: 0; }
+}
+
+.wa-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 6px;
+    border-radius: 11px;
+    background: #ef4444;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 18px;
+    text-align: center;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    transform: scale(0);
+    transition: transform var(--transition-spring);
+}
+
+.wa-badge.is-on {
+    transform: scale(1);
+}
+
+.wa-bubble {
+    width: min(340px, calc(100vw - 32px));
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border-radius: 18px;
+    box-shadow: var(--shadow-2xl), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    padding: 16px 16px 14px;
+    position: relative;
+    transform-origin: bottom right;
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+    visibility: hidden;
+    transition: opacity 0.25s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), visibility 0s linear 0.3s;
+}
+
+.wa-bubble[hidden] {
+    display: block; /* mantém no fluxo para animar; a visibilidade é controlada por .is-open */
+}
+
+.wa-bubble.is-open {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+    transition: opacity 0.25s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), visibility 0s;
+}
+
+.wa-bubble::after {
+    content: '';
+    position: absolute;
+    right: 22px;
+    bottom: -7px;
+    width: 14px;
+    height: 14px;
+    background: var(--bg-card);
+    transform: rotate(45deg);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.04);
+}
+
+.wa-bubble-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 0;
+    background: rgba(0, 0, 0, 0.06);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.wa-bubble-close:hover {
+    background: rgba(0, 0, 0, 0.12);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .wa-bubble-close {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .wa-bubble-close:hover {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.wa-bubble-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding-right: 28px;
+}
+
+.wa-bubble-head strong {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.wa-status {
+    display: block;
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.3;
+}
+
+.wa-avatar {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    flex: 0 0 auto;
+}
+
+.wa-avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: contain;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.wa-online {
+    position: absolute;
+    right: -1px;
+    bottom: -1px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #22c55e;
+    border: 2px solid var(--bg-card);
+}
+
+.wa-bubble-msg {
+    font-size: var(--font-size-sm);
+    line-height: 1.55;
+    color: var(--text-primary);
+    margin: 0 0 12px;
+}
+
+.wa-bubble-cta {
+    width: 100%;
+    background: #25D366;
+    color: #fff;
+    font-weight: 700;
+    padding: 11px 16px;
+    border-radius: 12px;
+    gap: 8px;
+}
+
+.wa-bubble-cta:hover {
+    background: #1ebe5b;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+/* CTA inline (card) — usado no fim de Taxas e do FAQ */
+.wa-inline {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    max-width: 880px;
+    margin: var(--space-2xl) auto 0;
+    padding: var(--space-lg) var(--space-xl);
+    border-radius: var(--radius-2xl);
+    background: var(--bg-card);
+    border: 1px solid rgba(37, 211, 102, 0.3);
+    box-shadow: var(--shadow-card);
+}
+
+.wa-inline-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #25D366;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+}
+
+.wa-inline-text {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.wa-inline-text h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    margin: 0 0 4px;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.wa-inline-text p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: var(--font-size-md);
+    line-height: 1.6;
+}
+
+.btn-whats {
+    background: #25D366;
+    color: #fff;
+    font-weight: 700;
+    white-space: nowrap;
+    gap: 8px;
+    flex: 0 0 auto;
+    padding: 12px 22px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+}
+
+.btn-whats:hover {
+    background: #1ebe5b;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+}
+
+.wa-inline.dark {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(37, 211, 102, 0.4);
+    box-shadow: none;
+}
+
+.wa-inline.dark h3 {
+    color: var(--text-white);
+}
+
+.wa-inline.dark p {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+/* CTA do hero com ícone do WhatsApp */
+.btn-whats-inline svg {
+    flex: 0 0 auto;
+}
+
+/* Vídeo do hero: proporção fixa evita CLS enquanto o poster/vídeo carrega */
+.hero-video {
+    aspect-ratio: 16 / 9;
+    background: #022c22;
+}
+
+@media (max-width: 768px) {
+    .wa-widget {
+        right: 14px;
+        bottom: calc(16px + env(safe-area-inset-bottom, 0px) + var(--wa-offset, 0px));
+    }
+
+    .whatsapp-float {
+        width: 56px;
+        height: 56px;
+    }
+
+    .whatsapp-tooltip {
+        display: none;
+    }
+
+    .wa-inline {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: var(--space-lg);
+        gap: var(--space-md);
+        margin-top: var(--space-xl);
+    }
+
+    .btn-whats {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    /* reafirma o seletor compacto (a regra base .lang-select vem depois no bloco HEADER) */
+    .lang-select {
+        padding: 8px 22px 8px 10px;
+        font-size: 13px;
+        background-position: right 8px center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wa-ring {
+        animation: none;
+    }
+
+    .wa-bubble,
+    .wa-badge,
+    .wa-widget {
+        transition: none;
+    }
 }

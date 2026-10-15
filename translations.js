@@ -16,7 +16,7 @@ window.JUNTIX_I18N = {
     hero_badge: 'The smart alternative to loans',
     hero_tagline: 'Juntix — bring your friends together and make your dreams come true',
     hero_titulo: 'Need money?',
-    hero_titulo_destaque: 'No interest. No banks. No loan sharks.',
+    hero_titulo_destaque: 'Money pool: no interest, no banks, no loan sharks.',
     hero_subtitulo: 'Gather people you trust, form a money pool and get access to up to <strong>R$ 20.000</strong> paying only a <strong>fixed service fee per Pix charge</strong> (R$ 10 to R$ 40, depending on the pool). As simple as the money pool you already know.',
     hero_cta_participar: 'I Want to Join',
     hero_cta_recrutador: 'I Want to Be a Recruiter',
@@ -33,7 +33,7 @@ window.JUNTIX_I18N = {
 
     // Como funciona
     como_badge: 'Step by step',
-    como_titulo: 'How Juntix works',
+    como_titulo: 'How the Juntix money pool works',
     como_subtitulo: 'As simple as a money pool between friends, with all the security of a digital platform',
     como_p1_titulo: 'Form the group',
     como_p1_desc: 'Gather 5 to 12 people you trust. Friends, family or coworkers.',
@@ -75,7 +75,7 @@ window.JUNTIX_I18N = {
 
     // Participante
     participante_badge: 'For participants',
-    participante_titulo: 'Make your dreams come true without paying interest',
+    participante_titulo: 'Group savings: make your dreams come true without paying interest',
     participante_subtitulo: 'Tired of paying abusive interest to banks and lenders? With Juntix, you get what you need the smart way.',
     participante_sonhos_titulo: 'What you can achieve',
     participante_sonho1: 'Renovate your home',
@@ -100,7 +100,7 @@ window.JUNTIX_I18N = {
 
     // Compare
     compare_badge: 'Save for real',
-    compare_titulo: 'Compare and see the difference',
+    compare_titulo: 'Money pool vs. loan: compare and see the difference',
     compare_subtitulo: 'See how much you pay to get R$ 5.000 with each option',
     compare_th1: 'Option',
     compare_th2: 'You receive',
@@ -202,7 +202,7 @@ window.JUNTIX_I18N = {
 
     // Ganhos / Recrutador
     ganhos_badge: 'Opportunity',
-    ganhos_titulo: 'Earn money as a Recruiter',
+    ganhos_titulo: 'Extra income: earn money as a Recruiter',
     ganhos_subtitulo: 'Your job is light: invite people you trust from your network. Juntix manages everything — and you earn <strong>twice</strong>: 50% of the joining fee in the 1st month and 10% of the pool at the end.',
     ganhos_banner_novo: 'NEW',
     ganhos_banner_texto: '<strong>+ 50% of the joining fee</strong> of each participant lands <strong>directly in your wallet in the 1st month</strong>. Withdrawals available from the 2nd month — processed within 24h of the request.',
@@ -226,7 +226,7 @@ window.JUNTIX_I18N = {
 
     // FAQ
     faq_badge: 'Get your answers',
-    faq_titulo: 'Frequently Asked Questions',
+    faq_titulo: 'Frequently asked questions about the money pool',
     faq_subtitulo: 'Everything you need to know about Juntix',
     faq_q1: 'Is Juntix a financial institution?',
     faq_a1: '<strong>No.</strong> Juntix is a technology platform that makes it easy to organize collective savings groups among people who know each other. We do not take deposits, we do not lend money and we are not regulated by the Central Bank of Brazil, but we are integrated with payment partners that are regulated by the Central Bank. We work as a management tool for the traditional money pool ("caixa" or "vaquinha") among friends.',
@@ -382,6 +382,22 @@ window.JUNTIX_I18N = {
     pj_e_d: 'A collaborative money pool between companies, with clear contractual rules, intermediated and managed by a technology platform. Billing and payouts by a payment institution authorized by the Brazilian Central Bank; digital contract, guarantee card and complete tax kit.',
     pj_cta_whats: 'Talk to Juntix on WhatsApp',
     pj_cta_cadastro: 'Register my company',
+
+    // Header / WhatsApp (CRO 2026-10)
+    nav_entrar: 'Log in',
+    nav_simulador: 'Simulator',
+    nav_whats: 'Chat on WhatsApp',
+    hero_cta_whats: 'Ask us on WhatsApp',
+    wa_nome: 'Juntix Assistant',
+    wa_status: 'Online now · replies in ~1 min',
+    wa_msg: 'Questions about how the pool, the fees or the guarantee work? Talk to us on WhatsApp: a reply within 1 minute. 👋',
+    wa_bubble_cta: 'Start a conversation',
+    faq_cta_titulo: 'Still have a question?',
+    faq_cta_texto: 'Talk to us on WhatsApp: a reply within 1 minute, no strings attached.',
+    faq_cta_btn: 'Ask on WhatsApp',
+    taxas_cta_titulo: 'Want to know exactly how much you would pay?',
+    taxas_cta_texto: 'Send us the amount you need and in how many months: we answer right away, with the real numbers.',
+    taxas_cta_btn: 'Ask on WhatsApp',
     pj_legal: 'Juntix PJ is operated by ISS Software Quality Solutions LTDA (CNPJ 39.997.807/0001-86) as an intermediation and management platform for collaborative pools. The simulation is illustrative and follows the table in force on the platform.',
   },
   es: {
@@ -400,7 +416,7 @@ window.JUNTIX_I18N = {
     hero_badge: 'La alternativa inteligente al préstamo',
     hero_tagline: 'Juntix, reúne a tus amigos y haz realidad tus sueños',
     hero_titulo: '¿Necesitas dinero?',
-    hero_titulo_destaque: 'Sin intereses. Sin banco. Sin usureros.',
+    hero_titulo_destaque: 'Caja colectiva: sin intereses, sin banco, sin usureros.',
     hero_subtitulo: 'Reúne a personas de confianza, forma una caja colectiva y accede a hasta <strong>R$ 20.000</strong> pagando solo una <strong>tarifa de servicio fija por cobro vía Pix</strong> (de R$ 10 a R$ 40, según la caja). Tan simple como la vaquita que ya conoces.',
     hero_cta_participar: 'Quiero Participar',
     hero_cta_recrutador: 'Quiero ser Reclutador',
@@ -417,7 +433,7 @@ window.JUNTIX_I18N = {
 
     // Como funciona
     como_badge: 'Paso a paso',
-    como_titulo: 'Cómo funciona Juntix',
+    como_titulo: 'Cómo funciona la caja colectiva Juntix',
     como_subtitulo: 'Tan simple como una vaquita entre amigos, pero con toda la seguridad de una plataforma digital',
     como_p1_titulo: 'Forma el grupo',
     como_p1_desc: 'Reúne de 5 a 12 personas de confianza. Amigos, familia o compañeros de trabajo.',
@@ -459,7 +475,7 @@ window.JUNTIX_I18N = {
 
     // Participante
     participante_badge: 'Para participantes',
-    participante_titulo: 'Haz realidad tus sueños sin pagar intereses',
+    participante_titulo: 'Ahorro en grupo: haz realidad tus sueños sin pagar intereses',
     participante_subtitulo: '¿Cansado de pagar intereses abusivos a bancos y financieras? Con Juntix, consigues lo que necesitas de forma inteligente.',
     participante_sonhos_titulo: 'Lo que puedes lograr',
     participante_sonho1: 'Reformar la casa',
@@ -484,7 +500,7 @@ window.JUNTIX_I18N = {
 
     // Compare
     compare_badge: 'Ahorra de verdad',
-    compare_titulo: 'Compara y ve la diferencia',
+    compare_titulo: 'Caja colectiva vs. préstamo: compara y mira la diferencia',
     compare_subtitulo: 'Mira cuánto pagas para conseguir R$ 5.000 en cada modalidad',
     compare_th1: 'Modalidad',
     compare_th2: 'Recibes',
@@ -586,7 +602,7 @@ window.JUNTIX_I18N = {
 
     // Ganhos / Recrutador
     ganhos_badge: 'Oportunidad',
-    ganhos_titulo: 'Gana dinero como Reclutador',
+    ganhos_titulo: 'Ingreso extra: gana dinero como Reclutador',
     ganhos_subtitulo: 'Tu trabajo es ligero: invita a personas de confianza de tu red. Juntix lo administra todo — y ganas <strong>dos veces</strong>: 50% de la cuota de adhesión ya en el 1er mes y 10% de la caja al final.',
     ganhos_banner_novo: 'NUEVO',
     ganhos_banner_texto: '<strong>+ 50% de la cuota de adhesión</strong> de cada participante cae <strong>directo en tu billetera ya en el 1er mes</strong>. Retiro liberado a partir del 2º mes — procesado en hasta 24h después de la solicitud.',
@@ -610,7 +626,7 @@ window.JUNTIX_I18N = {
 
     // FAQ
     faq_badge: 'Resuelve tus dudas',
-    faq_titulo: 'Preguntas Frecuentes',
+    faq_titulo: 'Preguntas frecuentes sobre la caja colectiva',
     faq_subtitulo: 'Todo lo que necesitas saber sobre Juntix',
     faq_q1: '¿Juntix es una institución financiera?',
     faq_a1: '<strong>No.</strong> Juntix es una plataforma de tecnología que facilita la organización de grupos de ahorro colectivo entre personas conocidas. No captamos recursos, no prestamos dinero y no estamos regulados por el Banco Central de Brasil, pero estamos integrados con socios de pago regulados por el Banco Central. Funcionamos como una herramienta de gestión para la tradicional "caja" o "vaquita" entre amigos.',
@@ -766,6 +782,22 @@ window.JUNTIX_I18N = {
     pj_e_d: 'Una caja colaborativa entre empresas, con reglas contractuales claras, intermediada y gestionada por una plataforma tecnológica. Cobro y traspaso por una institución de pago autorizada por el Banco Central de Brasil; contrato digital, tarjeta de garantía y kit fiscal completo.',
     pj_cta_whats: 'Hablar con Juntix por WhatsApp',
     pj_cta_cadastro: 'Registrar mi empresa',
+
+    // Header / WhatsApp (CRO 2026-10)
+    nav_entrar: 'Entrar',
+    nav_simulador: 'Simulador',
+    nav_whats: 'Hablar por WhatsApp',
+    hero_cta_whats: 'Resolver dudas por WhatsApp',
+    wa_nome: 'Asistente Juntix',
+    wa_status: 'En línea ahora · responde en ~1 min',
+    wa_msg: '¿Dudas sobre cómo funciona la caja, las tarifas o la garantía? Háblanos por WhatsApp: respuesta en 1 minuto. 👋',
+    wa_bubble_cta: 'Iniciar conversación',
+    faq_cta_titulo: '¿Todavía tienes alguna duda?',
+    faq_cta_texto: 'Háblanos por WhatsApp: respuesta en 1 minuto, sin compromiso.',
+    faq_cta_btn: 'Preguntar por WhatsApp',
+    taxas_cta_titulo: '¿Quieres saber exactamente cuánto pagarías?',
+    taxas_cta_texto: 'Envíanos el monto que necesitas y en cuántos meses: respondemos al instante, con los números reales.',
+    taxas_cta_btn: 'Preguntar por WhatsApp',
     pj_legal: 'Juntix PJ es operado por ISS Software Quality Solutions LTDA (CNPJ 39.997.807/0001-86) como plataforma de intermediación y gestión de cajas colaborativas. La simulación es ilustrativa y sigue la tabla vigente en la plataforma.',
   },
 };

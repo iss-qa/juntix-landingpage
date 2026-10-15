@@ -25,8 +25,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="preload" href="styles.css" as="style">
-    <link rel="preload" href="script.js?v=20261014" as="script">
+    <link rel="preload" href="script.js?v=20261016" as="script">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="simulador.css?v=20261015">
     <link rel="icon" type="image/png" href="logo/logo_juntix.png">
 
     <!-- SEO & Social -->
@@ -200,6 +201,7 @@
             </button>
             <ul class="nav-links">
                 <li><a href="#como-funciona" data-i18n="nav_como">Como Funciona</a></li>
+                <li><a href="#simulador">Simulador</a></li>
                 <li><a href="#plataforma" data-i18n="nav_plataforma">Plataforma</a></li>
                 <li><a href="#participante" data-i18n="nav_paravoce">Para Você</a></li>
                 <li><a href="#fundador" data-i18n="nav_fundador">Fundador</a></li>
@@ -894,6 +896,69 @@
         </section>
 
         <!-- Taxas Transparentes -->
+        <section id="simulador" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge reveal-up">Simulador</span>
+                    <h2 class="section-title reveal-up">Simule o seu caixa</h2>
+                    <p class="section-subtitle reveal-up">Escolha quanto quer receber e em quantos meses — veja o valor de cada parcela, as taxas e o total.</p>
+                </div>
+                <div class="sim-card reveal-up">
+                    <div class="sim-passo">
+                        <h3><span>1</span>Quanto você quer receber?</h3>
+                        <div class="sim-grade" data-sim-valores>
+                            <button type="button" class="sim-opcao" data-valor="1000"><strong>R$ 1.000,00</strong><span class="sim-tag" data-score></span></button>
+                            <button type="button" class="sim-opcao" data-valor="2000"><strong>R$ 2.000,00</strong><span class="sim-tag" data-score></span></button>
+                            <button type="button" class="sim-opcao" data-valor="3000"><strong>R$ 3.000,00</strong><span class="sim-tag" data-score></span></button>
+                            <button type="button" class="sim-opcao" data-valor="5000"><strong>R$ 5.000,00</strong><span class="sim-tag" data-score></span></button>
+                            <button type="button" class="sim-opcao" data-valor="10000"><strong>R$ 10.000,00</strong><span class="sim-tag" data-score></span></button>
+                            <button type="button" class="sim-opcao" data-valor="20000"><strong>R$ 20.000,00</strong><span class="sim-tag" data-score></span></button>
+                        </div>
+                        <input type="text" inputmode="numeric" class="sim-outro" data-sim-outro placeholder="Outro valor (R$ 1.000 a R$ 20.000)" aria-label="Outro valor do caixa">
+                        <p class="sim-dica">Valores a partir de R$ 8.000,00 exigem 1 caixa concluído na Juntix.</p>
+                    </div>
+                    <div class="sim-passo">
+                        <h3><span>2</span>Em quantos meses?</h3>
+                        <div class="sim-grade meses" data-sim-meses>
+                            <button type="button" class="sim-opcao" data-meses="5"><strong>5</strong><small>meses</small></button>
+                            <button type="button" class="sim-opcao" data-meses="10"><strong>10</strong><small>meses</small></button>
+                            <button type="button" class="sim-opcao" data-meses="12"><strong>12</strong><small>meses</small></button>
+                            <button type="button" class="sim-opcao" data-meses="20"><strong>20</strong><small>meses</small></button>
+                        </div>
+                        <p class="sim-dica">Cada mês um participante recebe: 10 meses = 10 pessoas no caixa.</p>
+                    </div>
+                    <div class="sim-resultado" data-sim-resultado hidden>
+                        <div class="sim-destaque">
+                            <p>Na sua vez, você recebe</p>
+                            <strong data-r-recebe></strong>
+                            <p data-r-meses></p>
+                        </div>
+                        <ul class="sim-linhas">
+                            <li><span>Taxa de adesão (uma vez, por Pix, antes da 1ª parcela)</span><b data-r-adesao></b></li>
+                            <li><span>1ª parcela</span><b data-r-primeira></b></li>
+                            <li><span>Parcelas do meio (com correção ~IPCA)</span><b data-r-meio></b></li>
+                            <li><span>Última parcela (inclui a comissão do recrutador de <span data-r-comissao></span>)</span><b data-r-ultima></b></li>
+                            <li><span>Taxa de serviço + correção no ciclo</span><b data-r-servico></b></li>
+                            <li class="total"><span>Total pago no ciclo (com a adesão)</span><b data-r-total></b></li>
+                        </ul>
+                        <p class="sim-score" data-r-score></p>
+                        <details class="sim-tabela-wrap">
+                            <summary>Ver mês a mês</summary>
+                            <table class="sim-tabela">
+                                <thead><tr><th>Mês</th><th>Cota</th><th>Acréscimos</th><th>Total</th></tr></thead>
+                                <tbody data-r-tabela></tbody>
+                            </table>
+                        </details>
+                        <div class="sim-acoes">
+                            <a href="https://wa.me/557182166039?text=Oi%20Juntix!%20Quero%20saber%20mais%20sobre%20o%20Caixa." target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-glow" data-assistente="SIMULADOR" data-sim-cta>Quero participar pelo WhatsApp</a>
+                            <a href="https://painel.juntix.com.br/registro" class="btn btn-lg btn-outline-hero sim-btn-conta">Criar minha conta</a>
+                        </div>
+                        <p class="sim-nota">Simulação com a taxa de serviço vigente (R$ 20,00 por parcela) e correção estimada de 0,41% ao mês. A correção vai para quem recebe no mês. Os valores exatos de cada caixa aparecem antes de você entrar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="taxas" class="section section-dark">
             <div class="container">
                 <div class="section-header">
@@ -1977,7 +2042,7 @@
                                 <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </a>
-                        <a href="https://wa.me/557182166039?text=Oi%20Juntix!%20Quero%20conhecer%20os%20caixas"
+                        <a href="https://wa.me/557182166039?text=Oi%20Juntix!%20Quero%20saber%20mais%20sobre%20o%20Caixa."
                             data-assistente="CTAFINAL"
                             target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-outline-hero" data-i18n="ctafinal_btn2">
                             Falar no WhatsApp
@@ -2050,7 +2115,7 @@
     </footer>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/557182166039?text=Oi%20Juntix!%20Quero%20conhecer%20os%20caixas"
+    <a href="https://wa.me/557182166039?text=Oi%20Juntix!%20Quero%20saber%20mais%20sobre%20o%20Caixa."
         data-assistente="FLUTUANTE"
         target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Fale com o Assistente Juntix no WhatsApp">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
@@ -2068,7 +2133,8 @@
 
     <script src="translations.js"></script>
     <script src="i18n.js"></script>
-    <script src="script.js?v=20261014"></script>
+    <script src="simulador.js?v=20261015"></script>
+    <script src="script.js?v=20261016"></script>
 
     <!-- Google Calendar Appointment Scheduling begin -->
     <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">

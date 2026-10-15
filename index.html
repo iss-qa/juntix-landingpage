@@ -11,40 +11,52 @@
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(self)">
     <meta name="description"
-        content="Juntix - A plataforma inteligente de caixa coletivo entre amigos. Sem juros, sem banco, sem burocracia. Ganhe renda extra como recrutador: 50% da taxa de adesão no 1º mês + 10% por caixa no final. Acesse até R$ 20.000 pagando só uma taxa de serviço fixa por cobrança via Pix (de R$ 10 a R$ 40, conforme o caixa). Agora também para empresas: Juntix PJ, capital de giro sem banco no meio.">
+        content="Junte pessoas de confiança e receba até R$ 20.000 sem juros e sem banco. Taxa fixa por Pix, contrato digital e cartão de garantia. Fale no WhatsApp.">
     <meta name="keywords"
-        content="caixa coletivo, vaquinha entre amigos, poupança coletiva, sem juros, recrutador, renda extra recrutando, administrador de caixa, consórcio informal, fintech brasileira, juntix">
+        content="caixa coletivo, caixa coletivo online, poupança em grupo, economia colaborativa, consórcio entre amigos, dinheiro sem juros, vaquinha entre amigos, renda extra recrutador, capital de giro sem banco, juntix">
     <meta name="author" content="Juntix - ISS Software Quality Solutions">
     <meta name="facebook-domain-verification" content="dl9oq2p1wu196bcrw1rn2t9bcq1job" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <title>Juntix - Caixa Coletivo Entre Amigos | Sem Juros, 100% Online</title>
+    <title>Juntix – Caixa Coletivo Online Sem Juros | Até R$ 20 mil</title>
 
     <!-- Preconnect & Preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-    <link rel="preload" href="styles.css" as="style">
-    <link rel="preload" href="script.js?v=20261016" as="script">
-    <link rel="stylesheet" href="styles.css">
+    <!-- ?v= é cache-busting: o .htaccess serve css/js com cache imutável de 1 ano.
+         Bumpar a versão em TODOS os .html a cada deploy que mude css/js. -->
+    <link rel="preload" href="styles.css?v=20261017" as="style">
+    <link rel="stylesheet" href="styles.css?v=20261017">
+    <link rel="icon" type="image/png" sizes="32x32" href="logo/favicon-32.png">
     <link rel="stylesheet" href="simulador.css?v=20261015">
     <link rel="icon" type="image/png" href="logo/logo_juntix.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="logo/apple-touch-icon.png">
+    <meta name="theme-color" content="#047857">
 
     <!-- SEO & Social -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://juntix.com.br/">
-    <meta property="og:title" content="Juntix - Caixa Coletivo Entre Amigos | Sem Juros">
+    <meta property="og:title" content="Juntix – Caixa coletivo online sem juros, sem banco, sem agiota">
     <meta property="og:description"
-        content="Reúna amigos de confiança, forme um caixa coletivo e tenha acesso a até R$ 20.000 sem juros. Recrutadores ganham 10% de comissão — renda extra com sua rede.">
-    <meta property="og:image" content="https://juntix.com.br/logo/logo_juntix.png">
+        content="Junte pessoas de confiança e receba até R$ 20.000 sem juros. Taxa fixa por Pix, contrato digital e cartão de garantia. Fale com a gente no WhatsApp.">
+    <meta property="og:image" content="https://juntix.com.br/logo/og-juntix.jpg">
+    <meta property="og:image:secure_url" content="https://juntix.com.br/logo/og-juntix.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Juntix – Caixa coletivo online: sem juros, sem banco, sem agiota. Até R$ 20.000 com pessoas de confiança.">
     <meta property="og:locale" content="pt_BR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="es_ES">
     <meta property="og:site_name" content="Juntix">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Juntix - Caixa Coletivo Entre Amigos | Sem Juros">
+    <meta name="twitter:title" content="Juntix – Caixa coletivo online sem juros">
     <meta name="twitter:description"
-        content="Reúna amigos de confiança e tenha acesso a até R$ 20.000. Sem juros, sem banco, sem burocracia. 100% online.">
-    <meta name="twitter:image" content="https://juntix.com.br/logo/logo_juntix.png">
+        content="Junte pessoas de confiança e receba até R$ 20.000 sem juros e sem banco. Taxa fixa por Pix, contrato digital e cartão de garantia.">
+    <meta name="twitter:image" content="https://juntix.com.br/logo/og-juntix.jpg">
+    <meta name="twitter:image:alt" content="Juntix – Caixa coletivo online: sem juros, sem banco, sem agiota.">
 
     <link rel="canonical" href="https://juntix.com.br/">
 
@@ -59,14 +71,15 @@
           "legalName": "ISS Software Quality Solutions",
           "url": "https://juntix.com.br/",
           "logo": "https://juntix.com.br/logo/logo_juntix.png",
-          "description": "Plataforma de gestão para caixas coletivos entre amigos. Sem juros, sem banco, 100% online.",
+          "description": "Plataforma de caixa coletivo online (poupança em grupo) entre pessoas de confiança. Sem juros, sem banco, 100% online.",
           "foundingDate": "2024",
           "taxID": "39.997.807/0001-86",
           "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+55-71-8216-6039",
             "contactType": "customer service",
-            "availableLanguage": "Portuguese"
+            "url": "https://wa.me/557182166039",
+            "availableLanguage": ["Portuguese", "English", "Spanish"]
           },
           "sameAs": []
         },
@@ -74,7 +87,8 @@
           "@type": "WebSite",
           "url": "https://juntix.com.br/",
           "name": "Juntix",
-          "description": "Plataforma de caixa coletivo entre amigos - sem juros, sem burocracia"
+          "description": "Caixa coletivo online entre pessoas de confiança - sem juros, sem banco, sem burocracia",
+          "inLanguage": "pt-BR"
         },
         {
           "@type": "SoftwareApplication",
@@ -171,12 +185,41 @@
     <!-- Header -->
     <header class="header" role="banner">
         <nav class="nav container" aria-label="Navegação principal">
-            <a href="#" class="logo">
-                <img src="logo/logo_juntix.png" alt="Juntix - Plataforma de Caixa Coletivo" class="logo-img"
-                    width="56" height="56">
+            <a href="#" class="logo" aria-label="Juntix – início">
+                <picture>
+                    <source srcset="logo/logo_juntix_112.webp" type="image/webp">
+                    <img src="logo/logo_juntix_112.png" alt="Juntix - Plataforma de Caixa Coletivo" class="logo-img"
+                        width="56" height="56" fetchpriority="high">
+                </picture>
                 <span class="logo-text">Juntix</span>
             </a>
-            <div class="nav-controls">
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#como-funciona" data-i18n="nav_como">Como Funciona</a></li>
+                <li><a href="#simulador" data-i18n="nav_simulador">Simulador</a></li>
+                <li><a href="#plataforma" data-i18n="nav_plataforma">Plataforma</a></li>
+                <li><a href="#participante" data-i18n="nav_paravoce">Para Você</a></li>
+                <li><a href="#fundador" data-i18n="nav_fundador">Fundador</a></li>
+                <li><a href="#posicao-fixa" data-i18n="nav_posicao">Posição Fixa</a></li>
+                <li><a href="#garantia" data-i18n="nav_garantia">Garantia</a></li>
+                <li><a href="#ganhos" data-i18n="nav_recrutador">Recrutador</a></li>
+                <li><a href="#empresas" data-i18n="nav_empresas">Empresas</a></li>
+                <!-- Só no painel mobile: ações principais + WhatsApp -->
+                <li class="nav-mobile-only nav-mobile-actions">
+                    <a href="https://painel.juntix.com.br/login" class="btn btn-nav-login" data-i18n="nav_entrar">Entrar</a>
+                    <a href="https://painel.juntix.com.br/registro" class="btn btn-nav-cta" data-i18n="nav_cta">Começar Agora</a>
+                </li>
+                <li class="nav-mobile-only">
+                    <a href="https://wa.me/557182166039?text=Ol%C3%A1%21%20Estava%20no%20site%20da%20Juntix%20pelo%20celular%20e%20quero%20tirar%20uma%20d%C3%BAvida%20sobre%20o%20caixa." data-assistente="MENU" data-assistente-texto="Olá! Estava no site da Juntix pelo celular e quero tirar uma dúvida sobre o caixa."
+                        target="_blank" rel="noopener noreferrer" class="btn btn-nav-whats">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        <span data-i18n="nav_whats">Falar no WhatsApp</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Ações: idioma, tema, Entrar, CTA (desktop) e hambúrguer (mobile) — sempre à direita -->
+            <div class="nav-actions">
                 <select id="langSelect" class="lang-select" aria-label="Idioma / Language / Idioma">
                     <option value="pt">🇧🇷 PT</option>
                     <option value="en">🇺🇸 EN</option>
@@ -193,24 +236,14 @@
                         <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
                     </svg>
                 </button>
+                <a href="https://painel.juntix.com.br/login" class="btn btn-nav-login nav-desktop-only" data-i18n="nav_entrar">Entrar</a>
+                <a href="https://painel.juntix.com.br/registro" class="btn btn-nav-cta nav-desktop-only" data-i18n="nav_cta">Começar Agora</a>
+                <button class="mobile-menu-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navLinks">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-            <button class="mobile-menu-btn" aria-label="Abrir menu de navegação" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-links">
-                <li><a href="#como-funciona" data-i18n="nav_como">Como Funciona</a></li>
-                <li><a href="#simulador">Simulador</a></li>
-                <li><a href="#plataforma" data-i18n="nav_plataforma">Plataforma</a></li>
-                <li><a href="#participante" data-i18n="nav_paravoce">Para Você</a></li>
-                <li><a href="#fundador" data-i18n="nav_fundador">Fundador</a></li>
-                <li><a href="#posicao-fixa" data-i18n="nav_posicao">Posição Fixa</a></li>
-                <li><a href="#garantia" data-i18n="nav_garantia">Garantia</a></li>
-                <li><a href="#ganhos" data-i18n="nav_recrutador">Recrutador</a></li>
-                <li><a href="#empresas" data-i18n="nav_empresas">Empresas</a></li>
-                <li><a href="https://painel.juntix.com.br" class="btn btn-nav-cta" data-i18n="nav_cta">Começar Agora</a></li>
-            </ul>
         </nav>
     </header>
 
@@ -238,7 +271,7 @@
                 <h1 class="hero-title reveal-up" data-delay="200">
                     <span data-i18n="hero_titulo">Precisa de dinheiro?</span>
                     <span class="hero-title-highlight">
-                        <span class="gradient-text-animated" data-i18n="hero_titulo_destaque">Sem juros. Sem banco. Sem agiota.</span>
+                        <span class="gradient-text-animated" data-i18n="hero_titulo_destaque">Caixa coletivo: sem juros, sem banco, sem agiota.</span>
                     </span>
                 </h1>
 
@@ -250,7 +283,7 @@
                 </p>
 
                 <div class="hero-cta reveal-up" data-delay="400">
-                    <a href="https://painel.juntix.com.br" class="btn btn-lg btn-glow">
+                    <a href="https://painel.juntix.com.br/registro" class="btn btn-lg btn-glow">
                         <span data-i18n="hero_cta_participar">Quero Participar</span>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
@@ -260,9 +293,11 @@
                     <a href="#ganhos" class="btn btn-lg btn-outline-hero" data-i18n="hero_cta_recrutador">
                         Quero ser Recrutador
                     </a>
-                    <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0Gs9Hugv8SqJn3pG1KIIXRyFilMM18uMXbD7bXaMkrzJYaJTq6fjhd0iOl-1J-napmOVHjEZrU?gv=true"
-                        target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-ghost-hero" data-i18n="hero_cta_saber">
-                        Quero saber mais
+                    <a href="https://wa.me/557182166039?text=Ol%C3%A1%21%20Estava%20navegando%20no%20site%20da%20Juntix%20e%20quero%20entender%20como%20funciona%20o%20caixa."
+                        data-assistente="HERO" data-assistente-texto="Olá! Estava navegando no site da Juntix e quero entender como funciona o caixa."
+                        target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-ghost-hero btn-whats-inline">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        <span data-i18n="hero_cta_whats">Tirar dúvidas no WhatsApp</span>
                     </a>
                 </div>
 
@@ -304,8 +339,9 @@
                 <!-- Video Section -->
                 <div class="hero-video-wrapper reveal-up" data-delay="600">
                     <div class="hero-video-container">
-                        <video id="heroVideo" class="hero-video" autoplay loop playsinline
-                            poster="logo/logo_juntix.png">
+                        <!-- Sem autoplay/preload: o script inicia o vídeo só quando ele entra na tela (poupa ~2,8 MB no carregamento inicial, principalmente no mobile) -->
+                        <video id="heroVideo" class="hero-video" loop playsinline preload="none" width="1280" height="720"
+                            poster="video/animacao_boa_poster.jpg">
                             <source src="video/animacao_boa.mp4" type="video/mp4">
                             Seu navegador não suporta vídeos HTML5.
                         </video>
@@ -378,7 +414,7 @@
             <div class="container">
                 <div class="section-header">
                     <span class="section-badge reveal-up" data-i18n="como_badge">Passo a passo</span>
-                    <h2 class="section-title reveal-up" data-i18n="como_titulo">Como funciona o Juntix</h2>
+                    <h2 class="section-title reveal-up" data-i18n="como_titulo">Como funciona o caixa coletivo Juntix</h2>
                     <p class="section-subtitle reveal-up" data-i18n="como_subtitulo">Simples como uma vaquinha entre amigos, mas com toda a
                         segurança de uma plataforma digital</p>
                 </div>
@@ -460,9 +496,12 @@
                             <span class="platform-card-dot"></span>
                             <span class="platform-card-label" data-i18n="plataforma_card1">Dashboard do Caixa</span>
                         </div>
-                        <img src="logo/caixa.png"
+                        <picture>
+                            <source srcset="logo/caixa.webp" type="image/webp">
+                            <img src="logo/caixa.png"
                             alt="Painel de controle do caixa coletivo Juntix mostrando progresso de 40%, valor de R$ 2.500 e participantes"
-                            loading="lazy" width="883" height="565">
+                            loading="lazy" width="883" height="565" decoding="async">
+                        </picture>
                     </div>
 
                     <!-- Journey -->
@@ -473,9 +512,12 @@
                             <span class="platform-card-dot"></span>
                             <span class="platform-card-label" data-i18n="plataforma_card2">Jornada do Caixa</span>
                         </div>
-                        <img src="logo/jornada.png"
+                        <picture>
+                            <source srcset="logo/jornada.webp" type="image/webp">
+                            <img src="logo/jornada.png"
                             alt="Jornada do caixa Juntix mostrando a ordem de contemplação dos participantes"
-                            loading="lazy" width="884" height="293">
+                            loading="lazy" width="884" height="293" decoding="async">
+                        </picture>
                     </div>
 
                     <!-- Payment Summary -->
@@ -486,9 +528,12 @@
                             <span class="platform-card-dot"></span>
                             <span class="platform-card-label" data-i18n="plataforma_card3">Resumo de Pagamentos</span>
                         </div>
-                        <img src="logo/resumo_pay.png"
+                        <picture>
+                            <source srcset="logo/resumo_pay.webp" type="image/webp">
+                            <img src="logo/resumo_pay.png"
                             alt="Resumo de pagamentos do Juntix mostrando status mensal de pagos e pendentes"
-                            loading="lazy" width="892" height="275">
+                            loading="lazy" width="892" height="275" decoding="async">
+                        </picture>
                     </div>
 
                     <!-- Payment List -->
@@ -499,9 +544,12 @@
                             <span class="platform-card-dot"></span>
                             <span class="platform-card-label" data-i18n="plataforma_card4">Pagamentos Detalhados</span>
                         </div>
-                        <img src="logo/pay.png"
+                        <picture>
+                            <source srcset="logo/pay.webp" type="image/webp">
+                            <img src="logo/pay.png"
                             alt="Lista detalhada de pagamentos do Juntix com status individual de cada participante"
-                            loading="lazy" width="872" height="612">
+                            loading="lazy" width="872" height="612" decoding="async">
+                        </picture>
                     </div>
                 </div>
 
@@ -645,7 +693,7 @@
             <div class="container">
                 <div class="section-header">
                     <span class="section-badge section-badge-light reveal-up" data-i18n="participante_badge">Para participantes</span>
-                    <h2 class="section-title light reveal-up" data-i18n="participante_titulo">Realize seus sonhos sem pagar juros</h2>
+                    <h2 class="section-title light reveal-up" data-i18n="participante_titulo">Poupança em grupo: realize seus sonhos sem pagar juros</h2>
                     <p class="section-subtitle light reveal-up" data-i18n="participante_subtitulo">Cansado de pagar juros abusivos para bancos e
                         financeiras? Com o Juntix, você conquista o que precisa de forma inteligente.</p>
                 </div>
@@ -766,7 +814,7 @@
             <div class="container">
                 <div class="section-header">
                     <span class="section-badge reveal-up" data-i18n="compare_badge">Economize de verdade</span>
-                    <h2 class="section-title reveal-up" data-i18n="compare_titulo">Compare e veja a diferença</h2>
+                    <h2 class="section-title reveal-up" data-i18n="compare_titulo">Caixa coletivo vs. empréstimo: compare e veja a diferença</h2>
                     <p class="section-subtitle reveal-up" data-i18n="compare_subtitulo">Veja quanto você paga para conseguir R$ 5.000 em cada
                         modalidade</p>
                 </div>
@@ -1009,6 +1057,20 @@
                         <p class="fee-desc" data-i18n="taxas_f3_desc">Cobrada uma única vez na entrada, conforme as regras da caixa. Nos meses intermediários, aplica-se apenas a parcela do caixa + a taxa de serviço via Pix (R$ 10 a R$ 40, conforme o caixa).</p>
                     </div>
                 </div>
+
+                <!-- CTA WhatsApp contextual (CRO): dúvida sobre taxas é a #1 objeção antes de entrar -->
+                <div class="wa-inline dark reveal-up" data-delay="500">
+                    <span class="wa-inline-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
+                    <div class="wa-inline-text">
+                        <h3 data-i18n="taxas_cta_titulo">Quer saber exatamente quanto você pagaria?</h3>
+                        <p data-i18n="taxas_cta_texto">Mande o valor que precisa e em quantos meses: a gente responde na hora, com os números reais.</p>
+                    </div>
+                    <a href="https://wa.me/557182166039?text=Ol%C3%A1%21%20Vi%20as%20taxas%20no%20site%20da%20Juntix.%20Quero%20saber%20quanto%20eu%20pagaria%20em%20um%20caixa%20de%20R%24%20____%20em%20____%20meses." data-assistente="TAXAS" data-assistente-texto="Olá! Vi as taxas no site da Juntix. Quero saber quanto eu pagaria em um caixa de R$ ____ em ____ meses."
+                        target="_blank" rel="noopener noreferrer" class="btn btn-whats">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        <span data-i18n="taxas_cta_btn">Perguntar no WhatsApp</span>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -1236,124 +1298,254 @@
                 <div class="section-header">
                     <span class="section-badge section-badge-dark reveal-up" data-i18n="pj_badge">Novo · Juntix PJ</span>
                     <h2 class="section-title light reveal-up" data-i18n="pj_titulo">Capital de giro para a sua empresa, sem banco no meio</h2>
-                    <p class="section-subtitle light reveal-up" data-i18n="pj_subtitulo">12 empresas, 12 meses, uma contemplada por mês. Cada uma recebe o valor cheio do caixa — de <strong>R$ 5.000 a R$ 20.000</strong> — pagando taxas fixas e transparentes em vez de juros.</p>
+                    <p class="section-subtitle light reveal-up" data-i18n="pj_subtitulo">12 empresas formam um caixa de 12 meses. A cada mês, uma recebe o valor cheio — de <strong>R$ 5.000 a R$ 20.000</strong> — e todas pagam só taxas fixas. Sem juros.</p>
                 </div>
 
-                <div class="pj-stats reveal-up">
-                    <div class="pj-stat">
-                        <span class="pj-stat-value">R$ 5.000 a R$ 20.000</span>
-                        <span class="pj-stat-label" data-i18n="pj_stat1">por empresa, valor cheio no seu mês</span>
+                <!-- Resumo em 3 números -->
+                <div class="pj-strip reveal-up" role="list">
+                    <div class="pj-strip-item" role="listitem">
+                        <span class="pj-strip-value" data-i18n="pj_stat1_valor">R$ 5.000 a R$ 20.000</span>
+                        <span class="pj-strip-label" data-i18n="pj_stat1">por empresa, valor cheio no seu mês</span>
                     </div>
-                    <div class="pj-stat">
-                        <span class="pj-stat-value">12 × 12</span>
-                        <span class="pj-stat-label" data-i18n="pj_stat2">empresas e meses — uma contemplada por mês</span>
+                    <div class="pj-strip-item" role="listitem">
+                        <span class="pj-strip-value">12 × 12</span>
+                        <span class="pj-strip-label" data-i18n="pj_stat2">empresas e meses — uma contemplada por mês</span>
                     </div>
-                    <div class="pj-stat">
-                        <span class="pj-stat-value" data-i18n="pj_stat3_valor">0 juros</span>
-                        <span class="pj-stat-label" data-i18n="pj_stat3">só taxas fixas, conhecidas antes de entrar</span>
+                    <div class="pj-strip-item" role="listitem">
+                        <span class="pj-strip-value" data-i18n="pj_stat3_valor">0 juros</span>
+                        <span class="pj-strip-label" data-i18n="pj_stat3">só taxas fixas, conhecidas antes de entrar</span>
                     </div>
                 </div>
 
-                <!-- Faça a conta -->
-                <div class="pj-conta reveal-up" data-delay="100">
-                    <div class="pj-conta-header">
+                <!-- Como funciona: timeline em 4 passos -->
+                <div class="pj-block reveal-up" data-delay="100">
+                    <div class="pj-block-head">
+                        <h3 data-i18n="pj_como_titulo">Como funciona</h3>
+                        <p data-i18n="pj_como_sub">Quatro passos, do cadastro ao dinheiro na conta da empresa.</p>
+                    </div>
+                    <ol class="pj-timeline">
+                        <li class="pj-tl-step">
+                            <span class="pj-tl-node" aria-hidden="true">1</span>
+                            <div class="pj-tl-card">
+                                <span class="pj-tl-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                </span>
+                                <h4 data-i18n="pj_p1_t">Forma-se o grupo</h4>
+                                <p data-i18n="pj_p1_d">12 empresas com CNPJ, triagem cadastral e termo de adesão assinado digitalmente.</p>
+                            </div>
+                        </li>
+                        <li class="pj-tl-step">
+                            <span class="pj-tl-node" aria-hidden="true">2</span>
+                            <div class="pj-tl-card">
+                                <span class="pj-tl-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="m9 16 2 2 4-4"/></svg>
+                                </span>
+                                <h4 data-i18n="pj_p2_t">Cada empresa escolhe sua posição</h4>
+                                <p data-i18n="pj_p2_d">A posição define o mês em que você recebe. Precisa agora? Reserva uma das primeiras. Pode esperar? Paga menos.</p>
+                            </div>
+                        </li>
+                        <li class="pj-tl-step">
+                            <span class="pj-tl-node" aria-hidden="true">3</span>
+                            <div class="pj-tl-card">
+                                <span class="pj-tl-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M14 8H8M16 12H8M13 16H8"/></svg>
+                                </span>
+                                <h4 data-i18n="pj_p3_t">Um boleto por mês</h4>
+                                <p data-i18n="pj_p3_d">O carnê com os 12 boletos (com Pix copia e cola) sai na formação do grupo. O valor da sua posição é congelado.</p>
+                            </div>
+                        </li>
+                        <li class="pj-tl-step">
+                            <span class="pj-tl-node" aria-hidden="true">4</span>
+                            <div class="pj-tl-card">
+                                <span class="pj-tl-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
+                                </span>
+                                <h4 data-i18n="pj_p4_t">No seu mês, o dinheiro cai na conta</h4>
+                                <p data-i18n="pj_p4_d">A empresa contemplada recebe o valor cheio, com contrato, extrato e nota fiscal das taxas prontos para a contabilidade.</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+
+                <!-- Faça a conta: comparativo de custo em barras -->
+                <div class="pj-block pj-conta reveal-up" data-delay="150">
+                    <div class="pj-block-head">
                         <h3 data-i18n="pj_conta_titulo">Faça a conta: R$ 10.000 de capital de giro em 12 meses</h3>
-                        <p data-i18n="pj_conta_sub">Posição intermediária do caixa (ágio de 2%), com adesão, taxa de gestão e comissão do organizador incluídas. Crédito para pequena empresa a 4% ao mês (estimativa de mercado: bancos digitais e fintechs), Tabela Price em 12 meses.</p>
+                        <p data-i18n="pj_conta_sub">Quanto custa receber R$ 10.000 e devolver em 12 parcelas, fonte por fonte. No Juntix PJ, posição intermediária (ágio de 2%) com adesão, gestão e comissão do organizador já incluídas.</p>
                     </div>
                     <div class="pj-conta-grid">
-                        <div class="pj-conta-card juntix">
-                            <span class="pj-conta-tag">Juntix PJ</span>
-                            <span class="pj-conta-recebe" data-i18n="pj_conta_recebe">Você recebe <strong>R$ 10.000,00</strong></span>
-                            <span class="pj-conta-total">R$ 10.913,33</span>
-                            <span class="pj-conta-legenda" data-i18n="pj_conta_paga">é o que você paga no total</span>
-                            <span class="pj-conta-custo success" data-i18n="pj_conta_custo_juntix">R$ 913,33 de custo (9,1%)</span>
-                        </div>
-                        <div class="pj-conta-vs" aria-hidden="true">vs</div>
-                        <div class="pj-conta-card banco">
-                            <span class="pj-conta-tag" data-i18n="pj_conta_banco_tag">Crédito para pequena empresa (4% ao mês)</span>
-                            <span class="pj-conta-recebe" data-i18n="pj_conta_recebe">Você recebe <strong>R$ 10.000,00</strong></span>
-                            <span class="pj-conta-total">R$ 12.786,26</span>
-                            <span class="pj-conta-legenda" data-i18n="pj_conta_paga">é o que você paga no total</span>
-                            <span class="pj-conta-custo danger" data-i18n="pj_conta_custo_banco">R$ 2.786,26 só de juros (27,9%) + IOF e tarifas</span>
-                        </div>
+                        <figure class="pj-chart">
+                            <figcaption class="pj-chart-title" data-i18n="pj_chart_titulo">Custo total para receber R$ 10.000</figcaption>
+                            <ol class="pj-bars">
+                                <li class="pj-bar is-juntix">
+                                    <div class="pj-bar-head">
+                                        <span class="pj-bar-name" data-i18n="pj_bar1_n">Juntix PJ</span>
+                                        <span class="pj-bar-value" data-i18n="pj_bar1_v"><strong>R$ 913,33</strong> <small>(9,1%)</small></span>
+                                    </div>
+                                    <div class="pj-bar-track"><div class="pj-bar-fill" style="--w: 18%"></div></div>
+                                    <span class="pj-bar-total" data-i18n="pj_bar1_t">Você paga R$ 10.913,33 no total</span>
+                                </li>
+                                <li class="pj-bar">
+                                    <div class="pj-bar-head">
+                                        <span class="pj-bar-name" data-i18n="pj_bar2_n">Capital de giro, média BCB (2,5% a.m.)</span>
+                                        <span class="pj-bar-value" data-i18n="pj_bar2_v"><strong>R$ 1.698,46</strong> <small>(17%)</small></span>
+                                    </div>
+                                    <div class="pj-bar-track"><div class="pj-bar-fill" style="--w: 34%"></div></div>
+                                    <span class="pj-bar-total" data-i18n="pj_bar2_t">Você paga R$ 11.698,46 no total</span>
+                                </li>
+                                <li class="pj-bar">
+                                    <div class="pj-bar-head">
+                                        <span class="pj-bar-name" data-i18n="pj_bar3_n">Crédito para pequena empresa (4% a.m.)</span>
+                                        <span class="pj-bar-value" data-i18n="pj_bar3_v"><strong>R$ 2.786,26</strong> <small>(27,9%) + IOF e tarifas</small></span>
+                                    </div>
+                                    <div class="pj-bar-track"><div class="pj-bar-fill" style="--w: 56%"></div></div>
+                                    <span class="pj-bar-total" data-i18n="pj_bar3_t">Você paga R$ 12.786,26 no total</span>
+                                </li>
+                                <li class="pj-bar is-open">
+                                    <div class="pj-bar-head">
+                                        <span class="pj-bar-name" data-i18n="pj_bar4_n">Cartão rotativo / cheque especial</span>
+                                        <span class="pj-bar-value" data-i18n="pj_bar4_v"><strong>mais de R$ 5.000</strong> <small>(&gt;50%)</small></span>
+                                    </div>
+                                    <div class="pj-bar-track"><div class="pj-bar-fill" style="--w: 100%"></div></div>
+                                    <span class="pj-bar-total" data-i18n="pj_bar4_t">Você paga mais de R$ 15.000 no total</span>
+                                </li>
+                            </ol>
+                        </figure>
+                        <aside class="pj-taxas">
+                            <h4 data-i18n="pj_taxas_titulo">Sem banco no meio, o custo é só isto:</h4>
+                            <ul>
+                                <li><span class="pj-taxa-k" data-i18n="pj_taxa1_k">Adesão</span><span data-i18n="pj_taxa1_v">3% do valor, uma única vez</span></li>
+                                <li><span class="pj-taxa-k" data-i18n="pj_taxa2_k">Gestão</span><span data-i18n="pj_taxa2_v">R$ 20 a R$ 40 por mês, conforme a faixa do caixa</span></li>
+                                <li><span class="pj-taxa-k" data-i18n="pj_taxa3_k">Organizador</span><span data-i18n="pj_taxa3_v">10%, rateado entre as 12 empresas</span></li>
+                                <li><span class="pj-taxa-k" data-i18n="pj_taxa4_k">Ágio da posição</span><span data-i18n="pj_taxa4_v">0% a 12% — só para quem recebe antes</span></li>
+                            </ul>
+                            <p class="pj-taxas-nota" data-i18n="pj_taxas_nota">O dinheiro é das próprias empresas do grupo — por isso não há juros.</p>
+                        </aside>
                     </div>
-                    <p class="pj-conta-nota" data-i18n="pj_conta_nota">O custo é baixo porque não existe banco no meio: o dinheiro é das próprias empresas do grupo. A Juntix cobra apenas taxas fixas pela organização — adesão de 3%, taxa de gestão de R$ 20 a R$ 40 por mês conforme a faixa do caixa e a comissão do organizador (10%, rateada entre as empresas). Quem pode esperar até o fim paga ainda menos; quem precisa receber nos primeiros meses paga um pouco mais pela urgência. Mesmo pela média do BCB para capital de giro (2,5% ao mês, puxada pelas grandes empresas) o banco sairia por R$ 11.698,46 — e no cartão rotativo ou no cheque especial o total passa de R$ 15.000,00.</p>
+                    <p class="pj-conta-nota" data-i18n="pj_conta_nota">Simulação ilustrativa. Crédito para pequena empresa a 4% a.m. (estimativa de mercado: bancos digitais e fintechs) e média BCB de 2,5% a.m. para capital de giro, ambos em Tabela Price de 12 meses, sem IOF e tarifas.</p>
                 </div>
 
-                <!-- Como funciona -->
-                <div class="pj-steps reveal-up" data-delay="150">
-                    <div class="pj-step">
-                        <span class="pj-step-n">1</span>
-                        <h4 data-i18n="pj_p1_t">Forma-se o grupo</h4>
-                        <p data-i18n="pj_p1_d">12 empresas, ciclo de 12 meses. Cadastro com CNPJ, triagem cadastral e termo de adesão assinado digitalmente.</p>
+                <!-- Mapa das 12 posições -->
+                <div class="pj-block reveal-up" data-delay="200">
+                    <div class="pj-block-head">
+                        <h3 data-i18n="pj_tabela_titulo">Todas recebem o mesmo. Só muda quando.</h3>
+                        <p data-i18n="pj_tabela_sub">Caixa de R$ 10.000 · 12 empresas · 12 meses. O ágio é só o preço de receber antes — e é ele que remunera quem aceitou esperar.</p>
                     </div>
-                    <div class="pj-step">
-                        <span class="pj-step-n">2</span>
-                        <h4 data-i18n="pj_p2_t">Cada empresa define sua posição</h4>
-                        <p data-i18n="pj_p2_d">A posição diz em que mês a sua empresa recebe. Quem precisa do capital agora reserva uma posição inicial; quem pode esperar entra no sorteio e paga menos.</p>
-                    </div>
-                    <div class="pj-step">
-                        <span class="pj-step-n">3</span>
-                        <h4 data-i18n="pj_p3_t">Um boleto por mês, do começo ao fim</h4>
-                        <p data-i18n="pj_p3_d">O carnê com os 12 boletos sai na formação do grupo, com Pix copia e cola. O valor da sua posição é congelado: não muda no meio do ciclo.</p>
-                    </div>
-                    <div class="pj-step">
-                        <span class="pj-step-n">4</span>
-                        <h4 data-i18n="pj_p4_t">No seu mês, o dinheiro cai na conta da empresa</h4>
-                        <p data-i18n="pj_p4_d">A contemplada recebe o valor cheio direto na carteira da empresa, com contrato, extrato e nota fiscal das taxas prontos para a contabilidade.</p>
-                    </div>
-                </div>
-
-                <!-- Tabela de posições -->
-                <div class="pj-tabela-wrap reveal-up" data-delay="200">
-                    <h3 class="pj-tabela-titulo" data-i18n="pj_tabela_titulo">Todas recebem o mesmo. Só muda quando.</h3>
-                    <p class="pj-tabela-sub" data-i18n="pj_tabela_sub">Caixa de R$ 10.000 · 12 empresas · 12 meses. O ágio é só o preço de receber antes — e é ele que remunera quem aceitou esperar.</p>
-                    <div class="table-container">
-                        <table class="pj-table">
-                            <thead>
-                                <tr>
-                                    <th data-i18n="pj_th_pos">Posição</th>
-                                    <th data-i18n="pj_th_perfil">Perfil</th>
-                                    <th data-i18n="pj_th_agio">Ágio</th>
-                                    <th data-i18n="pj_th_parcela">Parcela (12×)</th>
-                                    <th data-i18n="pj_th_total">Paga pelo caixa</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="pj-urg"><td>1º</td><td data-i18n="pj_perfil_urg">Urgência</td><td>12%</td><td>R$ 933,33</td><td>R$ 11.200,00</td></tr>
-                                <tr class="pj-urg"><td>2º</td><td data-i18n="pj_perfil_urg">Urgência</td><td>10%</td><td>R$ 916,67</td><td>R$ 11.000,00</td></tr>
-                                <tr class="pj-urg"><td>3º</td><td data-i18n="pj_perfil_urg">Urgência</td><td>8%</td><td>R$ 900,00</td><td>R$ 10.800,00</td></tr>
-                                <tr class="pj-urg"><td>4º</td><td data-i18n="pj_perfil_urg">Urgência</td><td>6%</td><td>R$ 883,33</td><td>R$ 10.600,00</td></tr>
-                                <tr class="pj-urg"><td>5º</td><td data-i18n="pj_perfil_urg">Urgência</td><td>4%</td><td>R$ 866,67</td><td>R$ 10.400,00</td></tr>
-                                <tr class="pj-plan"><td>6º</td><td data-i18n="pj_perfil_plan">Planejamento</td><td>2%</td><td>R$ 850,00</td><td>R$ 10.200,00</td></tr>
-                                <tr class="pj-plan"><td>7º</td><td data-i18n="pj_perfil_plan">Planejamento</td><td>2%</td><td>R$ 850,00</td><td>R$ 10.200,00</td></tr>
-                                <tr class="pj-plan"><td>8º</td><td data-i18n="pj_perfil_plan">Planejamento</td><td>2%</td><td>R$ 850,00</td><td>R$ 10.200,00</td></tr>
-                                <tr class="pj-plan"><td>9º</td><td data-i18n="pj_perfil_plan">Planejamento</td><td>2%</td><td>R$ 850,00</td><td>R$ 10.200,00</td></tr>
-                                <tr class="pj-plan"><td>10º</td><td data-i18n="pj_perfil_plan">Planejamento</td><td>2%</td><td>R$ 850,00</td><td>R$ 10.200,00</td></tr>
-                                <tr class="pj-poup"><td>11º</td><td data-i18n="pj_perfil_poup">Poupador</td><td>0%</td><td>R$ 833,33</td><td>R$ 10.000,00</td></tr>
-                                <tr class="pj-poup"><td>12º</td><td data-i18n="pj_perfil_poup">Poupador</td><td>0%</td><td>R$ 833,33</td><td>R$ 10.000,00</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <p class="pj-tabela-nota" data-i18n="pj_tabela_nota">Valores da cota + ágio da posição. Somam-se as taxas fixas (adesão de 3%, gestão mensal de R$ 20 a R$ 40 e comissão do organizador), iguais para todas as posições. Todas as 12 empresas recebem exatamente R$ 10.000,00.</p>
+                    <ul class="pj-zonas">
+                        <li class="pj-zona urg"><span class="pj-zona-dot" aria-hidden="true"></span><strong data-i18n="pj_perfil_urg">Urgência</strong><span data-i18n="pj_zona_urg_d">1º ao 5º · recebe primeiro, ágio de 12% a 4%</span></li>
+                        <li class="pj-zona plan"><span class="pj-zona-dot" aria-hidden="true"></span><strong data-i18n="pj_perfil_plan">Planejamento</strong><span data-i18n="pj_zona_plan_d">6º ao 10º · ágio de 2%</span></li>
+                        <li class="pj-zona poup"><span class="pj-zona-dot" aria-hidden="true"></span><strong data-i18n="pj_perfil_poup">Poupador</strong><span data-i18n="pj_zona_poup_d">11º e 12º · sem ágio, paga só a cota</span></li>
+                    </ul>
+                    <ol class="pj-pos-grid">
+                        <li class="pj-pos urg">
+                            <div class="pj-pos-top"><span class="pj-pos-n">1º</span><span class="pj-pos-agio">+12%</span></div>
+                            <span class="pj-pos-zona" data-i18n="pj_perfil_urg">Urgência</span>
+                            <span class="pj-pos-parcela">R$ 933,33 <small data-i18n="pj_lbl_mes">/mês</small></span>
+                            <span class="pj-pos-total">R$ 11.200,00 <small data-i18n="pj_lbl_total">pelo caixa</small></span>
+                        </li>
+                        <li class="pj-pos urg">
+                            <div class="pj-pos-top"><span class="pj-pos-n">2º</span><span class="pj-pos-agio">+10%</span></div>
+                            <span class="pj-pos-zona" data-i18n="pj_perfil_urg">Urgência</span>
+                            <span class="pj-pos-parcela">R$ 916,67 <small data-i18n="pj_lbl_mes">/mês</small></span>
+                            <span class="pj-pos-total">R$ 11.000,00 <small data-i18n="pj_lbl_total">pelo caixa</small></span>
+                        </li>
+                        <li class="pj-pos urg">
+                            <div class="pj-pos-top"><span class="pj-pos-n">3º</span><span class="pj-pos-agio">+8%</span></div>
+                            <span class="pj-pos-zona" data-i18n="pj_perfil_urg">Urgência</span>
+                            <span class="pj-pos-parcela">R$ 900,00 <small data-i18n="pj_lbl_mes">/mês</small></span>
+                            <span class="pj-pos-total">R$ 10.800,00 <small data-i18n="pj_lbl_total">pelo caixa</small></span>
+                        </li>
+                        <li class="pj-pos urg">
+                            <div class="pj-pos-top"><span class="pj-pos-n">4º</span><span class="pj-pos-agio">+6%</span></div>
+                            <span class="pj-pos-zona" data-i18n="pj_perfil_urg">Urgência</span>
+                            <span class="pj-pos-parcela">R$ 883,33 <small data-i18n="pj_lbl_mes">/mês</small></span>
+                            <span class="pj-pos-total">R$ 10.600,00 <small data-i18n="pj_lbl_total">pelo caixa</small></span>
+                        </li>
+                        <li class="pj-pos urg">
+                            <div class="pj-pos-top"><span class="pj-pos-n">5º</span><span class="pj-pos-agio">+4%</span></div>
+                            <span class="pj-pos-zona" data-i18n="pj_perfil_urg">Urgência</span>
+                            <span class="pj-pos-parcela">R$ 866,67 <small data-i18n="pj_lbl_mes">/mês</small></span>
+                            <span class="pj-pos-total">R$ 10.400,00 <small data-i18n="pj_lbl_total">pelo caixa</small></span>
+                        </li>
+                        <li class="pj-pos plan">
+                            <div class="pj-pos-top"><span class="pj-pos-n">6º</span><span class="pj-pos-agio">+2%</span></div>
+                            <span class="pj-pos-zona" data-i18n="pj_perfil_plan">Planejamento</span>
+                            <span class="pj-pos-parcela">R$ 850,00 <small data-i18n="pj_lbl_mes">/mês</small></span>
+                            <span class="pj-pos-total">R$ 10.200,00 <small data-i18n="pj_lbl_total">pelo caixa</small></span>
+                        </li>
+                        <li class="pj-pos plan">
+                            <div class="pj-pos-top"><span class="pj-pos-n">7º</span><span class="pj-pos-agio">+2%</span></div>
+                            <span class="pj-pos-zona" data-i18n="pj_perfil_plan">Planejamento</span>
+                            <span class="pj-pos-parcela">R$ 850,00 <small data-i18n="pj_lbl_mes">/mês</small></span>
+                            <span class="pj-pos-total">R$ 10.200,00 <small data-i18n="pj_lbl_total">pelo caixa</small></span>
+                        </li>
+                        <li class="pj-pos plan">
+                            <div class="pj-pos-top"><span class="pj-pos-n">8º</span><span class="pj-pos-agio">+2%</span></div>
+                            <span class="pj-pos-zona" data-i18n="pj_perfil_plan">Planejamento</span>
+                            <span class="pj-pos-parcela">R$ 850,00 <small data-i18n="pj_lbl_mes">/mês</small></span>
+                            <span class="pj-pos-total">R$ 10.200,00 <small data-i18n="pj_lbl_total">pelo caixa</small></span>
+                        </li>
+                        <li class="pj-pos plan">
+                            <div class="pj-pos-top"><span class="pj-pos-n">9º</span><span class="pj-pos-agio">+2%</span></div>
+                            <span class="pj-pos-zona" data-i18n="pj_perfil_plan">Planejamento</span>
+                            <span class="pj-pos-parcela">R$ 850,00 <small data-i18n="pj_lbl_mes">/mês</small></span>
+                            <span class="pj-pos-total">R$ 10.200,00 <small data-i18n="pj_lbl_total">pelo caixa</small></span>
+                        </li>
+                        <li class="pj-pos plan">
+                            <div class="pj-pos-top"><span class="pj-pos-n">10º</span><span class="pj-pos-agio">+2%</span></div>
+                            <span class="pj-pos-zona" data-i18n="pj_perfil_plan">Planejamento</span>
+                            <span class="pj-pos-parcela">R$ 850,00 <small data-i18n="pj_lbl_mes">/mês</small></span>
+                            <span class="pj-pos-total">R$ 10.200,00 <small data-i18n="pj_lbl_total">pelo caixa</small></span>
+                        </li>
+                        <li class="pj-pos poup">
+                            <div class="pj-pos-top"><span class="pj-pos-n">11º</span><span class="pj-pos-agio">0%</span></div>
+                            <span class="pj-pos-zona" data-i18n="pj_perfil_poup">Poupador</span>
+                            <span class="pj-pos-parcela">R$ 833,33 <small data-i18n="pj_lbl_mes">/mês</small></span>
+                            <span class="pj-pos-total">R$ 10.000,00 <small data-i18n="pj_lbl_total">pelo caixa</small></span>
+                        </li>
+                        <li class="pj-pos poup">
+                            <div class="pj-pos-top"><span class="pj-pos-n">12º</span><span class="pj-pos-agio">0%</span></div>
+                            <span class="pj-pos-zona" data-i18n="pj_perfil_poup">Poupador</span>
+                            <span class="pj-pos-parcela">R$ 833,33 <small data-i18n="pj_lbl_mes">/mês</small></span>
+                            <span class="pj-pos-total">R$ 10.000,00 <small data-i18n="pj_lbl_total">pelo caixa</small></span>
+                        </li>
+                    </ol>
+                    <p class="pj-tabela-nota" data-i18n="pj_tabela_nota">Valores da cota + ágio da posição. As taxas fixas (adesão, gestão e organizador) são iguais para todas as posições. Todas as 12 empresas recebem exatamente R$ 10.000,00.</p>
                 </div>
 
                 <!-- Não é / É -->
                 <div class="pj-ee reveal-up" data-delay="250">
                     <div class="pj-ee-card nao">
-                        <h4 data-i18n="pj_naoe_t">Não é</h4>
-                        <p data-i18n="pj_naoe_d">Empréstimo, financiamento, consórcio, custódia de valores nem produto de investimento. Não há juros nem promessa de rendimento.</p>
+                        <h4><span class="pj-ee-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span data-i18n="pj_naoe_t">Não é</span></h4>
+                        <ul>
+                            <li data-i18n="pj_naoe_1">Empréstimo ou financiamento</li>
+                            <li data-i18n="pj_naoe_2">Consórcio</li>
+                            <li data-i18n="pj_naoe_3">Custódia de valores</li>
+                            <li data-i18n="pj_naoe_4">Produto de investimento — não há juros nem promessa de rendimento</li>
+                        </ul>
                     </div>
                     <div class="pj-ee-card sim">
-                        <h4 data-i18n="pj_e_t">É</h4>
-                        <p data-i18n="pj_e_d">Um caixa colaborativo entre empresas, com regras contratuais claras, intermediado e gerenciado por uma plataforma de tecnologia. Cobrança e repasse por instituição de pagamento autorizada pelo Banco Central; contrato digital, cartão de garantia e kit fiscal completo.</p>
+                        <h4><span class="pj-ee-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pj_e_t">É</span></h4>
+                        <ul>
+                            <li data-i18n="pj_e_1">Um caixa colaborativo entre empresas, com regras contratuais claras</li>
+                            <li data-i18n="pj_e_2">Intermediado e gerenciado por uma plataforma de tecnologia</li>
+                            <li data-i18n="pj_e_3">Cobrança e repasse por instituição de pagamento autorizada pelo Banco Central</li>
+                            <li data-i18n="pj_e_4">Contrato digital, cartão de garantia e kit fiscal completo</li>
+                        </ul>
                     </div>
                 </div>
 
+                <!-- CTA -->
                 <div class="pj-cta reveal-up" data-delay="300">
-                    <a href="https://wa.me/5571996838735?text=Ol%C3%A1%20Isaias!%20Vi%20o%20Juntix%20PJ%20no%20site%20e%20quero%20saber%20mais%20sobre%20o%20Caixa%20Capital%20de%20Giro%20para%20a%20minha%20empresa."
-                        target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-glow" data-i18n="pj_cta_whats">Falar com a Juntix no WhatsApp</a>
-                    <a href="https://painel.juntix.com.br/registro" class="btn btn-lg btn-outline-hero" data-i18n="pj_cta_cadastro">Cadastrar minha empresa</a>
+                    <div class="pj-cta-text">
+                        <h3 data-i18n="pj_cta_titulo">Pronto para montar o caixa da sua empresa?</h3>
+                        <p data-i18n="pj_cta_sub">Fale com a gente ou cadastre a empresa agora. Cadastro e contrato 100% digitais.</p>
+                    </div>
+                    <div class="pj-cta-actions">
+                        <a href="https://wa.me/5571996838735?text=Ol%C3%A1%20Isaias!%20Vi%20o%20Juntix%20PJ%20no%20site%20e%20quero%20saber%20mais%20sobre%20o%20Caixa%20Capital%20de%20Giro%20para%20a%20minha%20empresa."
+                            target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-glow" data-i18n="pj_cta_whats">Falar com a Juntix no WhatsApp</a>
+                        <a href="https://painel.juntix.com.br/registro" class="btn btn-lg btn-outline-hero" data-i18n="pj_cta_cadastro">Cadastrar minha empresa</a>
+                    </div>
                 </div>
                 <p class="pj-legal" data-i18n="pj_legal">Juntix PJ é operado por ISS Software Quality Solutions LTDA (CNPJ 39.997.807/0001-86) como plataforma de intermediação e gestão de caixas colaborativos. A simulação é ilustrativa e segue a tabela vigente na plataforma.</p>
             </div>
@@ -1364,7 +1556,7 @@
             <div class="container">
                 <div class="section-header">
                     <span class="section-badge section-badge-gold reveal-up" data-i18n="ganhos_badge">Oportunidade</span>
-                    <h2 class="section-title light reveal-up" data-i18n="ganhos_titulo">Ganhe dinheiro como Recrutador</h2>
+                    <h2 class="section-title light reveal-up" data-i18n="ganhos_titulo">Renda extra: ganhe dinheiro como Recrutador</h2>
                     <p class="section-subtitle light reveal-up" data-i18n="ganhos_subtitulo">Seu trabalho é leve: convide pessoas de confiança da sua
                         rede. A Juntix administra tudo — e você ganha <strong>duas vezes</strong>: 50% da taxa de
                         adesão já no 1º mês e 10% do caixa no final.</p>
@@ -1488,7 +1680,7 @@
             <div class="container">
                 <div class="section-header">
                     <span class="section-badge reveal-up" data-i18n="faq_badge">Tire suas dúvidas</span>
-                    <h2 class="section-title reveal-up" data-i18n="faq_titulo">Perguntas Frequentes</h2>
+                    <h2 class="section-title reveal-up" data-i18n="faq_titulo">Perguntas frequentes sobre o caixa coletivo</h2>
                     <p class="section-subtitle reveal-up" data-i18n="faq_subtitulo">Tudo o que você precisa saber sobre o Juntix</p>
                 </div>
                 <div class="faq-container">
@@ -1729,6 +1921,20 @@
                             </ul>
                         </div>
                     </div>
+                </div>
+
+                <!-- CTA WhatsApp contextual (CRO): quem chegou ao fim do FAQ ainda com dúvida é lead quente -->
+                <div class="wa-inline reveal-up">
+                    <span class="wa-inline-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
+                    <div class="wa-inline-text">
+                        <h3 data-i18n="faq_cta_titulo">Ainda ficou com alguma dúvida?</h3>
+                        <p data-i18n="faq_cta_texto">Fale com a gente no WhatsApp: resposta em 1 minuto, sem compromisso.</p>
+                    </div>
+                    <a href="https://wa.me/557182166039?text=Ol%C3%A1%21%20Li%20o%20FAQ%20no%20site%20da%20Juntix%20e%20ainda%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20caixa." data-assistente="FAQ" data-assistente-texto="Olá! Li o FAQ no site da Juntix e ainda tenho uma dúvida sobre o caixa."
+                        target="_blank" rel="noopener noreferrer" class="btn btn-whats">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        <span data-i18n="faq_cta_btn">Tirar dúvida no WhatsApp</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -2035,15 +2241,15 @@
                     <p data-i18n="ctafinal_sub">Junte seus amigos, organize caixas e realize seus sonhos sem pagar juros. Ou torne-se
                         recrutador e ganhe uma renda extra com sua rede de contatos — a Juntix administra tudo.</p>
                     <div class="cta-final-buttons">
-                        <a href="https://painel.juntix.com.br" class="btn btn-lg btn-glow">
+                        <a href="https://painel.juntix.com.br/registro" class="btn btn-lg btn-glow">
                             <span data-i18n="ctafinal_btn1">Começar Agora</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </a>
-                        <a href="https://wa.me/557182166039?text=Oi%20Juntix!%20Quero%20saber%20mais%20sobre%20o%20Caixa."
-                            data-assistente="CTAFINAL"
+                        <a href="https://wa.me/557182166039?text=Ol%C3%A1%21%20Estava%20no%20site%20da%20Juntix%20e%20quero%20participar%20de%20um%20caixa.%20Como%20eu%20come%C3%A7o%3F"
+                            data-assistente="CTAFINAL" data-assistente-texto="Olá! Estava no site da Juntix e quero participar de um caixa. Como eu começo?"
                             target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-outline-hero" data-i18n="ctafinal_btn2">
                             Falar no WhatsApp
                         </a>
@@ -2059,7 +2265,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="#" class="logo">
-                        <img src="logo/logo_juntix.png" alt="Juntix Logo" class="logo-img" loading="lazy" width="40"
+                        <img src="logo/logo_juntix_112.png" alt="Juntix Logo" class="logo-img" loading="lazy" width="40"
                             height="40">
                         <span class="logo-text">Juntix</span>
                     </a>
@@ -2095,7 +2301,7 @@
                         <h4 data-i18n="footer_contato_titulo">Contato</h4>
                         <ul>
                             <li><a href="mailto:suporte@juntix.com.br">suporte@juntix.com.br</a></li>
-                            <li><a href="https://wa.me/557182166039?text=Oi%20Juntix!" target="_blank" rel="noopener noreferrer">WhatsApp: 71
+                            <li><a href="https://wa.me/557182166039?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Juntix%20e%20quero%20falar%20com%20o%20atendimento." data-assistente="RODAPE" data-assistente-texto="Olá! Vim pelo site da Juntix e quero falar com o atendimento." target="_blank" rel="noopener noreferrer">WhatsApp: 71
                                     8216-6039</a></li>
                         </ul>
                     </div>
@@ -2114,16 +2320,41 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/557182166039?text=Oi%20Juntix!%20Quero%20saber%20mais%20sobre%20o%20Caixa."
-        data-assistente="FLUTUANTE"
-        target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Fale com o Assistente Juntix no WhatsApp">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-            <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-        </svg>
-        <span class="whatsapp-tooltip" data-i18n="footer_whats_tooltip">Fale conosco</span>
-    </a>
+    <!-- WhatsApp: botão flutuante + balão de saudação (CRO) -->
+    <div class="wa-widget" id="waWidget">
+        <div class="wa-bubble" id="waBubble" role="complementary" aria-label="Atendimento pelo WhatsApp" hidden>
+            <button type="button" class="wa-bubble-close" id="waBubbleClose" aria-label="Fechar">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+            <div class="wa-bubble-head">
+                <span class="wa-avatar">
+                    <img src="logo/logo_juntix_112.png" alt="" width="40" height="40" loading="lazy">
+                    <span class="wa-online" aria-hidden="true"></span>
+                </span>
+                <div>
+                    <strong data-i18n="wa_nome">Assistente Juntix</strong>
+                    <span class="wa-status" data-i18n="wa_status">Online agora · responde em ~1 min</span>
+                </div>
+            </div>
+            <p class="wa-bubble-msg" data-i18n="wa_msg">Dúvidas sobre como funciona o caixa, as taxas ou a garantia? Fale com a gente no WhatsApp: resposta em 1 minuto. 👋</p>
+            <a href="https://wa.me/557182166039?text=Ol%C3%A1%21%20Estava%20navegando%20no%20site%20da%20Juntix%20e%20quero%20entender%20como%20funciona%20o%20caixa." data-assistente="BALAO" data-assistente-texto="Olá! Estava navegando no site da Juntix e quero entender como funciona o caixa."
+                target="_blank" rel="noopener noreferrer" class="btn wa-bubble-cta">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                <span data-i18n="wa_bubble_cta">Começar conversa</span>
+            </a>
+        </div>
+        <a href="https://wa.me/557182166039?text=Ol%C3%A1%21%20Estava%20navegando%20no%20site%20da%20Juntix%20e%20quero%20entender%20como%20funciona%20o%20caixa."
+            data-assistente="FLUTUANTE" data-assistente-texto="Olá! Estava navegando no site da Juntix e quero entender como funciona o caixa."
+            target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Fale com a Juntix no WhatsApp">
+            <span class="wa-ring" aria-hidden="true"></span>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+            <span class="wa-badge" id="waBadge" aria-hidden="true">1</span>
+            <span class="whatsapp-tooltip" data-i18n="footer_whats_tooltip">Fale conosco</span>
+        </a>
+    </div>
 
     <noscript>
         <div style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1e293b;color:#e2e8f0;padding:14px 24px;font-family:sans-serif;font-size:13px;text-align:center;border-top:2px solid #334155">
@@ -2131,10 +2362,10 @@
         </div>
     </noscript>
 
-    <script src="translations.js"></script>
-    <script src="i18n.js"></script>
-    <script src="simulador.js?v=20261015"></script>
-    <script src="script.js?v=20261016"></script>
+    <script src="translations.js?v=20261017" defer></script>
+    <script src="i18n.js?v=20261017" defer></script>
+    <script src="simulador.js?v=20261015" defer></script>
+    <script src="script.js?v=20261017" defer></script>
 
     <!-- Google Calendar Appointment Scheduling begin -->
     <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">

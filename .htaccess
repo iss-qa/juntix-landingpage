@@ -6,6 +6,7 @@ AddDefaultCharset UTF-8
 AddType "text/html; charset=UTF-8" .html
 AddType "text/css; charset=UTF-8"  .css
 AddType "text/javascript; charset=UTF-8" .js
+AddType image/webp .webp
 
 # === Content-Security-Policy ===
 # Restringe de onde scripts, estilos, fontes e frames podem ser carregados.
@@ -51,12 +52,18 @@ Options -Indexes
     <FilesMatch "\.(html)$">
         Header set Cache-Control "no-cache, must-revalidate"
     </FilesMatch>
-    <FilesMatch "\.(css|js|png|jpg|jpeg|svg|ico|woff2)$">
+    # (css/js levam ?v=AAAAMMDD nos HTML — bumpar a cada deploy que os altere)
+    <FilesMatch "\.(css|js|png|jpg|jpeg|webp|svg|ico|woff2|mp4)$">
         Header set Cache-Control "public, max-age=31536000, immutable"
     </FilesMatch>
+    # robots/sitemap mudam pouco, mas não podem ficar presos 1 ano
+    <FilesMatch "^(robots\.txt|sitemap\.xml)$">
+        Header set Cache-Control "public, max-age=86400"
+    </FilesMatch>
+    Header append Vary "Accept-Encoding"
 </IfModule>
 
 # Compressão (melhora performance)
 <IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/html text/css application/javascript
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json application/ld+json image/svg+xml application/xml
 </IfModule>

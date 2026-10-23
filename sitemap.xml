@@ -12,6 +12,12 @@
     </image:image>
   </url>
   <url>
+    <loc>https://juntix.com.br/seja-parceiro</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://juntix.com.br/termos-de-servico.html</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>yearly</changefreq>

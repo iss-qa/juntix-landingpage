@@ -29,6 +29,14 @@ object-src 'none';\
 upgrade-insecure-requests;"
 </IfModule>
 
+# === URLs limpas ===
+# /seja-parceiro (sem barra) abre a página da pasta mantendo a query (?lid=&seg=)
+# — é o link que a captação manda para as lojas.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^seja-parceiro/?$ /seja-parceiro/index.html [L]
+</IfModule>
+
 # === Segurança básica ===
 # Impede listagem de diretórios
 Options -Indexes

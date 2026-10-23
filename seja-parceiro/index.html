@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parceria Juntix para lojas – venda à vista para quem o banco recusou</title>
+    <meta name="description"
+        content="Sua loja organiza um caixa colaborativo da Juntix: o cliente paga sem juros de financiamento, quem é contemplado compra à vista com você e a loja ainda ganha a comissão do organizador.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://juntix.com.br/seja-parceiro">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://juntix.com.br/seja-parceiro">
+    <meta property="og:title" content="Parceria Juntix para lojas – recupere a venda que o banco recusou">
+    <meta property="og:description"
+        content="O cliente paga sem juros num caixa da sua loja; quem é contemplado compra à vista com você. Sem custo para entrar.">
+    <meta property="og:image" content="https://juntix.com.br/logo/og-juntix.jpg">
+    <meta property="og:locale" content="pt_BR">
+    <meta name="theme-color" content="#047857">
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --verde: #047857;
+            --verde-2: #16a34a;
+            --verde-claro: #ecfdf5;
+            --tinta: #0f172a;
+            --texto: #334155;
+            --suave: #64748b;
+            --linha: #e2e8f0;
+            --fundo: #f8fafc;
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { margin: 0; font-family: 'Inter', system-ui, sans-serif; color: var(--texto); background: #fff; line-height: 1.6; }
+        a { color: var(--verde); }
+        .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+        header.topo { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--linha); }
+        header.topo .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+        header.topo img { height: 30px; display: block; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 999px; padding: 13px 22px; font-weight: 700; font-size: 15px; text-decoration: none; border: 2px solid transparent; cursor: pointer; transition: transform .15s, background .15s; }
+        .btn:hover { transform: translateY(-1px); }
+        .btn-verde { background: var(--verde-2); color: #fff; }
+        .btn-verde:hover { background: var(--verde); }
+        .btn-borda { border-color: var(--verde-2); color: var(--verde); background: #fff; }
+        .btn-sm { padding: 9px 16px; font-size: 14px; }
+        .hero { background: linear-gradient(160deg, var(--verde-claro), #fff 60%); padding: 64px 0 56px; }
+        .selo { display: inline-block; background: #d1fae5; color: var(--verde); font-weight: 700; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; }
+        h1 { color: var(--tinta); font-size: clamp(30px, 5vw, 50px); line-height: 1.12; margin: 18px 0 16px; font-weight: 800; letter-spacing: -.02em; }
+        h1 span { color: var(--verde-2); }
+        .hero p.lead { font-size: clamp(17px, 2.2vw, 20px); max-width: 720px; margin: 0 0 28px; }
+        .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+        .segmentos { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 0; }
+        .segmentos button { font: inherit; font-size: 14px; font-weight: 600; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--linha); background: #fff; color: var(--texto); cursor: pointer; }
+        .segmentos button[aria-pressed="true"] { background: var(--tinta); color: #fff; border-color: var(--tinta); }
+        section { padding: 56px 0; }
+        section.cinza { background: var(--fundo); }
+        h2 { color: var(--tinta); font-size: clamp(24px, 3.4vw, 34px); line-height: 1.2; margin: 0 0 10px; font-weight: 800; letter-spacing: -.01em; }
+        .sub { color: var(--suave); margin: 0 0 32px; max-width: 720px; }
+        .passos { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; counter-reset: passo; }
+        .passo { background: #fff; border: 1px solid var(--linha); border-radius: 16px; padding: 22px; }
+        .passo::before { counter-increment: passo; content: counter(passo); display: inline-flex; width: 32px; height: 32px; align-items: center; justify-content: center; border-radius: 999px; background: var(--verde-2); color: #fff; font-weight: 800; margin-bottom: 12px; }
+        .passo h3 { margin: 0 0 6px; color: var(--tinta); font-size: 17px; }
+        .passo p { margin: 0; font-size: 15px; }
+        .exemplo { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+        .cartao { border: 1px solid var(--linha); border-radius: 16px; padding: 24px; background: #fff; }
+        .cartao.destaque { border: 2px solid var(--verde-2); background: var(--verde-claro); }
+        .cartao h3 { margin: 0 0 4px; color: var(--tinta); font-size: 18px; }
+        .cartao .pequeno { color: var(--suave); font-size: 14px; margin: 0 0 16px; }
+        .linha { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-top: 1px solid var(--linha); font-size: 15px; }
+        .linha strong { color: var(--tinta); white-space: nowrap; }
+        .linha.total { font-weight: 800; color: var(--verde); }
+        .linha.total strong { color: var(--verde); font-size: 18px; }
+        .nota { font-size: 12.5px; color: var(--suave); margin: 14px 0 0; }
+        .papeis { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+        .papeis ul { margin: 8px 0 0; padding-left: 20px; }
+        .papeis li { margin: 6px 0; }
+        .eh { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+        .eh .cartao h3 { display: flex; align-items: center; gap: 8px; }
+        details { border: 1px solid var(--linha); border-radius: 14px; padding: 16px 20px; background: #fff; margin: 0 0 10px; }
+        summary { cursor: pointer; font-weight: 700; color: var(--tinta); list-style: none; }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: '+'; float: right; color: var(--verde-2); font-weight: 800; }
+        details[open] summary::after { content: '–'; }
+        details p { margin: 10px 0 0; }
+        .final { background: var(--tinta); color: #cbd5e1; text-align: center; }
+        .final h2 { color: #fff; }
+        .final .ctas { justify-content: center; }
+        .final .btn-borda { background: transparent; color: #fff; border-color: #fff; }
+        footer { padding: 28px 0; font-size: 13px; color: var(--suave); border-top: 1px solid var(--linha); }
+        footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; }
+        #cookie-banner { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; background: #fff; border-top: 2px solid var(--linha); box-shadow: 0 -8px 32px rgba(0,0,0,.12); padding: 16px 20px; font-size: 14px; }
+        #cookie-banner .wrap { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; }
+        #cookie-banner button { font: inherit; font-weight: 600; border-radius: 999px; padding: 8px 16px; cursor: pointer; }
+        @media (max-width: 560px) { .ctas .btn { width: 100%; } header.topo .btn-sm { padding: 8px 12px; font-size: 13px; } }
+    </style>
+</head>
+
+<body>
+    <header class="topo">
+        <div class="wrap">
+            <a href="/" aria-label="Juntix — página inicial"><img src="/logo/logo_juntix.png" alt="Juntix"></a>
+            <a class="btn btn-verde btn-sm js-wa" href="https://api.whatsapp.com/send?phone=557182166039" target="_blank" rel="noopener">Quero ser parceiro</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="wrap">
+                <span class="selo">Parceria para lojas · sem custo para entrar</span>
+                <h1 id="titulo">Venda à vista para o cliente que <span>o banco recusou.</span></h1>
+                <p class="lead" id="lead">Sua loja organiza um caixa colaborativo na Juntix com a moto que o cliente quer. Ele paga em parcelas <strong>sem juros de financiamento</strong>; todo mês um participante é contemplado com o valor cheio e compra à vista com você. A loja não financia nada — e ainda ganha a comissão de organizadora do grupo.</p>
+                <div class="ctas">
+                    <a class="btn btn-verde js-wa" href="https://api.whatsapp.com/send?phone=557182166039" target="_blank" rel="noopener">Quero ser parceiro</a>
+                    <a class="btn btn-borda" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0Gs9Hugv8SqJn3pG1KIIXRyFilMM18uMXbD7bXaMkrzJYaJTq6fjhd0iOl-1J-napmOVHjEZrU?gv=true" target="_blank" rel="noopener">Agendar 20 minutos</a>
+                </div>
+                <div class="segmentos" role="group" aria-label="Ramo da sua loja">
+                    <button type="button" data-seg="bens" aria-pressed="true">🏍️ Motos e veículos</button>
+                    <button type="button" data-seg="turismo" aria-pressed="false">✈️ Agências de viagem</button>
+                    <button type="button" data-seg="festa" aria-pressed="false">🎉 Festas e eventos</button>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="wrap">
+                <h2>Como funciona</h2>
+                <p class="sub">Você já tem o cliente e o produto. A Juntix entra com o grupo, a cobrança e o contrato.</p>
+                <div class="passos">
+                    <div class="passo">
+                        <h3>A loja abre o caixa</h3>
+                        <p id="passo1">Um caixa com o nome da loja e o valor da moto, na vitrine da Juntix. A loja é a organizadora do grupo.</p>
+                    </div>
+                    <div class="passo">
+                        <h3>O vendedor oferece</h3>
+                        <p id="passo2">Quando o cliente toma "não" do banco ou foge dos juros, o vendedor oferece o caixa. O cadastro é pelo WhatsApp e pelo site.</p>
+                    </div>
+                    <div class="passo">
+                        <h3>A Juntix cuida do grupo</h3>
+                        <p>Contrato digital, análise de cada participante, cartão de garantia, cobrança por Pix e boleto, lembretes e nota fiscal.</p>
+                    </div>
+                    <div class="passo">
+                        <h3>Todo mês, uma venda à vista</h3>
+                        <p id="passo4">Um participante é contemplado com o valor cheio na conta dele e compra à vista na loja. Até o último mês, todos recebem.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cinza">
+            <div class="wrap">
+                <h2>Faça a conta</h2>
+                <p class="sub" id="exemplo-titulo">Exemplo: moto de R$ 15.000 · 15 participantes · 15 meses.</p>
+                <div class="exemplo">
+                    <div class="cartao">
+                        <h3>Para o cliente</h3>
+                        <p class="pequeno">Sem juros de financiamento — só taxas fixas, conhecidas antes de entrar.</p>
+                        <div class="linha"><span>Parcela mensal</span><strong id="ex-parcela">R$ 1.000,00</strong></div>
+                        <div class="linha"><span>Taxa de serviço</span><strong>R$ 10 a R$ 40 por cobrança</strong></div>
+                        <div class="linha"><span>Adesão (só no 1º mês)</span><strong id="ex-adesao">R$ 355,26</strong></div>
+                        <div class="linha"><span>Comissão da organizadora (só na última)</span><strong id="ex-comissao-part">R$ 100,00</strong></div>
+                    </div>
+                    <div class="cartao destaque">
+                        <h3>Para a loja</h3>
+                        <p class="pequeno">Como organizadora do grupo, além das vendas.</p>
+                        <div class="linha"><span>Comissão de organizadora (10% do caixa, no fim)</span><strong id="ex-comissao">R$ 1.500,00</strong></div>
+                        <div class="linha"><span>Metade das adesões (no 1º mês)</span><strong id="ex-adesao-loja">R$ 2.664,45</strong></div>
+                        <div class="linha total"><span>Por grupo</span><strong id="ex-total">R$ 4.164,45</strong></div>
+                        <div class="linha"><span id="ex-vendas-rotulo">Vendas à vista</span><strong id="ex-vendas">até 15 motos, uma por mês</strong></div>
+                    </div>
+                </div>
+                <p class="nota">Valores pela tabela vigente da Juntix (adesão progressiva sobre o valor do caixa; comissão de 10% do valor do caixa rateada na última parcela). A taxa de serviço depende do caixa. O dinheiro da contemplação é do participante: a loja vende à vista para quem foi contemplado, como numa venda comum.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="wrap">
+                <h2>Quem faz o quê</h2>
+                <div class="papeis">
+                    <div class="cartao">
+                        <h3>A loja</h3>
+                        <ul>
+                            <li>Define o produto, o valor e o prazo do caixa</li>
+                            <li>Apresenta o caixa aos clientes e divulga o link</li>
+                            <li id="papel-entrega">Vende à vista para quem é contemplado e entrega a moto</li>
+                            <li>Recebe a comissão de organizadora na própria conta</li>
+                        </ul>
+                    </div>
+                    <div class="cartao">
+                        <h3>A Juntix</h3>
+                        <ul>
+                            <li>Mostra o caixa da loja na vitrine</li>
+                            <li>Cadastro, análise e contrato de cada participante</li>
+                            <li>Cobrança mensal, lembretes, cartão de garantia e nota fiscal</li>
+                            <li>Repasse do valor cheio ao contemplado de cada mês</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cinza">
+            <div class="wrap">
+                <h2>O que é — e o que não é</h2>
+                <div class="eh">
+                    <div class="cartao">
+                        <h3>✅ É</h3>
+                        <p>Intermediação e gestão de caixas colaborativos: pessoas que pagam juntas, sem juros, e recebem o valor cheio em ordem definida. Os pagamentos correm por instituições de pagamento autorizadas pelo Banco Central.</p>
+                    </div>
+                    <div class="cartao">
+                        <h3>🚫 Não é</h3>
+                        <p>Não é consórcio, não é financiamento e a loja não concede crédito. Não existe banco no meio: o dinheiro é dos próprios participantes do grupo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="wrap">
+                <h2>Perguntas frequentes</h2>
+                <details>
+                    <summary>A loja paga alguma coisa para ser parceira?</summary>
+                    <p>Não. Abrir o caixa é gratuito. A loja só precisa de uma conta de recebimento na Juntix para receber a comissão de organizadora.</p>
+                </details>
+                <details>
+                    <summary>A loja corre risco se alguém atrasar?</summary>
+                    <p>A loja não financia nada: ela vende à vista para quem já foi contemplado. A cobrança do grupo é da Juntix, com contrato, análise de cada participante, cartão de garantia e cobrança automática.</p>
+                </details>
+                <details>
+                    <summary>O contemplado é obrigado a comprar na loja?</summary>
+                    <p>O dinheiro é do participante. O caixa leva o nome da loja e o produto que o cliente foi buscar, e a loja pode oferecer uma condição especial à vista para os contemplados do grupo.</p>
+                </details>
+                <details>
+                    <summary>Quando a loja recebe a comissão?</summary>
+                    <p>A metade das adesões entra no 1º mês, quando os participantes pagam a adesão. Os 10% de organizadora entram ao final, quando todos do grupo já receberam.</p>
+                </details>
+                <details>
+                    <summary>Quanto tempo leva para começar?</summary>
+                    <p>Uma conversa de 20 minutos para configurar o primeiro caixa. A partir daí, é divulgar o link.</p>
+                </details>
+            </div>
+        </section>
+
+        <section class="final">
+            <div class="wrap">
+                <h2>Vamos montar o caixa da sua loja?</h2>
+                <p>Fale com a gente no WhatsApp ou marque 20 minutos para ver ao vivo.</p>
+                <div class="ctas">
+                    <a class="btn btn-verde js-wa" href="https://api.whatsapp.com/send?phone=557182166039" target="_blank" rel="noopener">Quero ser parceiro</a>
+                    <a class="btn btn-borda" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0Gs9Hugv8SqJn3pG1KIIXRyFilMM18uMXbD7bXaMkrzJYaJTq6fjhd0iOl-1J-napmOVHjEZrU?gv=true" target="_blank" rel="noopener">Agendar 20 minutos</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <span>Juntix · intermediação e gestão de caixas colaborativos · Lauro de Freitas (BA)</span>
+            <span><a href="/">juntix.com.br</a> · <a href="/politica-privacidade.html">Política de Privacidade</a> · <a href="/termos-de-servico.html">Termos</a></span>
+        </div>
+    </footer>
+
+    <div id="cookie-banner" role="dialog" aria-label="Privacidade e cookies">
+        <div class="wrap">
+            <span>Usamos cookies essenciais e, com sua permissão, cookies de análise (Meta Pixel). <a href="/politica-privacidade.html">Política de Privacidade</a>.</span>
+            <span>
+                <button type="button" id="cookie-essencial" style="background:#fff;border:1px solid var(--linha);color:var(--texto)">Apenas essenciais</button>
+                <button type="button" id="cookie-todos" style="background:var(--verde-2);border:0;color:#fff">Aceitar todos</button>
+            </span>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            // Ramo da loja: ?seg=bens|turismo|festa (a captação manda no link) ou os botões.
+            var SEGMENTOS = {
+                bens: {
+                    titulo: 'Venda à vista para o cliente que <span>o banco recusou.</span>',
+                    lead: 'Sua loja organiza um caixa colaborativo na Juntix com a moto que o cliente quer. Ele paga em parcelas <strong>sem juros de financiamento</strong>; todo mês um participante é contemplado com o valor cheio e compra à vista com você. A loja não financia nada — e ainda ganha a comissão de organizadora do grupo.',
+                    passo1: 'Um caixa com o nome da loja e o valor da moto, na vitrine da Juntix. A loja é a organizadora do grupo.',
+                    passo2: 'Quando o cliente toma "não" do banco ou foge dos juros, o vendedor oferece o caixa. O cadastro é pelo WhatsApp e pelo site.',
+                    passo4: 'Um participante é contemplado com o valor cheio na conta dele e compra à vista na loja. Até o último mês, todos recebem.',
+                    exemplo: 'Exemplo: moto de R$ 15.000 · 15 participantes · 15 meses.',
+                    parcela: 'R$ 1.000,00', adesao: 'R$ 355,26', comissaoPart: 'R$ 100,00',
+                    comissao: 'R$ 1.500,00', adesaoLoja: 'R$ 2.664,45', total: 'R$ 4.164,45',
+                    vendas: 'até 15 motos, uma por mês',
+                    entrega: 'Vende à vista para quem é contemplado e entrega a moto',
+                    ref: 'SEJA-PARCEIRO',
+                    msg: 'Olá! Tenho uma loja de motos e quero saber mais sobre a parceria Juntix.'
+                },
+                turismo: {
+                    titulo: 'Feche a viagem do cliente que <span>travou no preço à vista.</span>',
+                    lead: 'Sua agência organiza um caixa colaborativo na Juntix com o pacote. O cliente paga em parcelas <strong>sem juros</strong>; todo mês um participante é contemplado com o valor cheio e compra o pacote à vista com você. A agência não financia nada — e ainda ganha a comissão de organizadora do grupo.',
+                    passo1: 'Um caixa com o nome da agência e o valor do pacote, na vitrine da Juntix. A agência é a organizadora do grupo.',
+                    passo2: 'Quando o cliente ama o destino mas trava no preço ou no medo de parcelar, o vendedor oferece o caixa.',
+                    passo4: 'Um participante é contemplado com o valor cheio e compra o pacote à vista na agência. Até o último mês, todos recebem.',
+                    exemplo: 'Exemplo: pacote de R$ 8.000 · 10 participantes · 10 meses.',
+                    parcela: 'R$ 800,00', adesao: 'R$ 174,74', comissaoPart: 'R$ 80,00',
+                    comissao: 'R$ 800,00', adesaoLoja: 'R$ 873,70', total: 'R$ 1.673,70',
+                    vendas: 'até 10 pacotes, um por mês',
+                    entrega: 'Vende o pacote à vista para quem é contemplado',
+                    ref: 'SEJA-PARCEIRO',
+                    msg: 'Olá! Tenho uma agência de viagens e quero saber mais sobre a parceria Juntix.'
+                },
+                festa: {
+                    titulo: 'Realize a festa do cliente <span>que não tinha o valor à vista.</span>',
+                    lead: 'Seu espaço organiza um caixa colaborativo na Juntix com o pacote de festa. O cliente paga em parcelas <strong>sem juros</strong>; todo mês um participante é contemplado com o valor cheio e contrata a festa à vista com você. O espaço não financia nada — e ainda ganha a comissão de organizador do grupo.',
+                    passo1: 'Um caixa com o nome do espaço e o valor da festa, na vitrine da Juntix. O espaço é o organizador do grupo.',
+                    passo2: 'Quando o cliente adora o espaço mas trava no valor à vista, o vendedor oferece o caixa.',
+                    passo4: 'Um participante é contemplado com o valor cheio e contrata a festa à vista com você. Até o último mês, todos recebem.',
+                    exemplo: 'Exemplo: festa de R$ 12.000 · 12 participantes · 12 meses.',
+                    parcela: 'R$ 1.000,00', adesao: 'R$ 274,74', comissaoPart: 'R$ 100,00',
+                    comissao: 'R$ 1.200,00', adesaoLoja: 'R$ 1.648,44', total: 'R$ 2.848,44',
+                    vendas: 'até 12 festas, uma por mês',
+                    entrega: 'Fecha a festa à vista com quem é contemplado',
+                    ref: 'SEJA-PARCEIRO',
+                    msg: 'Olá! Tenho um espaço de festas e quero saber mais sobre a parceria Juntix.'
+                }
+            };
+            var params = new URLSearchParams(location.search);
+            // lid = lead da captação (24 hex) — vai no marcador [ref:] para o Assistente atribuir.
+            var lid = /^[a-f0-9]{24}$/i.test(params.get('lid') || '') ? params.get('lid') : '';
+
+            function aplicar(seg) {
+                var s = SEGMENTOS[seg] || SEGMENTOS.bens;
+                var t = function (id, v, html) { var el = document.getElementById(id); if (el) el[html ? 'innerHTML' : 'textContent'] = v; };
+                t('titulo', s.titulo, true); t('lead', s.lead, true);
+                t('passo1', s.passo1); t('passo2', s.passo2); t('passo4', s.passo4);
+                t('exemplo-titulo', s.exemplo); t('ex-parcela', s.parcela); t('ex-adesao', s.adesao);
+                t('ex-comissao-part', s.comissaoPart); t('ex-comissao', s.comissao); t('ex-adesao-loja', s.adesaoLoja);
+                t('ex-total', s.total); t('ex-vendas', s.vendas); t('papel-entrega', s.entrega);
+                var ref = s.ref + (lid ? '-' + lid : '');
+                var href = 'https://api.whatsapp.com/send?phone=557182166039&text=' + encodeURIComponent(s.msg + ' [ref:' + ref + ']');
+                document.querySelectorAll('.js-wa').forEach(function (a) { a.href = href; });
+                document.querySelectorAll('.segmentos button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.seg === seg)); });
+            }
+            document.querySelectorAll('.segmentos button').forEach(function (b) {
+                b.addEventListener('click', function () { aplicar(b.dataset.seg); });
+            });
+            aplicar(SEGMENTOS[params.get('seg')] ? params.get('seg') : 'bens');
+
+            // Cookies: mesma chave e política da home (juntix-cookie-consent, v2.0).
+            var CHAVE = 'juntix-cookie-consent', VERSAO = '2.0';
+            function consent() {
+                try {
+                    var raw = localStorage.getItem(CHAVE);
+                    if (!raw) return null;
+                    if (raw === 'all' || raw === 'essential') return raw;
+                    var d = JSON.parse(raw);
+                    if ((d.expires && new Date(d.expires) < new Date()) || (d.policyVersion && d.policyVersion !== VERSAO)) return null;
+                    return d.value === 'all' || d.value === 'essential' ? d.value : null;
+                } catch (e) { return null; }
+            }
+            function salvar(v) {
+                try {
+                    var exp = new Date(); exp.setDate(exp.getDate() + 365);
+                    localStorage.setItem(CHAVE, JSON.stringify({ value: v, date: new Date().toISOString(), policyVersion: VERSAO, expires: exp.toISOString() }));
+                } catch (e) {}
+            }
+            function pixel() {
+                if (window._metaPixelLoaded) return;
+                window._metaPixelLoaded = true;
+                !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+                fbq('init', '891735022628881');
+                fbq('init', '1958090274813776');
+                fbq('track', 'PageView');
+            }
+            var banner = document.getElementById('cookie-banner');
+            document.getElementById('cookie-todos').addEventListener('click', function () { salvar('all'); banner.style.display = 'none'; pixel(); });
+            document.getElementById('cookie-essencial').addEventListener('click', function () { salvar('essential'); banner.style.display = 'none'; });
+            var c = consent();
+            if (c === 'all') pixel(); else if (!c) banner.style.display = 'block';
+            document.querySelectorAll('.js-wa').forEach(function (a) {
+                a.addEventListener('click', function () { if (window.fbq) fbq('track', 'Contact'); });
+            });
+        })();
+    </script>
+</body>
+
+</html>

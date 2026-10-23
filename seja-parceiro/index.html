@@ -61,7 +61,7 @@
         section.cinza { background: var(--fundo); }
         h2 { color: var(--tinta); font-size: clamp(24px, 3.4vw, 34px); line-height: 1.2; margin: 0 0 10px; font-weight: 800; letter-spacing: -.01em; }
         .sub { color: var(--suave); margin: 0 0 32px; max-width: 720px; }
-        .passos { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; counter-reset: passo; }
+        .passos { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; counter-reset: passo; }
         .passo { background: #fff; border: 1px solid var(--linha); border-radius: 16px; padding: 22px; }
         .passo::before { counter-increment: passo; content: counter(passo); display: inline-flex; width: 32px; height: 32px; align-items: center; justify-content: center; border-radius: 999px; background: var(--verde-2); color: #fff; font-weight: 800; margin-bottom: 12px; }
         .passo h3 { margin: 0 0 6px; color: var(--tinta); font-size: 17px; }
@@ -137,15 +137,19 @@
                     </div>
                     <div class="passo">
                         <h3>O vendedor oferece</h3>
-                        <p id="passo2">Quando o cliente toma "não" do banco ou foge dos juros, o vendedor oferece o caixa. O cadastro é pelo WhatsApp e pelo site.</p>
+                        <p id="passo2">Quando o cliente toma um "não" do banco, fica numa dúvida orçamentária cruel por causa do crédito negado — e a loja está a um passo de perder a venda. O vendedor oferece a aquisição pelo caixa Juntix. O cadastro é pelo WhatsApp ou pelo site.</p>
+                    </div>
+                    <div class="passo">
+                        <h3>Um verdadeiro ganha-ganha</h3>
+                        <p id="passo3">A loja vende à vista para o cliente que iria perder. O vendedor ganha comissão pelo grupo que montou, e a Juntix ganha na gestão e nas taxas administrativas.</p>
                     </div>
                     <div class="passo">
                         <h3>A Juntix cuida do grupo</h3>
                         <p>Contrato digital, análise de cada participante, cartão de garantia, cobrança por Pix e boleto, lembretes e nota fiscal.</p>
                     </div>
                     <div class="passo">
-                        <h3>A cada contemplação, à vista</h3>
-                        <p id="passo4">Um participante é contemplado: a loja recebe o valor cheio à vista e entrega a moto. Até o último mês, todos os participantes recebem.</p>
+                        <h3 id="titulo5">O participante é contemplado — e quem recebe à vista é a loja</h3>
+                        <p id="passo5">A loja recebe o valor cheio à vista e entrega a moto, assinando o contrato de venda direto com o participante. A alienação e as obrigações de pagamento ficam entre o participante e a Juntix.</p>
                     </div>
                 </div>
             </div>
@@ -281,8 +285,10 @@
                     titulo: 'Venda à vista para o cliente que <span>o banco recusou.</span>',
                     lead: 'Sua loja ganha um card exclusivo na Juntix com a moto. O cliente entra num caixa colaborativo e paga em parcelas <strong>sem juros de financiamento</strong>. A cada contemplação, <strong>a loja recebe o valor cheio à vista</strong> e entrega a moto. A loja não financia nada e só entrega depois de receber.',
                     passo1: 'Card exclusivo na vitrine da Juntix, com a identidade da loja, a moto, o valor e as condições.',
-                    passo2: 'Quando o cliente toma "não" do banco ou foge dos juros, o vendedor oferece o caixa. O cadastro é pelo WhatsApp e pelo site.',
-                    passo4: 'Um participante é contemplado: a loja recebe o valor cheio à vista e entrega a moto. Até o último mês, todos os participantes recebem.',
+                    passo2: 'Quando o cliente toma um "não" do banco, fica numa dúvida orçamentária cruel por causa do crédito negado — e a loja está a um passo de perder a venda. O vendedor oferece a aquisição pelo caixa Juntix. O cadastro é pelo WhatsApp ou pelo site.',
+                    passo3: 'A loja vende à vista para o cliente que iria perder. O vendedor ganha comissão pelo grupo que montou, e a Juntix ganha na gestão e nas taxas administrativas.',
+                    titulo5: 'O participante é contemplado — e quem recebe à vista é a loja',
+                    passo5: 'A loja recebe o valor cheio à vista e entrega a moto, assinando o contrato de venda direto com o participante. A alienação e as obrigações de pagamento ficam entre o participante e a Juntix.',
                     exemplo: 'Exemplo: moto de R$ 15.000 · 15 participantes · 15 meses.',
                     parcela: 'R$ 1.000,00', adesao: 'R$ 355,26',
                     repasse: 'R$ 15.000', total: 'R$ 225.000',
@@ -295,8 +301,10 @@
                     titulo: 'Feche a viagem do cliente que <span>travou no preço à vista.</span>',
                     lead: 'Sua agência ganha um card exclusivo na Juntix com o pacote. O cliente entra num caixa colaborativo e paga em parcelas <strong>sem juros</strong>. A cada contemplação, <strong>a agência recebe o valor cheio à vista</strong> e emite a viagem. A agência não financia nada e só emite depois de receber.',
                     passo1: 'Card exclusivo na vitrine da Juntix, com a identidade da agência, o pacote, o valor e as condições.',
-                    passo2: 'Quando o cliente ama o destino mas trava no preço ou no medo de parcelar, o vendedor oferece o caixa.',
-                    passo4: 'Um participante é contemplado: a agência recebe o valor cheio à vista e emite o pacote. Até o último mês, todos os participantes recebem.',
+                    passo2: 'Quando o cliente ama o destino mas trava no preço à vista ou no medo de parcelar, a agência está a um passo de perder a venda. O vendedor oferece a aquisição pelo caixa Juntix. O cadastro é pelo WhatsApp ou pelo site.',
+                    passo3: 'A agência vende à vista para o cliente que iria perder. O vendedor ganha comissão pelo grupo que montou, e a Juntix ganha na gestão e nas taxas administrativas.',
+                    titulo5: 'O participante é contemplado — e quem recebe à vista é a agência',
+                    passo5: 'A agência recebe o valor cheio à vista e emite o pacote, assinando o contrato de viagem direto com o participante. As obrigações de pagamento ficam entre o participante e a Juntix.',
                     exemplo: 'Exemplo: pacote de R$ 8.000 · 10 participantes · 10 meses.',
                     parcela: 'R$ 800,00', adesao: 'R$ 174,74',
                     repasse: 'R$ 8.000', total: 'R$ 80.000',
@@ -309,8 +317,10 @@
                     titulo: 'Realize a festa do cliente <span>que não tinha o valor à vista.</span>',
                     lead: 'Seu espaço ganha um card exclusivo na Juntix com o pacote de festa. O cliente entra num caixa colaborativo e paga em parcelas <strong>sem juros</strong>. A cada contemplação, <strong>o espaço recebe o valor cheio à vista</strong> e realiza a festa. O espaço não financia nada e só realiza depois de receber.',
                     passo1: 'Card exclusivo na vitrine da Juntix, com a identidade do espaço, o pacote de festa, o valor e as condições.',
-                    passo2: 'Quando o cliente adora o espaço mas trava no valor à vista, o vendedor oferece o caixa.',
-                    passo4: 'Um participante é contemplado: o espaço recebe o valor cheio à vista e realiza a festa. Até o último mês, todos os participantes recebem.',
+                    passo2: 'Quando o cliente adora o espaço mas trava no valor à vista, o espaço está a um passo de perder a venda. O vendedor oferece a aquisição pelo caixa Juntix. O cadastro é pelo WhatsApp ou pelo site.',
+                    passo3: 'O espaço vende à vista para o cliente que iria perder. O vendedor ganha comissão pelo grupo que montou, e a Juntix ganha na gestão e nas taxas administrativas.',
+                    titulo5: 'O participante é contemplado — e quem recebe à vista é o espaço',
+                    passo5: 'O espaço recebe o valor cheio à vista e realiza a festa, assinando o contrato do evento direto com o participante. As obrigações de pagamento ficam entre o participante e a Juntix.',
                     exemplo: 'Exemplo: festa de R$ 12.000 · 12 participantes · 12 meses.',
                     parcela: 'R$ 1.000,00', adesao: 'R$ 274,74',
                     repasse: 'R$ 12.000', total: 'R$ 144.000',
@@ -328,7 +338,7 @@
                 var s = SEGMENTOS[seg] || SEGMENTOS.bens;
                 var t = function (id, v, html) { var el = document.getElementById(id); if (el) el[html ? 'innerHTML' : 'textContent'] = v; };
                 t('titulo', s.titulo, true); t('lead', s.lead, true);
-                t('passo1', s.passo1); t('passo2', s.passo2); t('passo4', s.passo4);
+                t('passo1', s.passo1); t('passo2', s.passo2); t('passo3', s.passo3); t('titulo5', s.titulo5); t('passo5', s.passo5);
                 t('exemplo-titulo', s.exemplo); t('ex-parcela', s.parcela); t('ex-adesao', s.adesao);
                 t('ex-repasse', s.repasse);
                 t('ex-total', s.total); t('ex-vendas', s.vendas); t('papel-entrega', s.entrega);

@@ -29,6 +29,18 @@ object-src 'none';\
 upgrade-insecure-requests;"
 </IfModule>
 
+# === URLs limpas e redirecionamentos da captação ===
+# /seja-parceiro (sem barra) abre a página da pasta mantendo a query (?lid=&seg=)
+# — é o link que a captação manda para as lojas.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^seja-parceiro/?$ /seja-parceiro/index.html [L]
+    # Captação de administradores: a página vive no painel, que guarda o ?lid=
+    # para atribuir o cadastro (sessionStorage do domínio do painel). 302 —
+    # vira página da LP quando ela existir. A query (?lid=) vai junto.
+    RewriteRule ^seja-administrador/?$ https://painel.juntix.com.br/seja-administrador [R=302,L]
+</IfModule>
+
 # === Segurança básica ===
 # Impede listagem de diretórios
 Options -Indexes
